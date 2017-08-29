@@ -1,0 +1,829 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		B637A4691F561BF400B83C47 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4681F561BF400B83C47 /* Urls.swift */; };
+		B637A46B1F561D3C00B83C47 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A46A1F561D3C00B83C47 /* LoginRequest.swift */; };
+		B637A46D1F561D4D00B83C47 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A46C1F561D4D00B83C47 /* LoginResponse.swift */; };
+		B637A46F1F561F9000B83C47 /* Jwt.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A46E1F561F9000B83C47 /* Jwt.swift */; };
+		B637A4711F56230E00B83C47 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4701F56230E00B83C47 /* User.swift */; };
+		B637A4731F5623BB00B83C47 /* LoginDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4721F5623BB00B83C47 /* LoginDelegate.swift */; };
+		B637A4751F5624B100B83C47 /* LoginPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4741F5624B100B83C47 /* LoginPresenter.swift */; };
+		B637A4771F56264000B83C47 /* Reach.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4761F56264000B83C47 /* Reach.swift */; };
+		B637A4791F56267700B83C47 /* BasePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4781F56267700B83C47 /* BasePresenter.swift */; };
+		B637A47B1F56278C00B83C47 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A47A1F56278C00B83C47 /* Constants.swift */; };
+		B637A47D1F56285200B83C47 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A47C1F56285200B83C47 /* BaseViewController.swift */; };
+		B637A47F1F5628F000B83C47 /* ViewControllerBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A47E1F5628F000B83C47 /* ViewControllerBaseViewController.swift */; };
+		B637A4811F562CA000B83C47 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4801F562CA000B83C47 /* RealmManager.swift */; };
+		B69CDD6E1F55B92500E19560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CDD6D1F55B92500E19560 /* AppDelegate.swift */; };
+		B69CDD701F55B92500E19560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CDD6F1F55B92500E19560 /* ViewController.swift */; };
+		B69CDD731F55B92500E19560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69CDD711F55B92500E19560 /* Main.storyboard */; };
+		B69CDD751F55B92500E19560 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69CDD741F55B92500E19560 /* Assets.xcassets */; };
+		B69CDD781F55B92500E19560 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69CDD761F55B92500E19560 /* LaunchScreen.storyboard */; };
+		B69CDD831F55B92500E19560 /* BiofieldsTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CDD821F55B92500E19560 /* BiofieldsTests.swift */; };
+		B69CDD8E1F55B92500E19560 /* BiofieldsUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CDD8D1F55B92500E19560 /* BiofieldsUITests.swift */; };
+		B69CDDDC1F55C2EA00E19560 /* IQKeyboardManagerSwift in Resources */ = {isa = PBXBuildFile; fileRef = B69CDDDB1F55C2EA00E19560 /* IQKeyboardManagerSwift */; };
+		B69CDDDE1F55C35D00E19560 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69CDDDD1F55C35D00E19560 /* Images.xcassets */; };
+		B69CDDE21F55E3C600E19560 /* DesignUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CDDE11F55E3C600E19560 /* DesignUtils.swift */; };
+		B69CDDE41F55E80300E19560 /* Icons.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B69CDDE31F55E80300E19560 /* Icons.xcassets */; };
+		EA9D6089AC03918D590C8D29 /* Pods_Biofields.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF4BD074EDDAE02DD39AA9A /* Pods_Biofields.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		B69CDD7F1F55B92500E19560 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B69CDD621F55B92500E19560 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B69CDD691F55B92500E19560;
+			remoteInfo = Biofields;
+		};
+		B69CDD8A1F55B92500E19560 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = B69CDD621F55B92500E19560 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B69CDD691F55B92500E19560;
+			remoteInfo = Biofields;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		4E452C3403660FEEC448C3DC /* Pods-Biofields.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biofields.release.xcconfig"; path = "Pods/Target Support Files/Pods-Biofields/Pods-Biofields.release.xcconfig"; sourceTree = "<group>"; };
+		8FF4BD074EDDAE02DD39AA9A /* Pods_Biofields.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Biofields.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		90B5A28BBD7F77228290206E /* Pods-Biofields.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biofields.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Biofields/Pods-Biofields.debug.xcconfig"; sourceTree = "<group>"; };
+		B637A4681F561BF400B83C47 /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
+		B637A46A1F561D3C00B83C47 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
+		B637A46C1F561D4D00B83C47 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
+		B637A46E1F561F9000B83C47 /* Jwt.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Jwt.swift; sourceTree = "<group>"; };
+		B637A4701F56230E00B83C47 /* User.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		B637A4721F5623BB00B83C47 /* LoginDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginDelegate.swift; sourceTree = "<group>"; };
+		B637A4741F5624B100B83C47 /* LoginPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginPresenter.swift; sourceTree = "<group>"; };
+		B637A4761F56264000B83C47 /* Reach.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reach.swift; sourceTree = "<group>"; };
+		B637A4781F56267700B83C47 /* BasePresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BasePresenter.swift; sourceTree = "<group>"; };
+		B637A47A1F56278C00B83C47 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		B637A47C1F56285200B83C47 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		B637A47E1F5628F000B83C47 /* ViewControllerBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerBaseViewController.swift; sourceTree = "<group>"; };
+		B637A4801F562CA000B83C47 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		B69CDD6A1F55B92500E19560 /* Biofields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biofields.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69CDD6D1F55B92500E19560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		B69CDD6F1F55B92500E19560 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../ViewController.swift; sourceTree = "<group>"; };
+		B69CDD721F55B92500E19560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		B69CDD741F55B92500E19560 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; name = Assets.xcassets; path = ../../Assets.xcassets; sourceTree = "<group>"; };
+		B69CDD771F55B92500E19560 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		B69CDD791F55B92500E19560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B69CDD7E1F55B92500E19560 /* BiofieldsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiofieldsTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69CDD821F55B92500E19560 /* BiofieldsTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiofieldsTests.swift; sourceTree = "<group>"; };
+		B69CDD841F55B92500E19560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B69CDD891F55B92500E19560 /* BiofieldsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BiofieldsUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B69CDD8D1F55B92500E19560 /* BiofieldsUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiofieldsUITests.swift; sourceTree = "<group>"; };
+		B69CDD8F1F55B92500E19560 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B69CDDDB1F55C2EA00E19560 /* IQKeyboardManagerSwift */ = {isa = PBXFileReference; lastKnownFileType = folder; path = IQKeyboardManagerSwift; sourceTree = "<group>"; };
+		B69CDDDD1F55C35D00E19560 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		B69CDDE11F55E3C600E19560 /* DesignUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DesignUtils.swift; sourceTree = "<group>"; };
+		B69CDDE31F55E80300E19560 /* Icons.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Icons.xcassets; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		B69CDD671F55B92500E19560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EA9D6089AC03918D590C8D29 /* Pods_Biofields.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69CDD7B1F55B92500E19560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69CDD861F55B92500E19560 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		B69CDD611F55B92500E19560 = {
+			isa = PBXGroup;
+			children = (
+				B69CDD6C1F55B92500E19560 /* Biofields */,
+				B69CDD811F55B92500E19560 /* BiofieldsTests */,
+				B69CDD8C1F55B92500E19560 /* BiofieldsUITests */,
+				B69CDD6B1F55B92500E19560 /* Products */,
+				D23AE57D9017976EC24E404B /* Pods */,
+				D4D60E21249681368D7B7F5E /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		B69CDD6B1F55B92500E19560 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDD6A1F55B92500E19560 /* Biofields.app */,
+				B69CDD7E1F55B92500E19560 /* BiofieldsTests.xctest */,
+				B69CDD891F55B92500E19560 /* BiofieldsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		B69CDD6C1F55B92500E19560 /* Biofields */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDDDB1F55C2EA00E19560 /* IQKeyboardManagerSwift */,
+				B69CDDAB1F55C2A900E19560 /* View */,
+				B69CDDA81F55C29F00E19560 /* Presenter */,
+				B69CDDA51F55C29700E19560 /* Model */,
+				B69CDD9F1F55C28B00E19560 /* Library */,
+				B69CDD6D1F55B92500E19560 /* AppDelegate.swift */,
+				B69CDD791F55B92500E19560 /* Info.plist */,
+			);
+			path = Biofields;
+			sourceTree = "<group>";
+		};
+		B69CDD811F55B92500E19560 /* BiofieldsTests */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDD821F55B92500E19560 /* BiofieldsTests.swift */,
+				B69CDD841F55B92500E19560 /* Info.plist */,
+			);
+			path = BiofieldsTests;
+			sourceTree = "<group>";
+		};
+		B69CDD8C1F55B92500E19560 /* BiofieldsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDD8D1F55B92500E19560 /* BiofieldsUITests.swift */,
+				B69CDD8F1F55B92500E19560 /* Info.plist */,
+			);
+			path = BiofieldsUITests;
+			sourceTree = "<group>";
+		};
+		B69CDD9F1F55C28B00E19560 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDDA01F55C28B00E19560 /* Network */,
+				B69CDDA41F55C28B00E19560 /* Utils */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		B69CDDA01F55C28B00E19560 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDDA11F55C28B00E19560 /* Definitions */,
+				B69CDDA21F55C28B00E19560 /* Requests */,
+				B69CDDA31F55C28B00E19560 /* Response */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		B69CDDA11F55C28B00E19560 /* Definitions */ = {
+			isa = PBXGroup;
+			children = (
+				B637A4681F561BF400B83C47 /* Urls.swift */,
+			);
+			path = Definitions;
+			sourceTree = "<group>";
+		};
+		B69CDDA21F55C28B00E19560 /* Requests */ = {
+			isa = PBXGroup;
+			children = (
+				B637A46A1F561D3C00B83C47 /* LoginRequest.swift */,
+			);
+			path = Requests;
+			sourceTree = "<group>";
+		};
+		B69CDDA31F55C28B00E19560 /* Response */ = {
+			isa = PBXGroup;
+			children = (
+				B637A46C1F561D4D00B83C47 /* LoginResponse.swift */,
+				B637A46E1F561F9000B83C47 /* Jwt.swift */,
+			);
+			path = Response;
+			sourceTree = "<group>";
+		};
+		B69CDDA41F55C28B00E19560 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDDE11F55E3C600E19560 /* DesignUtils.swift */,
+				B637A4761F56264000B83C47 /* Reach.swift */,
+				B637A47A1F56278C00B83C47 /* Constants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		B69CDDA51F55C29700E19560 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDDA61F55C29700E19560 /* Managment */,
+				B69CDDA71F55C29700E19560 /* Objects */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B69CDDA61F55C29700E19560 /* Managment */ = {
+			isa = PBXGroup;
+			children = (
+				B637A4801F562CA000B83C47 /* RealmManager.swift */,
+			);
+			path = Managment;
+			sourceTree = "<group>";
+		};
+		B69CDDA71F55C29700E19560 /* Objects */ = {
+			isa = PBXGroup;
+			children = (
+				B637A4701F56230E00B83C47 /* User.swift */,
+			);
+			path = Objects;
+			sourceTree = "<group>";
+		};
+		B69CDDA81F55C29F00E19560 /* Presenter */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDDA91F55C29F00E19560 /* Delegate */,
+				B69CDDAA1F55C29F00E19560 /* Implementations */,
+			);
+			path = Presenter;
+			sourceTree = "<group>";
+		};
+		B69CDDA91F55C29F00E19560 /* Delegate */ = {
+			isa = PBXGroup;
+			children = (
+				B637A4721F5623BB00B83C47 /* LoginDelegate.swift */,
+			);
+			path = Delegate;
+			sourceTree = "<group>";
+		};
+		B69CDDAA1F55C29F00E19560 /* Implementations */ = {
+			isa = PBXGroup;
+			children = (
+				B637A4741F5624B100B83C47 /* LoginPresenter.swift */,
+				B637A4781F56267700B83C47 /* BasePresenter.swift */,
+			);
+			path = Implementations;
+			sourceTree = "<group>";
+		};
+		B69CDDAB1F55C2A900E19560 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDDAC1F55C2A900E19560 /* Assests */,
+				B69CDDAD1F55C2A900E19560 /* DataSources */,
+				B69CDDAE1F55C2A900E19560 /* Nibs */,
+				B69CDDAF1F55C2A900E19560 /* ViewControllers */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B69CDDAC1F55C2A900E19560 /* Assests */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDD741F55B92500E19560 /* Assets.xcassets */,
+				B69CDDDD1F55C35D00E19560 /* Images.xcassets */,
+				B69CDDE31F55E80300E19560 /* Icons.xcassets */,
+			);
+			path = Assests;
+			sourceTree = "<group>";
+		};
+		B69CDDAD1F55C2A900E19560 /* DataSources */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = DataSources;
+			sourceTree = "<group>";
+		};
+		B69CDDAE1F55C2A900E19560 /* Nibs */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDD711F55B92500E19560 /* Main.storyboard */,
+				B69CDD761F55B92500E19560 /* LaunchScreen.storyboard */,
+			);
+			path = Nibs;
+			sourceTree = "<group>";
+		};
+		B69CDDAF1F55C2A900E19560 /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				B69CDD6F1F55B92500E19560 /* ViewController.swift */,
+				B637A47C1F56285200B83C47 /* BaseViewController.swift */,
+				B637A47E1F5628F000B83C47 /* ViewControllerBaseViewController.swift */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		D23AE57D9017976EC24E404B /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				90B5A28BBD7F77228290206E /* Pods-Biofields.debug.xcconfig */,
+				4E452C3403660FEEC448C3DC /* Pods-Biofields.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		D4D60E21249681368D7B7F5E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8FF4BD074EDDAE02DD39AA9A /* Pods_Biofields.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		B69CDD691F55B92500E19560 /* Biofields */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B69CDD921F55B92500E19560 /* Build configuration list for PBXNativeTarget "Biofields" */;
+			buildPhases = (
+				4C7CB489AD627806F34D8C02 /* [CP] Check Pods Manifest.lock */,
+				B69CDD661F55B92500E19560 /* Sources */,
+				B69CDD671F55B92500E19560 /* Frameworks */,
+				B69CDD681F55B92500E19560 /* Resources */,
+				561503E1DB358827A7FAC370 /* [CP] Embed Pods Frameworks */,
+				7CEE1DE7128155949067FD3E /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Biofields;
+			productName = Biofields;
+			productReference = B69CDD6A1F55B92500E19560 /* Biofields.app */;
+			productType = "com.apple.product-type.application";
+		};
+		B69CDD7D1F55B92500E19560 /* BiofieldsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B69CDD951F55B92500E19560 /* Build configuration list for PBXNativeTarget "BiofieldsTests" */;
+			buildPhases = (
+				B69CDD7A1F55B92500E19560 /* Sources */,
+				B69CDD7B1F55B92500E19560 /* Frameworks */,
+				B69CDD7C1F55B92500E19560 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B69CDD801F55B92500E19560 /* PBXTargetDependency */,
+			);
+			name = BiofieldsTests;
+			productName = BiofieldsTests;
+			productReference = B69CDD7E1F55B92500E19560 /* BiofieldsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		B69CDD881F55B92500E19560 /* BiofieldsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B69CDD981F55B92500E19560 /* Build configuration list for PBXNativeTarget "BiofieldsUITests" */;
+			buildPhases = (
+				B69CDD851F55B92500E19560 /* Sources */,
+				B69CDD861F55B92500E19560 /* Frameworks */,
+				B69CDD871F55B92500E19560 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B69CDD8B1F55B92500E19560 /* PBXTargetDependency */,
+			);
+			name = BiofieldsUITests;
+			productName = BiofieldsUITests;
+			productReference = B69CDD891F55B92500E19560 /* BiofieldsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		B69CDD621F55B92500E19560 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0830;
+				LastUpgradeCheck = 0830;
+				ORGANIZATIONNAME = "HICS SA DE CV";
+				TargetAttributes = {
+					B69CDD691F55B92500E19560 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = PKFT6H4J27;
+						ProvisioningStyle = Automatic;
+					};
+					B69CDD7D1F55B92500E19560 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = PKFT6H4J27;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B69CDD691F55B92500E19560;
+					};
+					B69CDD881F55B92500E19560 = {
+						CreatedOnToolsVersion = 8.3.2;
+						DevelopmentTeam = PKFT6H4J27;
+						ProvisioningStyle = Automatic;
+						TestTargetID = B69CDD691F55B92500E19560;
+					};
+				};
+			};
+			buildConfigurationList = B69CDD651F55B92500E19560 /* Build configuration list for PBXProject "Biofields" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = B69CDD611F55B92500E19560;
+			productRefGroup = B69CDD6B1F55B92500E19560 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				B69CDD691F55B92500E19560 /* Biofields */,
+				B69CDD7D1F55B92500E19560 /* BiofieldsTests */,
+				B69CDD881F55B92500E19560 /* BiofieldsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		B69CDD681F55B92500E19560 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69CDD781F55B92500E19560 /* LaunchScreen.storyboard in Resources */,
+				B69CDDDE1F55C35D00E19560 /* Images.xcassets in Resources */,
+				B69CDDDC1F55C2EA00E19560 /* IQKeyboardManagerSwift in Resources */,
+				B69CDD751F55B92500E19560 /* Assets.xcassets in Resources */,
+				B69CDDE41F55E80300E19560 /* Icons.xcassets in Resources */,
+				B69CDD731F55B92500E19560 /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69CDD7C1F55B92500E19560 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69CDD871F55B92500E19560 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		4C7CB489AD627806F34D8C02 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		561503E1DB358827A7FAC370 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Biofields/Pods-Biofields-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7CEE1DE7128155949067FD3E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Biofields/Pods-Biofields-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		B69CDD661F55B92500E19560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69CDD701F55B92500E19560 /* ViewController.swift in Sources */,
+				B637A4791F56267700B83C47 /* BasePresenter.swift in Sources */,
+				B637A46F1F561F9000B83C47 /* Jwt.swift in Sources */,
+				B69CDDE21F55E3C600E19560 /* DesignUtils.swift in Sources */,
+				B637A46D1F561D4D00B83C47 /* LoginResponse.swift in Sources */,
+				B637A47D1F56285200B83C47 /* BaseViewController.swift in Sources */,
+				B637A4751F5624B100B83C47 /* LoginPresenter.swift in Sources */,
+				B637A4711F56230E00B83C47 /* User.swift in Sources */,
+				B637A47F1F5628F000B83C47 /* ViewControllerBaseViewController.swift in Sources */,
+				B637A4811F562CA000B83C47 /* RealmManager.swift in Sources */,
+				B637A47B1F56278C00B83C47 /* Constants.swift in Sources */,
+				B69CDD6E1F55B92500E19560 /* AppDelegate.swift in Sources */,
+				B637A46B1F561D3C00B83C47 /* LoginRequest.swift in Sources */,
+				B637A4731F5623BB00B83C47 /* LoginDelegate.swift in Sources */,
+				B637A4771F56264000B83C47 /* Reach.swift in Sources */,
+				B637A4691F561BF400B83C47 /* Urls.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69CDD7A1F55B92500E19560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69CDD831F55B92500E19560 /* BiofieldsTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B69CDD851F55B92500E19560 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B69CDD8E1F55B92500E19560 /* BiofieldsUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		B69CDD801F55B92500E19560 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B69CDD691F55B92500E19560 /* Biofields */;
+			targetProxy = B69CDD7F1F55B92500E19560 /* PBXContainerItemProxy */;
+		};
+		B69CDD8B1F55B92500E19560 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B69CDD691F55B92500E19560 /* Biofields */;
+			targetProxy = B69CDD8A1F55B92500E19560 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		B69CDD711F55B92500E19560 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B69CDD721F55B92500E19560 /* Base */,
+			);
+			name = Main.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		B69CDD761F55B92500E19560 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				B69CDD771F55B92500E19560 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		B69CDD901F55B92500E19560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		B69CDD911F55B92500E19560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		B69CDD931F55B92500E19560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 90B5A28BBD7F77228290206E /* Pods-Biofields.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PKFT6H4J27;
+				INFOPLIST_FILE = Biofields/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hics.Biofields;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		B69CDD941F55B92500E19560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4E452C3403660FEEC448C3DC /* Pods-Biofields.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = PKFT6H4J27;
+				INFOPLIST_FILE = Biofields/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hics.Biofields;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		B69CDD961F55B92500E19560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = PKFT6H4J27;
+				INFOPLIST_FILE = BiofieldsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hics.BiofieldsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Biofields.app/Biofields";
+			};
+			name = Debug;
+		};
+		B69CDD971F55B92500E19560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = PKFT6H4J27;
+				INFOPLIST_FILE = BiofieldsTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hics.BiofieldsTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Biofields.app/Biofields";
+			};
+			name = Release;
+		};
+		B69CDD991F55B92500E19560 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = PKFT6H4J27;
+				INFOPLIST_FILE = BiofieldsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hics.BiofieldsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Biofields;
+			};
+			name = Debug;
+		};
+		B69CDD9A1F55B92500E19560 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				DEVELOPMENT_TEAM = PKFT6H4J27;
+				INFOPLIST_FILE = BiofieldsUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = hics.BiofieldsUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_TARGET_NAME = Biofields;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		B69CDD651F55B92500E19560 /* Build configuration list for PBXProject "Biofields" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69CDD901F55B92500E19560 /* Debug */,
+				B69CDD911F55B92500E19560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B69CDD921F55B92500E19560 /* Build configuration list for PBXNativeTarget "Biofields" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69CDD931F55B92500E19560 /* Debug */,
+				B69CDD941F55B92500E19560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B69CDD951F55B92500E19560 /* Build configuration list for PBXNativeTarget "BiofieldsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69CDD961F55B92500E19560 /* Debug */,
+				B69CDD971F55B92500E19560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B69CDD981F55B92500E19560 /* Build configuration list for PBXNativeTarget "BiofieldsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B69CDD991F55B92500E19560 /* Debug */,
+				B69CDD9A1F55B92500E19560 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = B69CDD621F55B92500E19560 /* Project object */;
+}
