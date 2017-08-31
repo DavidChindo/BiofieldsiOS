@@ -43,7 +43,7 @@ class LoginPresenter: BasePresenter {
                             if code == Constants.STATUS_OK {
                                 self.delegate?.onSuccessLogin(loginResponse: response.result.value!)
                             }else{
-                                self.delegate?.onErrorLogin(msg: "surgio un erro")
+                                self.delegate?.onErrorLogin(msg: response.result.value?.msg)
                             }
                         case .failure(let error):
                             print(error)

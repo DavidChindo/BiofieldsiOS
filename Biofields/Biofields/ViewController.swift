@@ -8,13 +8,18 @@
 
 import UIKit
 import CryptoSwift
+import SwiftSpinner
+
 
 
 
 class ViewController: BaseViewController,LoginDelegate {
-
+    
+    @IBOutlet weak var passwordTxtField: UITextField!
+    @IBOutlet weak var usernameTxtField: UITextField!
     @IBOutlet weak var btnLogin: UIButton!
     var loginPresenter:LoginPresenter?
+    var window:UIWindow?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,26 +30,56 @@ class ViewController: BaseViewController,LoginDelegate {
     }
     
     @IBAction func onLoginClick(_ sender: Any) {
-        let password = "auth123"
-        let credentials = LoginRequest(email: "auth1@biofields.com", pass: password.md5())
-        
-        loginPresenter?.login(credentials: credentials)
+        let msgValidation = validateCredentials(username: usernameTxtField, password: passwordTxtField)
+        if msgValidation.isEmpty{
+            SwiftSpinner.show("Autenticando...")
+            let password = passwordTxtField.text
+            let credentials = LoginRequest(email: usernameTxtField.text!, pass: (password?.md5())!)
+            loginPresenter?.login(credentials: credentials)
+        }else{
+            DesignUtils.messageError(vc: self, title: "Error", msg: msgValidation)
+        }
     }
-
+    
     func customViews(){
-    DesignUtils.setBorder(button: btnLogin, mred: 255, mgreen: 255, mblue: 255)
+        DesignUtils.setBorder(button: btnLogin, mred: 255, mgreen: 255, mblue: 255)
     }
-
+    
     func onSuccessLogin(loginResponse: LoginResponse) {
-        print(loginResponse)
+        SwiftSpinner.hide()
         RealmManager.saveUser(usr: loginResponse)
-        print(RealmManager.findFirst(object: User.self))
+        initView(idView: "MenuTabViewController")
     }
     
     func onErrorLogin(msg: String?) {
-        print(msg)
+        SwiftSpinner.hide()
+        DesignUtils.messageError(vc: self, title: "Error", msg: msg!)
     }
-
+    
+    func validateCredentials(username: UITextField, password: UITextField) -> String {
+        
+        if !LogicUtils.validateTextField(textField: username) && !LogicUtils.validateTextField(textField: password){
+            return "Favor de ingresar usuario y contraseña"
+        }else{
+            if LogicUtils.validateTextField(textField: username){
+                if LogicUtils.validateTextField(textField: password){
+                    return ""
+                }else{
+                    return "La contraseña es requerida"
+                }
+            }else{
+                return "El usuario es requerido"
+            }
+        }
+    }
+    
+    func initView(idView:String){
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: idView)
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+    }
 }
 
 

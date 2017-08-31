@@ -16,7 +16,7 @@ public class LoginResponse: NSObject,Mappable {
     var email:String?
     var createdAt:String?
     var jwt:Jwt?
-
+    var msg:String?
     
     public required convenience init?(map: Map) {
         self.init()
@@ -27,6 +27,7 @@ public class LoginResponse: NSObject,Mappable {
         email <- map["email"]
         createdAt <- map["createdAt"]
         jwt <- map["array"]
+        msg <- map["message"]
     }
 
 }

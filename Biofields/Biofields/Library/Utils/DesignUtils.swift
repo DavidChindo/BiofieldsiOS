@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SpaceView
 
 class DesignUtils: NSObject {
 
@@ -15,4 +16,38 @@ class DesignUtils: NSObject {
         button.layer.borderWidth = 1.0
     }
     
+    class func alertConfirm(titleMessage:String, message:String,vc:UIViewController){
+        
+        let alertEmpty = UIAlertController(title: titleMessage, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertEmpty.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {(action:UIAlertAction!) in
+            
+        }))
+        
+        vc.present(alertEmpty, animated: true, completion: nil)
+        
+    }
+    
+    class func alertConfirmFinish(titleMessage:String, message:String,vc:UIViewController){
+        
+        let alertEmpty = UIAlertController(title: titleMessage, message: message, preferredStyle: UIAlertControllerStyle.alert)
+        
+        alertEmpty.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {(action:UIAlertAction!) in
+            vc.dismiss(animated: true, completion: nil)
+        }))
+        
+        vc.present(alertEmpty, animated: true, completion: nil)
+        
+    }
+
+    
+    class func messageError(vc:UIViewController, title: String, msg: String){
+        vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .error )
+            ])
+    }
+    
+    class func messageSuccess(vc:UIViewController, title: String, msg: String){
+        vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .success )
+            ])
+    }
 }

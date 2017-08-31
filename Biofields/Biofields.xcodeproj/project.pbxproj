@@ -20,6 +20,7 @@
 		B637A47D1F56285200B83C47 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A47C1F56285200B83C47 /* BaseViewController.swift */; };
 		B637A47F1F5628F000B83C47 /* ViewControllerBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A47E1F5628F000B83C47 /* ViewControllerBaseViewController.swift */; };
 		B637A4811F562CA000B83C47 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4801F562CA000B83C47 /* RealmManager.swift */; };
+		B637A4831F572F6300B83C47 /* LogicUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4821F572F6300B83C47 /* LogicUtils.swift */; };
 		B69CDD6E1F55B92500E19560 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CDD6D1F55B92500E19560 /* AppDelegate.swift */; };
 		B69CDD701F55B92500E19560 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B69CDD6F1F55B92500E19560 /* ViewController.swift */; };
 		B69CDD731F55B92500E19560 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B69CDD711F55B92500E19560 /* Main.storyboard */; };
@@ -68,6 +69,7 @@
 		B637A47C1F56285200B83C47 /* BaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
 		B637A47E1F5628F000B83C47 /* ViewControllerBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerBaseViewController.swift; sourceTree = "<group>"; };
 		B637A4801F562CA000B83C47 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
+		B637A4821F572F6300B83C47 /* LogicUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicUtils.swift; sourceTree = "<group>"; };
 		B69CDD6A1F55B92500E19560 /* Biofields.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Biofields.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B69CDD6D1F55B92500E19560 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B69CDD6F1F55B92500E19560 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ViewController.swift; path = ../../ViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 				B69CDDE11F55E3C600E19560 /* DesignUtils.swift */,
 				B637A4761F56264000B83C47 /* Reach.swift */,
 				B637A47A1F56278C00B83C47 /* Constants.swift */,
+				B637A4821F572F6300B83C47 /* LogicUtils.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -527,6 +530,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B637A4831F572F6300B83C47 /* LogicUtils.swift in Sources */,
 				B69CDD701F55B92500E19560 /* ViewController.swift in Sources */,
 				B637A4791F56267700B83C47 /* BasePresenter.swift in Sources */,
 				B637A46F1F561F9000B83C47 /* Jwt.swift in Sources */,

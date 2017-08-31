@@ -15,6 +15,7 @@ PODS:
   - Realm/Headers (2.8.3)
   - RealmSwift (2.8.3):
     - Realm (= 2.8.3)
+  - SpaceView (1.0.5)
   - STPopup (1.8.2)
   - SwiftSpinner (1.3.0)
 
@@ -27,6 +28,7 @@ DEPENDENCIES:
   - IQKeyboardManagerSwift
   - Kingfisher
   - RealmSwift
+  - SpaceView
   - STPopup
   - SwiftSpinner
 
@@ -41,9 +43,10 @@ SPEC CHECKSUMS:
   ObjectMapper: 65abcfd9a61cf7396cbd14a4fb22fddfcc46577e
   Realm: 3601ef091c8c499a31101d8563b991e75546cdce
   RealmSwift: 8183818515471b01a99abdd2970f8e4fd52b6f4a
+  SpaceView: 1619ebbb5162f4f3547a4cb383bea479a54fa76c
   STPopup: b69b3e7484ef7d2baec5f9ab2939f8a7bcdfe218
   SwiftSpinner: c249fffed3e74b5f3e6492dcc05d6bc1525a8220
 
-PODFILE CHECKSUM: db25d2c52b608d2b1a79e587d3e5ffe2128ae7f5
+PODFILE CHECKSUM: cefdec72066b417dad1e686fe6ed1e03306355e0
 
 COCOAPODS: 1.2.1
