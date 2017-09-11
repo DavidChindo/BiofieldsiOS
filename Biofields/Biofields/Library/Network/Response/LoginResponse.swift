@@ -17,6 +17,7 @@ public class LoginResponse: NSObject,Mappable {
     var createdAt:String?
     var jwt:Jwt?
     var msg:String?
+    var companies:[CompanyResponse] = []
     
     public required convenience init?(map: Map) {
         self.init()
@@ -28,6 +29,6 @@ public class LoginResponse: NSObject,Mappable {
         createdAt <- map["createdAt"]
         jwt <- map["array"]
         msg <- map["message"]
+        companies <- map["companies"]
     }
-
 }

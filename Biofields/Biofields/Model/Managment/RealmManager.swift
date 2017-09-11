@@ -19,6 +19,13 @@ class RealmManager: NSObject {
         return listResults
     }
     
+    class func clearRealm(){
+    
+        let realm = try! Realm()
+        try! realm.write({ () -> Void in
+            realm.deleteAll()
+        })
+    }
     
     class func list<T: Object>(_ object : T.Type,orderby: String)->[T]{
         var results:[T] = []
@@ -50,9 +57,42 @@ class RealmManager: NSObject {
             user.jwt = usr.jwt?.jwt
             realm.add(user, update: true)
         }
-        
     }
-
     
+    class func insert<T: Object>(_ object : T.Type,items: [T]){
+        
+        let realm = try! Realm()
+        try! realm.write {
+            realm.add(items, update: true)
+        }
+    }
+    
+    class func findByWord<T: Object>(_ object: T.Type,property: String,value: String) -> List<T>?{
+        let predicate = NSPredicate(format: property + " CONTAINS[cd] %@ ", value)
+        let results = try! Realm().objects(object.self).filter(predicate).sorted(byKeyPath: "name", ascending: true)
+        let listResults = List<T>()
+        listResults.append(objectsIn: results)
+        return listResults
+    }
+    
+    class func findByTwoWord<T: Object>(_ object: T.Type,property: String,value: String,propertySecond: String,valueSecond: String) -> List<T>?{
+        let predicate = NSPredicate(format: property + " = %@ AND " + propertySecond + " CONTAINS[cd] %@ ", value,valueSecond)
+        let results = try! Realm().objects(object.self).filter(predicate).sorted(byKeyPath: "name", ascending: true)
+        let listResults = List<T>()
+        listResults.append(objectsIn: results)
+        return listResults
+    }
+    
+    class func token() -> String{
+        
+        let user = findFirst(object: User.self)
+        return user != nil ? (user?.jwt)! : ""
+    }
+    
+    class func user() -> String{
+        
+        let user = findFirst(object: User.self)
+        return user != nil ? (user?.email)! : ""
+    }
     
 }

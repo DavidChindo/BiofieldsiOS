@@ -17,6 +17,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         IQKeyboardManager.sharedManager().enable = true
+        customNavBar()
+        isLoged()
         return true
     }
 
@@ -42,6 +44,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    func isLoged(){
+        if Prefs.instance().bool(Constants.LOGIN_PREFS){
+            initView(idView: "MenuTabViewController")
+        }else{
+            initView(idView: "LoginViewControllerID")
+        }
+        
+    }
+    
+    func initView(idView:String){
+        self.window = UIWindow(frame: UIScreen.main.bounds)
+        let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        let initialViewController = storyboard.instantiateViewController(withIdentifier: idView)
+        self.window?.rootViewController = initialViewController
+        self.window?.makeKeyAndVisible()
+    }
 
+    func customNavBar(){
+        UIApplication.shared.statusBarStyle = .lightContent
+        UINavigationBar.appearance().barTintColor = DesignUtils.greenPrimary
+        UINavigationBar.appearance().tintColor = UIColor.white
+        UINavigationBar.appearance().titleTextAttributes = [NSForegroundColorAttributeName:UIColor.white]
+        let titleAttributes:[String:Any] = [NSFontAttributeName:UIFont(name: "Verdana-UltraLight", size: 22) ?? UIFont.systemFont(ofSize: 20),NSForegroundColorAttributeName:UIColor.white]
+        UINavigationBar.appearance().titleTextAttributes = titleAttributes
+        let navigationBarAppearace = UINavigationBar.appearance()
+    }
+    
 }
 

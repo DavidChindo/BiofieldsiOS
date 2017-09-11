@@ -10,9 +10,6 @@ import UIKit
 import CryptoSwift
 import SwiftSpinner
 
-
-
-
 class ViewController: BaseViewController,LoginDelegate {
     
     @IBOutlet weak var passwordTxtField: UITextField!
@@ -35,6 +32,7 @@ class ViewController: BaseViewController,LoginDelegate {
             SwiftSpinner.show("Autenticando...")
             let password = passwordTxtField.text
             let credentials = LoginRequest(email: usernameTxtField.text!, pass: (password?.md5())!)
+            ChooseCompanyViewController.PASWD = (password?.md5())!
             loginPresenter?.login(credentials: credentials)
         }else{
             DesignUtils.messageError(vc: self, title: "Error", msg: msgValidation)
@@ -48,7 +46,8 @@ class ViewController: BaseViewController,LoginDelegate {
     func onSuccessLogin(loginResponse: LoginResponse) {
         SwiftSpinner.hide()
         RealmManager.saveUser(usr: loginResponse)
-        initView(idView: "MenuTabViewController")
+        ChooseCompanyViewController.COMPANIES = loginResponse.companies
+        initView(idView: "ChooseCompanyID")
     }
     
     func onErrorLogin(msg: String?) {

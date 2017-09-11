@@ -12,7 +12,7 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Biofields" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewControllerID" id="BYZ-38-t0r" customClass="ViewController" customModule="Biofields" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -21,11 +21,11 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_splash" translatesAutoresizingMaskIntoConstraints="NO" id="LmC-gA-OgJ">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_background" translatesAutoresizingMaskIntoConstraints="NO" id="LmC-gA-OgJ">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="08n-Do-ejS">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_logo" translatesAutoresizingMaskIntoConstraints="NO" id="08n-Do-ejS">
                                 <rect key="frame" x="40" y="88" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                             </imageView>
@@ -84,7 +84,7 @@
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Sgf-s0-1vc">
-                                <rect key="frame" x="16" y="440" width="288" height="30"/>
+                                <rect key="frame" x="16" y="425" width="288" height="48"/>
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="Ingresar">
@@ -105,12 +105,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="113" y="97"/>
+            <point key="canvasLocation" x="-540" y="97"/>
         </scene>
-        <!--Seguimiento-->
+        <!--Choose Company View Controller-->
+        <scene sceneID="u1t-pZ-any">
+            <objects>
+                <viewController storyboardIdentifier="ChooseCompanyID" id="zCy-Vx-HU7" customClass="ChooseCompanyViewController" customModule="Biofields" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="noQ-EQ-h2G"/>
+                        <viewControllerLayoutGuide type="bottom" id="EGX-BE-h4Q"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6sc-S6-LQI">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="img_background" translatesAutoresizingMaskIntoConstraints="NO" id="2dy-cf-YJq">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                            </imageView>
+                            <view alpha="0.34999999999999998" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="MQr-Wo-RV6">
+                                <rect key="frame" x="16" y="160" width="288" height="238"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </view>
+                            <pickerView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zgc-3J-mL9">
+                                <rect key="frame" x="33" y="234" width="255" height="91"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </pickerView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="B9A-Dq-TFA">
+                                <rect key="frame" x="33" y="347" width="255" height="38"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Aceptar">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="onAcceptSelectCompany:" destination="zCy-Vx-HU7" eventType="touchUpInside" id="d0F-u1-eqE"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Seleccionar empresa" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XKc-pZ-JKJ">
+                                <rect key="frame" x="69" y="193" width="169" height="21"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <connections>
+                        <outlet property="acceptBtn" destination="B9A-Dq-TFA" id="LSx-03-2RI"/>
+                        <outlet property="companiesPickerView" destination="zgc-3J-mL9" id="Ddr-Ph-J0p"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3Nu-uS-ZfA" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="151.875" y="95.070422535211264"/>
+        </scene>
+        <!--Requisitions Seg View Controller-->
         <scene sceneID="xsW-q3-qPt">
             <objects>
-                <viewController id="eqA-hQ-Mf2" sceneMemberID="viewController">
+                <viewController id="eqA-hQ-Mf2" customClass="RequisitionsSegViewController" customModule="Biofields" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="pjD-Mg-bbe"/>
                         <viewControllerLayoutGuide type="bottom" id="eae-ui-jBm"/>
@@ -119,26 +174,140 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="SEGUIMIENTO" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="be4-Y4-g9O">
-                                <rect key="frame" x="104" y="274" width="113" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="255" sectionHeaderHeight="28" sectionFooterHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="9PW-sh-EoT">
+                                <rect key="frame" x="0.0" y="32" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.92567157749999995" green="0.93701148030000003" blue="0.95295047759999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="requisitionCell" rowHeight="255" id="qww-Pj-BSC" customClass="RequisitionCellTableViewCell" customModule="Biofields" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="255"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="qww-Pj-BSC" id="ypw-fF-5Ny">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="255"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="s9g-PZ-1LV">
+                                                    <rect key="frame" x="16" y="5" width="288" height="237.5"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icoSupplier" translatesAutoresizingMaskIntoConstraints="NO" id="6PC-do-Axi">
+                                                            <rect key="frame" x="24" y="102" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requisiciones de prueba" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0uo-b0-oND">
+                                                            <rect key="frame" x="64" y="140" width="216" height="41"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.31781342629999998" green="0.32153725620000001" blue="0.32950457929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="KNn-MV-CmI">
+                                                            <rect key="frame" x="24" y="37" width="256" height="1"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.81578701730000003" green="0.82348114250000004" blue="0.82747560740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZgT-ab-wEj">
+                                                            <rect key="frame" x="24" y="186" width="256" height="1"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.81578701730000003" green="0.82348114250000004" blue="0.82747560740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="URGENTE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3Tl-6t-aqn">
+                                                            <rect key="frame" x="24" y="201" width="81" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" red="0.55161422490000001" green="0.001905075391" blue="0.15305016930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No. 2222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zQY-Z2-jDk">
+                                                            <rect key="frame" x="16" y="8" width="134" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <color key="textColor" red="0.31781342629999998" green="0.32153725620000001" blue="0.32950457929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="37o-ef-0Pi">
+                                                            <rect key="frame" x="0.0" y="0.0" width="8" height="237.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" red="0.55161422490000001" green="0.001905075391" blue="0.15305016930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </view>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icoCompany" translatesAutoresizingMaskIntoConstraints="NO" id="Cfa-ze-QAs">
+                                                            <rect key="frame" x="24" y="52" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icoInfo" translatesAutoresizingMaskIntoConstraints="NO" id="COL-MD-XFx">
+                                                            <rect key="frame" x="24" y="144" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABC Aerolineas S.A de C.V. :: AAE050309FM0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iya-eu-Due">
+                                                            <rect key="frame" x="64" y="97" width="216" height="42"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.31781342629999998" green="0.32153725620000001" blue="0.32950457929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$121,000.00 MXN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ghl-vI-oDD">
+                                                            <rect key="frame" x="136" y="201" width="144" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <color key="textColor" red="0.31781342629999998" green="0.32153725620000001" blue="0.32950457929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MvE-S0-a5N">
+                                                            <rect key="frame" x="153" y="8" width="127" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.81578701730000003" green="0.82348114250000004" blue="0.82747560740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gestión y Administración Sustentable, S.A de C.V." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wrU-ne-hNi">
+                                                            <rect key="frame" x="64" y="46" width="216" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icoMoney" translatesAutoresizingMaskIntoConstraints="NO" id="xgu-q9-sJA">
+                                                            <rect key="frame" x="113" y="199" width="22" height="23"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92567157749999995" green="0.93701148030000003" blue="0.95295047759999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="UrgentLbl" destination="3Tl-6t-aqn" id="xQr-Kt-oeh"/>
+                                            <outlet property="amountLbl" destination="ghl-vI-oDD" id="Rvb-bh-0cS"/>
+                                            <outlet property="companyLbl" destination="wrU-ne-hNi" id="jtZ-27-bN5"/>
+                                            <outlet property="container" destination="s9g-PZ-1LV" id="KGw-UY-4Ur"/>
+                                            <outlet property="descriptionLbl" destination="0uo-b0-oND" id="cBv-GQ-eXC"/>
+                                            <outlet property="moneyImg" destination="xgu-q9-sJA" id="ZDG-Bk-mkw"/>
+                                            <outlet property="numberLbl" destination="zQY-Z2-jDk" id="z5v-md-oEE"/>
+                                            <outlet property="providerLbl" destination="iya-eu-Due" id="Jsc-9t-8WM"/>
+                                            <outlet property="statusLbl" destination="MvE-S0-a5N" id="IVx-eD-2Q1"/>
+                                            <outlet property="urgentBar" destination="37o-ef-0Pi" id="H7H-1R-lqG"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Seguimiento" id="fTb-DL-Ai5"/>
+                    <navigationItem key="navigationItem" id="d5L-EI-2Ge"/>
+                    <connections>
+                        <outlet property="requisitionsSegTableView" destination="9PW-sh-EoT" id="D93-Cf-91i"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGU-Kv-DA2" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="-463"/>
+            <point key="canvasLocation" x="2872.5" y="-463.73239436619718"/>
         </scene>
-        <!--Por Autorizar-->
+        <!--Requisitions Auth View Controller-->
         <scene sceneID="T0h-WZ-m2A">
             <objects>
-                <viewController id="KZx-eS-aVQ" sceneMemberID="viewController">
+                <viewController id="KZx-eS-aVQ" customClass="RequisitionsAuthViewController" customModule="Biofields" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9O9-s5-9Dc"/>
                         <viewControllerLayoutGuide type="bottom" id="m0H-HU-Rih"/>
@@ -147,21 +316,137 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="POR AUTORIZAR" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="klj-rd-Qei">
-                                <rect key="frame" x="94" y="274" width="132" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="255" sectionHeaderHeight="28" sectionFooterHeight="50" translatesAutoresizingMaskIntoConstraints="NO" id="LWp-C5-VLh">
+                                <rect key="frame" x="0.0" y="20" width="320" height="504"/>
+                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                <color key="backgroundColor" red="0.92567157745361328" green="0.9370114803314209" blue="0.95295047760009766" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="requisitionCell" rowHeight="255" id="QEL-Xe-JXh" customClass="RequisitionCellTableViewCell" customModule="Biofields" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="320" height="255"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="QEL-Xe-JXh" id="VkB-NI-qav">
+                                            <rect key="frame" x="0.0" y="0.0" width="320" height="255"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="HVp-jR-dFw">
+                                                    <rect key="frame" x="16" y="5" width="288" height="237.5"/>
+                                                    <autoresizingMask key="autoresizingMask" widthSizable="YES"/>
+                                                    <subviews>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icoSupplier" translatesAutoresizingMaskIntoConstraints="NO" id="55r-Du-gO0">
+                                                            <rect key="frame" x="24" y="102" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Requisiciones de prueba" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VRU-o2-JqL">
+                                                            <rect key="frame" x="64" y="140" width="216" height="41"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="15"/>
+                                                            <color key="textColor" red="0.31781342629999998" green="0.32153725620000001" blue="0.32950457929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="moi-xy-xro">
+                                                            <rect key="frame" x="24" y="37" width="256" height="1"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.81578701730000003" green="0.82348114250000004" blue="0.82747560740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </view>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aBb-d7-QpS">
+                                                            <rect key="frame" x="24" y="186" width="256" height="1"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.81578701730000003" green="0.82348114250000004" blue="0.82747560740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </view>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="URGENTE" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nx9-cW-wzA">
+                                                            <rect key="frame" x="24" y="201" width="81" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                                            <color key="textColor" red="0.55161422490000001" green="0.001905075391" blue="0.15305016930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="No. 2222" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qxg-tz-iax">
+                                                            <rect key="frame" x="16" y="8" width="134" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <color key="textColor" red="0.31781342629999998" green="0.32153725620000001" blue="0.32950457929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="kDN-xa-rk3">
+                                                            <rect key="frame" x="0.0" y="0.0" width="8" height="237.5"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" heightSizable="YES"/>
+                                                            <color key="backgroundColor" red="0.55161422490000001" green="0.001905075391" blue="0.15305016930000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                        </view>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icoCompany" translatesAutoresizingMaskIntoConstraints="NO" id="OwU-2J-ypq">
+                                                            <rect key="frame" x="24" y="52" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icoInfo" translatesAutoresizingMaskIntoConstraints="NO" id="RUG-th-u8N">
+                                                            <rect key="frame" x="24" y="144" width="32" height="32"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMaxY="YES"/>
+                                                        </imageView>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="ABC Aerolineas S.A de C.V. :: AAE050309FM0" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nir-7o-4JI">
+                                                            <rect key="frame" x="64" y="97" width="216" height="42"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <color key="textColor" red="0.31781342629999998" green="0.32153725620000001" blue="0.32950457929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="$121,000.00 MXN" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ot0-pD-cdK">
+                                                            <rect key="frame" x="136" y="201" width="144" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                                            <color key="textColor" red="0.31781342629999998" green="0.32153725620000001" blue="0.32950457929999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="u7Z-MZ-Njb">
+                                                            <rect key="frame" x="153" y="8" width="127" height="21"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <color key="backgroundColor" red="0.81578701730000003" green="0.82348114250000004" blue="0.82747560740000003" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                                            <fontDescription key="fontDescription" type="boldSystem" pointSize="14"/>
+                                                            <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Gestión y Administración Sustentable, S.A de C.V." lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4lt-hb-mPZ">
+                                                            <rect key="frame" x="64" y="46" width="216" height="44"/>
+                                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
+                                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                            <nil key="textColor"/>
+                                                            <nil key="highlightedColor"/>
+                                                        </label>
+                                                        <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="icoMoney" translatesAutoresizingMaskIntoConstraints="NO" id="VNS-EP-9hS">
+                                                            <rect key="frame" x="113" y="199" width="22" height="23"/>
+                                                            <autoresizingMask key="autoresizingMask" flexibleMinX="YES"/>
+                                                        </imageView>
+                                                    </subviews>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                </view>
+                                            </subviews>
+                                        </tableViewCellContentView>
+                                        <color key="backgroundColor" red="0.92567157749999995" green="0.93701148030000003" blue="0.95295047759999996" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+                                        <connections>
+                                            <outlet property="UrgentLbl" destination="nx9-cW-wzA" id="YMp-j1-nA3"/>
+                                            <outlet property="amountLbl" destination="Ot0-pD-cdK" id="Xgc-zd-lUL"/>
+                                            <outlet property="companyLbl" destination="4lt-hb-mPZ" id="Haa-g3-Hgt"/>
+                                            <outlet property="container" destination="HVp-jR-dFw" id="Xyk-0J-tDR"/>
+                                            <outlet property="descriptionLbl" destination="VRU-o2-JqL" id="fNm-kj-fym"/>
+                                            <outlet property="moneyImg" destination="VNS-EP-9hS" id="8b0-hf-JoG"/>
+                                            <outlet property="numberLbl" destination="qxg-tz-iax" id="Iz4-Va-gkA"/>
+                                            <outlet property="providerLbl" destination="nir-7o-4JI" id="8Me-9l-Y0l"/>
+                                            <outlet property="statusLbl" destination="u7Z-MZ-Njb" id="AAd-Pt-IgK"/>
+                                            <outlet property="urgentBar" destination="kDN-xa-rk3" id="bHx-pI-wyZ"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Por Autorizar" id="VO1-ve-huU"/>
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="M5r-H1-M7b"/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="requisitionTable" destination="LWp-C5-VLh" id="peL-oq-xQr"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iW3-zP-Qvh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="-1147"/>
+            <point key="canvasLocation" x="2872.5" y="-1147.1830985915492"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="0gN-zJ-LCb">
@@ -173,17 +458,17 @@
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                     </tabBar>
                     <connections>
-                        <segue destination="KZx-eS-aVQ" kind="relationship" relationship="viewControllers" id="qMY-3o-5Et"/>
-                        <segue destination="eqA-hQ-Mf2" kind="relationship" relationship="viewControllers" id="WII-dB-8V1"/>
-                        <segue destination="OFK-6E-QVp" kind="relationship" relationship="viewControllers" id="AP2-Mg-kfb"/>
-                        <segue destination="M1M-Cu-t5v" kind="relationship" relationship="viewControllers" id="1fh-CS-g0G"/>
+                        <segue destination="7lz-6B-HTy" kind="relationship" relationship="viewControllers" id="qMY-3o-5Et"/>
+                        <segue destination="Nkg-we-Yyy" kind="relationship" relationship="viewControllers" id="WII-dB-8V1"/>
+                        <segue destination="0pW-bN-p6z" kind="relationship" relationship="viewControllers" id="AP2-Mg-kfb"/>
+                        <segue destination="nYD-XB-8B4" kind="relationship" relationship="viewControllers" id="1fh-CS-g0G"/>
                     </connections>
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zch-Ft-wcS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="870" y="98"/>
         </scene>
-        <!--Solicitud-->
+        <!--View Controller-->
         <scene sceneID="ngt-Yb-g5U">
             <objects>
                 <viewController id="OFK-6E-QVp" sceneMemberID="viewController">
@@ -205,16 +490,16 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Solicitud" id="N05-HI-aaw"/>
+                    <navigationItem key="navigationItem" id="ZBJ-cZ-aqp"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Mbm-Vc-VKF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="320"/>
+            <point key="canvasLocation" x="2872.5" y="319.01408450704224"/>
         </scene>
-        <!--Ajustes-->
+        <!--Settings View Controller-->
         <scene sceneID="MWd-xM-0R6">
             <objects>
-                <viewController id="M1M-Cu-t5v" sceneMemberID="viewController">
+                <viewController id="M1M-Cu-t5v" customClass="SettingsViewController" customModule="Biofields" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="CkA-Yh-nan"/>
                         <viewControllerLayoutGuide type="bottom" id="4YF-lI-7gd"/>
@@ -233,16 +518,101 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <tabBarItem key="tabBarItem" title="Ajustes" id="y1z-xd-F6S"/>
+                    <navigationItem key="navigationItem" id="jrZ-rU-D88"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gpj-4K-7Q1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1875" y="1020"/>
+            <point key="canvasLocation" x="2904" y="1137"/>
+        </scene>
+        <!--Por Autorizar-->
+        <scene sceneID="dpm-7X-kua">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="7lz-6B-HTy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Por Autorizar" image="qbiAut" selectedImage="qbiAut" id="VO1-ve-huU"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="jFm-CW-C2Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="KZx-eS-aVQ" kind="relationship" relationship="rootViewController" id="VLC-A6-KyK"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="b24-g1-GyM" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875" y="-1147.1830985915492"/>
+        </scene>
+        <!--Seguimiento-->
+        <scene sceneID="chS-uT-8bC">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Nkg-we-Yyy" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Seguimiento" image="qbiSeg" selectedImage="qbiSeg" id="fTb-DL-Ai5"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="bW7-fx-6dK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="eqA-hQ-Mf2" kind="relationship" relationship="rootViewController" id="5r6-ed-luO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Z9n-2c-DLJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875" y="-463.73239436619718"/>
+        </scene>
+        <!--Solicitud-->
+        <scene sceneID="Tia-Pz-jvo">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="0pW-bN-p6z" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Solicitud" image="qbiReq" selectedImage="qbiReq" id="N05-HI-aaw"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Ahr-jh-2J1">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="OFK-6E-QVp" kind="relationship" relationship="rootViewController" id="hit-Nz-rlL"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="D2Y-pA-tb6" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875" y="319.01408450704224"/>
+        </scene>
+        <!--Ajustes-->
+        <scene sceneID="e8N-Ke-bN2">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nYD-XB-8B4" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Ajustes" image="qbiLogout" selectedImage="qbiLogout" id="y1z-xd-F6S"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="sop-RF-T5r">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="M1M-Cu-t5v" kind="relationship" relationship="rootViewController" id="43l-tV-n3B"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="kDR-yz-JCB" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1875" y="1137"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icoLocked" width="12" height="12"/>
-        <image name="icoUser" width="12" height="12"/>
-        <image name="img_splash" width="375" height="667"/>
+        <image name="icoCompany" width="32" height="32"/>
+        <image name="icoInfo" width="32" height="32"/>
+        <image name="icoLocked" width="32" height="32"/>
+        <image name="icoMoney" width="32" height="32"/>
+        <image name="icoSupplier" width="32" height="32"/>
+        <image name="icoUser" width="32" height="32"/>
+        <image name="img_background" width="1080" height="1920"/>
+        <image name="img_logo" width="840" height="156"/>
+        <image name="qbiAut" width="25" height="25"/>
+        <image name="qbiLogout" width="25" height="25"/>
+        <image name="qbiReq" width="25" height="25"/>
+        <image name="qbiSeg" width="25" height="25"/>
     </resources>
 </document>
