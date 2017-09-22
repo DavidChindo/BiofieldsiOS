@@ -30,4 +30,7 @@ open class ItemResponse: Object,Mappable {
         companyId <- map["company_id"]
         itemDesc <- map["item_desc"]
     }
+    
+    override open var description: String { return itemDesc! }
+    
 }

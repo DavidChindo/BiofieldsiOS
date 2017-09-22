@@ -15,6 +15,7 @@ class DesignUtils: NSObject {
     static let grayStatus = UIColor(red: 187/255, green: 189/255, blue: 191/255, alpha: 1)
     static let redBio = UIColor(red: 160/255, green: 43/255, blue: 66/255, alpha: 1)
     static let backGroundColor = UIColor(red: 240/255, green: 242/255, blue: 247/255, alpha: 1)
+    static let grayFont = UIColor(red: 88/255, green: 89/255, blue: 91/255, alpha: 1)
     
     class func setBorder(button: UIButton,mred:Int,mgreen:Int,mblue:Int){
         button.layer.borderColor = UIColor(red: CGFloat(mred)/255, green: CGFloat(mgreen)/255, blue: CGFloat(mblue)/255, alpha: 1).cgColor
@@ -63,9 +64,9 @@ class DesignUtils: NSObject {
     class func containerRound(content: UIView)->UIView{
         content.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 1.0])
         content.layer.masksToBounds = false
-        content.layer.cornerRadius = 5.0
+        content.layer.cornerRadius = 3.0
         content.layer.shadowOffset = CGSize(width: -1, height: 1)
-        content.layer.shadowOpacity = 0.4
+        content.layer.shadowOpacity = 0.2
         
         return content
         

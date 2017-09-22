@@ -28,4 +28,8 @@ open class UoMResponse: Object, Mappable {
         uomName <- map["uom_name"]
         uomDescip <- map["uom_descrip"]
     }
+    
+    override open var description: String { return uomName! }
+    
+    
 }

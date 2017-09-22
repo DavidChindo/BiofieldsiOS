@@ -43,4 +43,14 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate 
         SwiftSpinner.hide()
         DesignUtils.messageError(vc: self, title: "Requisiciones seguimiento", msg: msgError)
     }
+    
+    func onOpenRequisition(requisition: RequisitionItemResponse) {
+        if requisition != nil {
+            RequisitionDetailViewController.NEEDAUTHORIZATION = true
+            RequisitionDetailViewController.requisitionObj = requisition
+            let destination = self.storyboard?.instantiateViewController(withIdentifier: "RequisitionDetailNavID")
+            navigationController?.present(destination!, animated: true, completion: nil)
+        }
+    }
+
 }

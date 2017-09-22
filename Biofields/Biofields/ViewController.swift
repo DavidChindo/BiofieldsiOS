@@ -9,6 +9,7 @@
 import UIKit
 import CryptoSwift
 import SwiftSpinner
+import STPopup
 
 class ViewController: BaseViewController,LoginDelegate {
     
@@ -37,6 +38,10 @@ class ViewController: BaseViewController,LoginDelegate {
         }else{
             DesignUtils.messageError(vc: self, title: "Error", msg: msgValidation)
         }
+    }
+    
+    @IBAction func onOpenRecoveryPasswdClick(_ sender: Any) {
+        openRecovery()
     }
     
     func customViews(){
@@ -78,6 +83,16 @@ class ViewController: BaseViewController,LoginDelegate {
         let initialViewController = storyboard.instantiateViewController(withIdentifier: idView)
         self.window?.rootViewController = initialViewController
         self.window?.makeKeyAndVisible()
+    }
+    
+    func openRecovery(){
+        let viewController = storyboard!.instantiateViewController(withIdentifier: "RecoveryPasswordDialogID") as! RecoveryPasswordDialogViewController
+        viewController.title = "Recuperar Contraseña"
+        
+        let popup : STPopupController = STPopupController(rootViewController: viewController)
+        popup.containerView.layer.cornerRadius = 4
+        popup.style = STPopupStyle.formSheet
+        popup.present(in: self)
     }
 }
 

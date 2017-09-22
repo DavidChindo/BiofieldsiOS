@@ -28,4 +28,7 @@ open class VendorResponse: Object,Mappable {
         id <- map["vend_id"]
         name <- map["vend_name"]
     }
+    
+    override open var description: String { return name! }
+    
 }

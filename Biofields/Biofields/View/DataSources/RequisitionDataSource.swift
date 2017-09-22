@@ -39,11 +39,9 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
             view.addSubview(messageLabel)
             self.tableView?.backgroundView = view
             self.tableView?.separatorStyle = .none
-            
-            
+        
             return 0
         }
-        
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -79,6 +77,10 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
         return cell
     }
     
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        delegate?.onOpenRequisition(requisition: self.requisitions[indexPath.row])
+    }
+    
     func update(_ items: [RequisitionItemResponse]){
         self.requisitions.removeAll()
         self.requisitions.append(contentsOf: items)
@@ -94,8 +96,6 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
             return "N/A"
         }
     }
-    
-    
     
 }
 

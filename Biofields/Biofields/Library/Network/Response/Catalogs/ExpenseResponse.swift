@@ -30,5 +30,7 @@ open class ExpenseResponse: Object,Mappable {
         expcatCode <- map["expcat_code"]
         expcatDesc <- map["expcat_descrip"]
     }
+    
+    override open var description: String { return expcatDesc! }
 
 }

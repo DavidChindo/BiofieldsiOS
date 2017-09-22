@@ -30,4 +30,7 @@ open class SiteResponse: Object,Mappable {
         siteNumber <- map["site_number"]
         siteName <- map["site_name"]
     }
+    
+    override open var description: String { return siteName! }
+    
 }

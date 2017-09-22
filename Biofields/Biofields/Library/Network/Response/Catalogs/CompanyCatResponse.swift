@@ -16,7 +16,7 @@ open class CompanyCatResponse: Object,Mappable {
     dynamic var companyId:String?
     dynamic var companyNumber:String?
     dynamic var companyName:String?
-    
+
     override open static func primaryKey()-> String?{
         return "companyId"
     }
@@ -30,4 +30,6 @@ open class CompanyCatResponse: Object,Mappable {
         companyNumber <- map["company_number"]
         companyName <- map["company_name"]
     }
+    
+    override open var description: String { return companyName! }
 }

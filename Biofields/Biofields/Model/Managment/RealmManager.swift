@@ -41,6 +41,17 @@ class RealmManager: NSObject {
         return results
     }
     
+    class func listStringByField<T: Object>(_ object : T.Type) -> [String]{
+        var values:[String] = []
+        let results = try! Realm().objects(object)
+        let listResults = List<T>()
+        listResults.append(objectsIn: results)
+        for item in listResults {
+            values.append(item.description)
+        }
+        return values
+    }
+    
     class func findFirst<T: Object>(object: T.Type) -> T?{
         let results = try! Realm().objects(object)
         return results.first

@@ -20,6 +20,7 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Por Autorizar"
+        
         requisitionPresenter = RequisitionAuthPresenter(delegate: self)
         setupPresenter(requisitionPresenter!)
         
@@ -41,5 +42,14 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
     func onRequisitionError(msgError: String) {
         SwiftSpinner.hide()
         DesignUtils.messageError(vc: self, title: "Requisiciones por autorizar", msg: msgError)
+    }
+    
+    func onOpenRequisition(requisition: RequisitionItemResponse) {        
+        if requisition != nil {
+            RequisitionDetailViewController.NEEDAUTHORIZATION = true
+            RequisitionDetailViewController.requisitionObj = requisition
+            let destination = self.storyboard?.instantiateViewController(withIdentifier: "RequisitionDetailNavID")
+            navigationController?.present(destination!, animated: true, completion: nil)
+        }
     }
 }

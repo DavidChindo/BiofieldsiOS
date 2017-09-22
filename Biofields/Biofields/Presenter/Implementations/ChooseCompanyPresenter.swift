@@ -39,7 +39,7 @@ class ChooseCompanyPresenter: BasePresenter {
                         switch response.result{
                         case .success:
                             let code = response.response?.statusCode
-                            if code == Constants.STATUS_OK_GET {
+                            if code == Constants.STATUS_OK {
                                 self.delegate?.onLoginCompanySuccess(loginResponse: response.result.value!)
                             }else{
                                 self.delegate?.onLoginCompanyError(msgError: (response.result.value?.msg)!)

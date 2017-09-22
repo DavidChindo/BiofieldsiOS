@@ -30,4 +30,7 @@ open class CostcenterResponse: Object,Mappable {
         costCenterName <- map["costcenter_name"]
         costCenterNumber <- map["costcenter_number"]
     }
+    
+    override open var description: String { return costCenterName! }
+    
 }

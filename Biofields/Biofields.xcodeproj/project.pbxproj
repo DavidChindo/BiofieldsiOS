@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B62362471F69A8CD00F4CD4E /* LBZSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62362461F69A8CD00F4CD4E /* LBZSpinner.swift */; };
+		B62362491F69E17700F4CD4E /* AddRequisition.swift in Sources */ = {isa = PBXBuildFile; fileRef = B62362481F69E17700F4CD4E /* AddRequisition.swift */; };
 		B637A4691F561BF400B83C47 /* Urls.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4681F561BF400B83C47 /* Urls.swift */; };
 		B637A46B1F561D3C00B83C47 /* LoginRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A46A1F561D3C00B83C47 /* LoginRequest.swift */; };
 		B637A46D1F561D4D00B83C47 /* LoginResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A46C1F561D4D00B83C47 /* LoginResponse.swift */; };
@@ -21,6 +23,9 @@
 		B637A47F1F5628F000B83C47 /* ViewControllerBaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A47E1F5628F000B83C47 /* ViewControllerBaseViewController.swift */; };
 		B637A4811F562CA000B83C47 /* RealmManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4801F562CA000B83C47 /* RealmManager.swift */; };
 		B637A4831F572F6300B83C47 /* LogicUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = B637A4821F572F6300B83C47 /* LogicUtils.swift */; };
+		B666ED271F6899B8008F9C02 /* RecoveryPasswordDialogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666ED261F6899B8008F9C02 /* RecoveryPasswordDialogViewController.swift */; };
+		B666ED291F689A22008F9C02 /* RecoveryPassword.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666ED281F689A22008F9C02 /* RecoveryPassword.swift */; };
+		B666ED2B1F689A98008F9C02 /* RecoveryPasswordPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B666ED2A1F689A98008F9C02 /* RecoveryPasswordPresenter.swift */; };
 		B6880E3D1F62FB1700EDFA3B /* LoginCompanyRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6880E3C1F62FB1700EDFA3B /* LoginCompanyRequest.swift */; };
 		B6880E3F1F62FE2200EDFA3B /* RecoveryPasswordRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6880E3E1F62FE2200EDFA3B /* RecoveryPasswordRequest.swift */; };
 		B6880E411F62FED000EDFA3B /* BudgeItemRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6880E401F62FED000EDFA3B /* BudgeItemRequest.swift */; };
@@ -64,6 +69,9 @@
 		B6C66F901F6729AF008BB230 /* RequisitionAuthDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C66F8F1F6729AF008BB230 /* RequisitionAuthDelegate.swift */; };
 		B6C66F921F67464D008BB230 /* RequisitionSegDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C66F911F67464D008BB230 /* RequisitionSegDelegate.swift */; };
 		B6C66F941F674678008BB230 /* RequisitionSegPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C66F931F674678008BB230 /* RequisitionSegPresenter.swift */; };
+		B6C66F961F683110008BB230 /* RequisitionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6C66F951F683110008BB230 /* RequisitionDetailViewController.swift */; };
+		B6E487261F686D3A0057D6D6 /* itemBudgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E487251F686D3A0057D6D6 /* itemBudgeTableViewCell.swift */; };
+		B6E487281F686E210057D6D6 /* ItemBudgeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E487271F686E210057D6D6 /* ItemBudgeDataSource.swift */; };
 		EA9D6089AC03918D590C8D29 /* Pods_Biofields.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF4BD074EDDAE02DD39AA9A /* Pods_Biofields.framework */; };
 /* End PBXBuildFile section */
 
@@ -88,6 +96,8 @@
 		4E452C3403660FEEC448C3DC /* Pods-Biofields.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biofields.release.xcconfig"; path = "Pods/Target Support Files/Pods-Biofields/Pods-Biofields.release.xcconfig"; sourceTree = "<group>"; };
 		8FF4BD074EDDAE02DD39AA9A /* Pods_Biofields.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Biofields.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		90B5A28BBD7F77228290206E /* Pods-Biofields.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Biofields.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Biofields/Pods-Biofields.debug.xcconfig"; sourceTree = "<group>"; };
+		B62362461F69A8CD00F4CD4E /* LBZSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LBZSpinner.swift; sourceTree = "<group>"; };
+		B62362481F69E17700F4CD4E /* AddRequisition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddRequisition.swift; sourceTree = "<group>"; };
 		B637A4681F561BF400B83C47 /* Urls.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Urls.swift; sourceTree = "<group>"; };
 		B637A46A1F561D3C00B83C47 /* LoginRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginRequest.swift; sourceTree = "<group>"; };
 		B637A46C1F561D4D00B83C47 /* LoginResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginResponse.swift; sourceTree = "<group>"; };
@@ -102,6 +112,10 @@
 		B637A47E1F5628F000B83C47 /* ViewControllerBaseViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewControllerBaseViewController.swift; sourceTree = "<group>"; };
 		B637A4801F562CA000B83C47 /* RealmManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RealmManager.swift; sourceTree = "<group>"; };
 		B637A4821F572F6300B83C47 /* LogicUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogicUtils.swift; sourceTree = "<group>"; };
+		B666ED251F68930F008F9C02 /* Biofields.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Biofields.entitlements; sourceTree = "<group>"; };
+		B666ED261F6899B8008F9C02 /* RecoveryPasswordDialogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordDialogViewController.swift; sourceTree = "<group>"; };
+		B666ED281F689A22008F9C02 /* RecoveryPassword.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveryPassword.swift; sourceTree = "<group>"; };
+		B666ED2A1F689A98008F9C02 /* RecoveryPasswordPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordPresenter.swift; sourceTree = "<group>"; };
 		B6880E3C1F62FB1700EDFA3B /* LoginCompanyRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginCompanyRequest.swift; sourceTree = "<group>"; };
 		B6880E3E1F62FE2200EDFA3B /* RecoveryPasswordRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecoveryPasswordRequest.swift; sourceTree = "<group>"; };
 		B6880E401F62FED000EDFA3B /* BudgeItemRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BudgeItemRequest.swift; sourceTree = "<group>"; };
@@ -151,6 +165,9 @@
 		B6C66F8F1F6729AF008BB230 /* RequisitionAuthDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequisitionAuthDelegate.swift; sourceTree = "<group>"; };
 		B6C66F911F67464D008BB230 /* RequisitionSegDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequisitionSegDelegate.swift; sourceTree = "<group>"; };
 		B6C66F931F674678008BB230 /* RequisitionSegPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequisitionSegPresenter.swift; sourceTree = "<group>"; };
+		B6C66F951F683110008BB230 /* RequisitionDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequisitionDetailViewController.swift; sourceTree = "<group>"; };
+		B6E487251F686D3A0057D6D6 /* itemBudgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemBudgeTableViewCell.swift; sourceTree = "<group>"; };
+		B6E487271F686E210057D6D6 /* ItemBudgeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBudgeDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -220,6 +237,7 @@
 		B69CDD6C1F55B92500E19560 /* Biofields */ = {
 			isa = PBXGroup;
 			children = (
+				B666ED251F68930F008F9C02 /* Biofields.entitlements */,
 				B69CDDDB1F55C2EA00E19560 /* IQKeyboardManagerSwift */,
 				B69CDDAB1F55C2A900E19560 /* View */,
 				B69CDDA81F55C29F00E19560 /* Presenter */,
@@ -311,6 +329,7 @@
 				B637A4821F572F6300B83C47 /* LogicUtils.swift */,
 				B6880E5F1F63177A00EDFA3B /* CatalogID.swift */,
 				B6880E611F63198B00EDFA3B /* Prefs.swift */,
+				B62362461F69A8CD00F4CD4E /* LBZSpinner.swift */,
 			);
 			name = Utils;
 			path = Library/Utils;
@@ -357,6 +376,7 @@
 				B6C66F7D1F66DB8A008BB230 /* ChooseCompanyDelegate.swift */,
 				B6C66F8F1F6729AF008BB230 /* RequisitionAuthDelegate.swift */,
 				B6C66F911F67464D008BB230 /* RequisitionSegDelegate.swift */,
+				B666ED281F689A22008F9C02 /* RecoveryPassword.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -369,6 +389,7 @@
 				B6C66F7B1F66DB76008BB230 /* ChooseCompanyPresenter.swift */,
 				B6C66F8D1F672992008BB230 /* RequisitionAuthPresenter.swift */,
 				B6C66F931F674678008BB230 /* RequisitionSegPresenter.swift */,
+				B666ED2A1F689A98008F9C02 /* RecoveryPasswordPresenter.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -399,6 +420,8 @@
 			children = (
 				B6C66F891F67282E008BB230 /* RequisitionCellTableViewCell.swift */,
 				B6C66F8B1F672863008BB230 /* RequisitionDataSource.swift */,
+				B6E487251F686D3A0057D6D6 /* itemBudgeTableViewCell.swift */,
+				B6E487271F686E210057D6D6 /* ItemBudgeDataSource.swift */,
 			);
 			path = DataSources;
 			sourceTree = "<group>";
@@ -423,6 +446,9 @@
 				B6C66F831F671C83008BB230 /* RequisitionsSegViewController.swift */,
 				B6C66F851F671CDE008BB230 /* FormRequisitionViewController.swift */,
 				B6C66F871F671CF1008BB230 /* SettingsViewController.swift */,
+				B6C66F951F683110008BB230 /* RequisitionDetailViewController.swift */,
+				B666ED261F6899B8008F9C02 /* RecoveryPasswordDialogViewController.swift */,
+				B62362481F69E17700F4CD4E /* AddRequisition.swift */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -517,6 +543,11 @@
 						CreatedOnToolsVersion = 8.3.2;
 						DevelopmentTeam = PKFT6H4J27;
 						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 0;
+							};
+						};
 					};
 					B69CDD7D1F55B92500E19560 = {
 						CreatedOnToolsVersion = 8.3.2;
@@ -635,10 +666,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B6C66F961F683110008BB230 /* RequisitionDetailViewController.swift in Sources */,
 				B6C66F8A1F67282E008BB230 /* RequisitionCellTableViewCell.swift in Sources */,
 				B6C66F8E1F672992008BB230 /* RequisitionAuthPresenter.swift in Sources */,
 				B6880E521F630AE300EDFA3B /* CostcenterResponse.swift in Sources */,
 				B6C66F861F671CDE008BB230 /* FormRequisitionViewController.swift in Sources */,
+				B666ED291F689A22008F9C02 /* RecoveryPassword.swift in Sources */,
 				B637A4831F572F6300B83C47 /* LogicUtils.swift in Sources */,
 				B69CDD701F55B92500E19560 /* ViewController.swift in Sources */,
 				B637A4791F56267700B83C47 /* BasePresenter.swift in Sources */,
@@ -647,7 +680,9 @@
 				B6880E501F630A2600EDFA3B /* CompanyCatResponse.swift in Sources */,
 				B637A46F1F561F9000B83C47 /* Jwt.swift in Sources */,
 				B69CDDE21F55E3C600E19560 /* DesignUtils.swift in Sources */,
+				B6E487281F686E210057D6D6 /* ItemBudgeDataSource.swift in Sources */,
 				B637A46D1F561D4D00B83C47 /* LoginResponse.swift in Sources */,
+				B6E487261F686D3A0057D6D6 /* itemBudgeTableViewCell.swift in Sources */,
 				B6C66F921F67464D008BB230 /* RequisitionSegDelegate.swift in Sources */,
 				B637A47D1F56285200B83C47 /* BaseViewController.swift in Sources */,
 				B637A4751F5624B100B83C47 /* LoginPresenter.swift in Sources */,
@@ -657,6 +692,7 @@
 				B637A47F1F5628F000B83C47 /* ViewControllerBaseViewController.swift in Sources */,
 				B637A4811F562CA000B83C47 /* RealmManager.swift in Sources */,
 				B6880E601F63177A00EDFA3B /* CatalogID.swift in Sources */,
+				B62362471F69A8CD00F4CD4E /* LBZSpinner.swift in Sources */,
 				B6880E621F63198B00EDFA3B /* Prefs.swift in Sources */,
 				B6880E5A1F630DCF00EDFA3B /* SiteResponse.swift in Sources */,
 				B6880E471F6302EB00EDFA3B /* RecoveryPasswordResponse.swift in Sources */,
@@ -677,6 +713,8 @@
 				B6C66F821F671C6A008BB230 /* RequisitionsAuthViewController.swift in Sources */,
 				B6C66F8C1F672863008BB230 /* RequisitionDataSource.swift in Sources */,
 				B6880E541F630BAE00EDFA3B /* ExpenseResponse.swift in Sources */,
+				B666ED2B1F689A98008F9C02 /* RecoveryPasswordPresenter.swift in Sources */,
+				B666ED271F6899B8008F9C02 /* RecoveryPasswordDialogViewController.swift in Sources */,
 				B6C66F7C1F66DB76008BB230 /* ChooseCompanyPresenter.swift in Sources */,
 				B6880E581F630D6600EDFA3B /* PaymentType.swift in Sources */,
 				B6880E431F62FFF700EDFA3B /* CompanyResponse.swift in Sources */,
@@ -684,6 +722,7 @@
 				B6880E3F1F62FE2200EDFA3B /* RecoveryPasswordRequest.swift in Sources */,
 				B637A4691F561BF400B83C47 /* Urls.swift in Sources */,
 				B6880E561F630CAB00EDFA3B /* ItemResponse.swift in Sources */,
+				B62362491F69E17700F4CD4E /* AddRequisition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -839,12 +878,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = PKFT6H4J27;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Biofields/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hics.Biofields;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};
@@ -856,12 +896,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = PKFT6H4J27;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Biofields/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = hics.Biofields;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_VERSION = 3.0;
 			};

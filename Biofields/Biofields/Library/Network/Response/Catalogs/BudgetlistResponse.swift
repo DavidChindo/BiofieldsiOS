@@ -30,4 +30,7 @@ open class BudgetlistResponse: Object,Mappable {
         rubroDesc <- map["rubro_desc"]
         rubroEmpresaId <- map["rubro_empresa_id"]
     }
+    
+    override open var description: String { return rubroDesc! }
+    
 }

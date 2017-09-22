@@ -13,4 +13,6 @@ public protocol RequisitionAuthDelegate: NSObjectProtocol {
     func onRequisitionAuthSuccess(requisitions: [RequisitionItemResponse])
     
     func onRequisitionError(msgError: String)
+    
+    func onOpenRequisition(requisition: RequisitionItemResponse)
 }

@@ -16,4 +16,6 @@ class Constants: NSObject {
     
     static let WM_PREFS = "prefsWM"
     static let LOGIN_PREFS = "prefsLogin"
+    
+    static let totalAmountBudge = "$ %d MXN"
 }
