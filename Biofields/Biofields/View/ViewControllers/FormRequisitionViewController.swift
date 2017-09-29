@@ -15,6 +15,8 @@ import SwiftSpinner
 
 class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UITextViewDelegate,UITableViewDelegate, UITableViewDataSource, FormRequisitionDelegate{
     
+    @IBOutlet weak var viewDiseable: UIView!
+    @IBOutlet weak var acceptBtn: UIButton!
     @IBOutlet weak var majorContainer: UIView!
     @IBOutlet weak var spCompany: LBZSpinner!
     @IBOutlet weak var scrollView: UIScrollView!
@@ -116,6 +118,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         filesTableView.dataSource = fileDataSource
         providerTxt.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         initTableView()
+        repositionFilesTableView()
         
     }
     
@@ -129,6 +132,8 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         deleteFiles()
         SwiftSpinner.hide()
         let msgSuccess = "Se ha creado tú requisición " + reqNumber + " y " + fResponse.message!
+        AddRequisition.IsNew = false
+        clearData()
         DesignUtils.alertConfirmFinish(titleMessage: "Nueva Requisición", message: msgSuccess, vc: self)
     }
     
@@ -152,8 +157,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             FormRequisitionViewController.idCompanyGlobal = companies[index].companyId!
             spBudgeItem.updateList(RealmManager.findByid(BudgetlistResponse.self, fieldName: "rubroEmpresaId", value: FormRequisitionViewController.idCompanyGlobal))
             budges = RealmManager.listById(BudgetlistResponse.self, fieldName: "rubroEmpresaId", value: FormRequisitionViewController.idCompanyGlobal)
-            budgetTitleLbl.isHidden = false
-            spBudgeItem.isHidden = false
+            viewDiseable.isHidden = true
         }else if spinner == spCenterCost{
             FormRequisitionViewController.indexsSpCenterCost = index
         }else if spinner == spBudgeItem{
@@ -264,7 +268,6 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         if (!FormRequisitionViewController.idCompanyGlobal.isEmpty){
             preSaveFields()
             let destination = self.storyboard?.instantiateViewController(withIdentifier: "BudgeItemId") as! BudgeItemFormViewController
-            //navigationController?.show(destination, sender: nil)
             navigationController?.pushViewController(destination, animated: true)
             
         }else{
@@ -336,11 +339,14 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         if !FormRequisitionViewController.BUDGES.isEmpty {
             print(FormRequisitionViewController.BUDGES.count)
             budgeDataSource?.update(FormRequisitionViewController.BUDGES)
+            repositionFilesTableView()
+            repositionRequisitionTableView()
         }else{
             print("No trae nada")
         }
         if !FormRequisitionViewController.files.isEmpty{
             fileDataSource?.update(FormRequisitionViewController.files)
+            repositionFilesTableView()
         }
     }
     
@@ -379,6 +385,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             FormRequisitionViewController.files.append(path.absoluteString)
             FormRequisitionViewController.filesPath.append(destinationPath)
             fileDataSource?.update(FormRequisitionViewController.files)
+            repositionFilesTableView()
         } catch let error {
             print("Error: \(error.localizedDescription)")
         }
@@ -467,6 +474,27 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         return cell
     }
     
+    func repositionFilesTableView(){
+        filesTableView.frame.size = filesTableView.contentSize
+        filesTableView.isScrollEnabled = false
+        filesContainer.frame.size = CGSize(width: filesContainer.frame.width, height: filesTableView.frame.height + 8)
+        requisitionsTitltle.frame = CGRect(x: requisitionsTitltle.frame.origin.x, y: filesContainer.frame.origin.y + filesContainer.frame.height +  20, width: requisitionsTitltle.frame.width, height: requisitionsTitltle.frame.height)
+        requisitionsContainer.frame = CGRect(x: requisitionsContainer.frame.origin.x, y: requisitionsTitltle.frame.origin.y + requisitionsTitltle.frame.height + 20, width: requisitionsContainer.frame.width, height: requisitionsContainer.frame.height)
+        requisitionBtn.frame = CGRect(x: requisitionBtn.frame.origin.x, y: requisitionsTitltle.frame.origin.y - 2, width: requisitionBtn.frame.width, height: requisitionBtn.frame.height)
+        acceptBtn.frame = CGRect(x: acceptBtn.frame.origin.x, y: requisitionsContainer.frame.origin.y + requisitionsContainer.frame.height + 20, width: acceptBtn.frame.width, height: acceptBtn.frame.height)
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height:acceptBtn.frame.origin.y + acceptBtn.frame.height + 30)
+        majorContainer.frame = CGRect(x: majorContainer.frame.origin.x, y: majorContainer.frame.origin.y, width: majorContainer.frame.width, height: acceptBtn.frame.origin.y + acceptBtn.frame.height + 30)
+    }
+    
+    func repositionRequisitionTableView(){
+        requisitionTable.frame.size = requisitionTable.contentSize
+        requisitionTable.isScrollEnabled = false
+        requisitionsContainer.frame.size = CGSize(width: requisitionsContainer.frame.width, height: requisitionTable.frame.height + 8)
+        acceptBtn.frame = CGRect(x: acceptBtn.frame.origin.x, y: requisitionsContainer.frame.origin.y + requisitionsContainer.frame.height + 20, width: acceptBtn.frame.width, height: acceptBtn.frame.height)
+        scrollView.contentSize = CGSize(width: scrollView.contentSize.width, height:acceptBtn.frame.origin.y + acceptBtn.frame.height + 30)
+        majorContainer.frame = CGRect(x: majorContainer.frame.origin.x, y: majorContainer.frame.origin.y, width: majorContainer.frame.width, height: acceptBtn.frame.origin.y + acceptBtn.frame.height + 30)
+    }
+    
     func validateForm()-> Bool{
         if LogicUtils.validateSpinner(spinner: spCompany){
             let message = String(format: Constants.ERROR_MESSAGE, "Empresa")
@@ -535,7 +563,14 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     
     func dissmissView(_ sender: Any){
         AddRequisition.IsNew = false
+        clearData()
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    func clearData(){
+        FormRequisitionViewController.BUDGES.removeAll()
+        FormRequisitionViewController.files.removeAll()
+        FormRequisitionViewController.filesPath.removeAll()
     }
     
 }
