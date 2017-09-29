@@ -1776,6 +1776,9 @@
                                 <autoresizingMask key="autoresizingMask" widthSizable="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <state key="normal" title="   Cerrar Sesión"/>
+                                <connections>
+                                    <action selector="onLogoutClick:" destination="M1M-Cu-t5v" eventType="touchUpInside" id="C7n-yW-5Kh"/>
+                                </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="  Versión 0.0.1" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AMW-nE-T6v">
                                 <rect key="frame" x="0.0" y="110" width="375" height="30"/>

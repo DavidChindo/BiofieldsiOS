@@ -90,6 +90,8 @@
 		B6D4BC301F7DCB0900F84F1A /* RequisitionDetailDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4BC2F1F7DCB0900F84F1A /* RequisitionDetailDelegate.swift */; };
 		B6D4BC321F7E087C00F84F1A /* FileDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4BC311F7E087C00F84F1A /* FileDetailTableViewCell.swift */; };
 		B6D4BC341F7E089C00F84F1A /* FileDetailDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4BC331F7E089C00F84F1A /* FileDetailDataSource.swift */; };
+		B6D4BC361F7EC9E200F84F1A /* SettingsDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4BC351F7EC9E200F84F1A /* SettingsDelegate.swift */; };
+		B6D4BC381F7ECA3100F84F1A /* SettingsPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D4BC371F7ECA3100F84F1A /* SettingsPresenter.swift */; };
 		B6E487261F686D3A0057D6D6 /* itemBudgeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E487251F686D3A0057D6D6 /* itemBudgeTableViewCell.swift */; };
 		B6E487281F686E210057D6D6 /* ItemBudgeDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6E487271F686E210057D6D6 /* ItemBudgeDataSource.swift */; };
 		EA9D6089AC03918D590C8D29 /* Pods_Biofields.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8FF4BD074EDDAE02DD39AA9A /* Pods_Biofields.framework */; };
@@ -206,6 +208,8 @@
 		B6D4BC2F1F7DCB0900F84F1A /* RequisitionDetailDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RequisitionDetailDelegate.swift; sourceTree = "<group>"; };
 		B6D4BC311F7E087C00F84F1A /* FileDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetailTableViewCell.swift; sourceTree = "<group>"; };
 		B6D4BC331F7E089C00F84F1A /* FileDetailDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FileDetailDataSource.swift; sourceTree = "<group>"; };
+		B6D4BC351F7EC9E200F84F1A /* SettingsDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsDelegate.swift; sourceTree = "<group>"; };
+		B6D4BC371F7ECA3100F84F1A /* SettingsPresenter.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPresenter.swift; sourceTree = "<group>"; };
 		B6E487251F686D3A0057D6D6 /* itemBudgeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = itemBudgeTableViewCell.swift; sourceTree = "<group>"; };
 		B6E487271F686E210057D6D6 /* ItemBudgeDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ItemBudgeDataSource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -428,6 +432,7 @@
 				B666ED281F689A22008F9C02 /* RecoveryPassword.swift */,
 				B6D35CCC1F7D54FC00E42A24 /* FormRequisitionDelegate.swift */,
 				B6D4BC2F1F7DCB0900F84F1A /* RequisitionDetailDelegate.swift */,
+				B6D4BC351F7EC9E200F84F1A /* SettingsDelegate.swift */,
 			);
 			path = Delegate;
 			sourceTree = "<group>";
@@ -443,6 +448,7 @@
 				B666ED2A1F689A98008F9C02 /* RecoveryPasswordPresenter.swift */,
 				B6D35CCA1F7D54EC00E42A24 /* FormRequisitionPresenter.swift */,
 				B6D4BC2D1F7DCAF500F84F1A /* RequisitionDetailPresenter.swift */,
+				B6D4BC371F7ECA3100F84F1A /* SettingsPresenter.swift */,
 			);
 			path = Implementations;
 			sourceTree = "<group>";
@@ -754,6 +760,7 @@
 				B6E487281F686E210057D6D6 /* ItemBudgeDataSource.swift in Sources */,
 				B637A46D1F561D4D00B83C47 /* LoginResponse.swift in Sources */,
 				B6E487261F686D3A0057D6D6 /* itemBudgeTableViewCell.swift in Sources */,
+				B6D4BC361F7EC9E200F84F1A /* SettingsDelegate.swift in Sources */,
 				B6C66F921F67464D008BB230 /* RequisitionSegDelegate.swift in Sources */,
 				B637A47D1F56285200B83C47 /* BaseViewController.swift in Sources */,
 				B637A4751F5624B100B83C47 /* LoginPresenter.swift in Sources */,
@@ -791,6 +798,7 @@
 				B65722961F7AD093002AD817 /* FilesResponse.swift in Sources */,
 				B6880E541F630BAE00EDFA3B /* ExpenseResponse.swift in Sources */,
 				B6D35CCB1F7D54EC00E42A24 /* FormRequisitionPresenter.swift in Sources */,
+				B6D4BC381F7ECA3100F84F1A /* SettingsPresenter.swift in Sources */,
 				B6D4BC301F7DCB0900F84F1A /* RequisitionDetailDelegate.swift in Sources */,
 				B6D35CC51F7C6D2800E42A24 /* BudgeItemDataSource.swift in Sources */,
 				B666ED2B1F689A98008F9C02 /* RecoveryPasswordPresenter.swift in Sources */,
