@@ -16,7 +16,6 @@ class ChooseCompanyViewController: BaseViewController,ChooseCompanyDelegate,UIPi
     @IBOutlet weak var acceptBtn: UIButton!
     
     var choosePresenter: ChooseCompanyPresenter?
-    var arrayPickerDataSource = ["BIOFIELDS, SOLAR"]
     var company:String = ""
     static var PASWD:String = ""
     static var COMPANIES:[CompanyResponse] = []
@@ -34,6 +33,7 @@ class ChooseCompanyViewController: BaseViewController,ChooseCompanyDelegate,UIPi
     
     func customViews(){
         DesignUtils.setBorder(button: acceptBtn, mred: 255, mgreen: 255, mblue: 255)
+        company = ChooseCompanyViewController.COMPANIES[0].companyName!
     }
     
     @IBAction func onAcceptSelectCompany(_ sender: Any) {
@@ -53,6 +53,7 @@ class ChooseCompanyViewController: BaseViewController,ChooseCompanyDelegate,UIPi
     
     func onLoginCompanySuccess(loginResponse: LoginResponse) {
         RealmManager.saveUser(usr: loginResponse)
+        Prefs.instance().putBool(Constants.IS_BIO_PREFS, value: company.lowercased().contains("biofields") ? true : false)
         SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(1/8)..."
         choosePresenter?.catalogVendor()
     }

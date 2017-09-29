@@ -8,28 +8,45 @@
 
 import UIKit
 import ObjectMapper
+import Realm
+import RealmSwift
 
-public class RequisitionItemResponse: NSObject,Mappable {
+public class RequisitionItemResponse: Object,Mappable {
 
-    var numRequisition:String?
-    var descRequisition:String?
-    var companyIdRequisition:String?
-    var companyNameRequsition:String?
-    var statusRequisition:String?
-    var amountRequisition:String?
-    var urgentRequisition:String?
-    var dateRequisition:String?
-    var costCenterRequisition:String?
-    var salesManNumberRequisition:String?
-    var billedRequisition:String?
-    var applicantRequisition:String?
-    var titularRequisition:String?
-    var directorRequisition:String?
-    var buyerRequisition:String?
-    var auditorRequisition:String?
-    var authDafRequisition:String?
-    var authDgRequisition:String?
+    dynamic var uniqueKey:String?
+    dynamic var numRequisition:String?
+    dynamic var descRequisition:String?
+    dynamic var companyIdRequisition:String?
+    dynamic var companyNameRequsition:String?
+    dynamic var statusRequisition:String?
+    dynamic var amountRequisition:String?
+    dynamic var urgentRequisition:String?
+    dynamic var dateRequisition:String?
+    dynamic var costCenterRequisition:String?
+    dynamic var salesManNumberRequisition:String?
+    dynamic var billedRequisition:String?
+    dynamic var applicantRequisition:String?
+    dynamic var titularRequisition:String?
+    dynamic var directorRequisition:String?
+    dynamic var buyerRequisition:String?
+    dynamic var auditorRequisition:String?
+    dynamic var authDafRequisition:String?
+    dynamic var authDgRequisition:String?
     var items:[BudgeItemResponse] = []
+    dynamic var needAuth:String?
+
+    
+    override open static func primaryKey()-> String?{
+        return "uniqueKey"
+    }
+    
+    func compundPrimaryKey(){
+        self.uniqueKey = self.numRequisition!+self.needAuth!
+    }
+    
+    override open static func ignoredProperties() -> [String] {
+        return ["items"]
+    }
     
     public required convenience init?(map: Map) {
         self.init()

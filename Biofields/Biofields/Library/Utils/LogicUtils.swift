@@ -14,6 +14,18 @@ class LogicUtils: NSObject {
         return !(textField.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty)!
     }
     
+    class func validateTextView(textView: UITextView) -> Bool{
+        return !(textView.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty)!
+    }
+    
+    class func validateSpinner(spinner: LBZSpinner)->Bool{
+        return spinner.selectedIndex == LBZSpinner.INDEX_NOTHING
+    }
+    
+    class func validateSegmented(segmented: UISegmentedControl) -> Bool{
+        return segmented.selectedSegmentIndex >= 0
+    }
+    
     class func validateString(word:String?)->Bool{
         if let wordTemp = word{
             return true

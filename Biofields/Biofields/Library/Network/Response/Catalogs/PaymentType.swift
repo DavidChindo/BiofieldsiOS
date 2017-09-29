@@ -19,7 +19,7 @@ public class PaymentType: NSObject {
         self.id = id
     }
     
-    func paymentsType()->[PaymentType]{
+    class func paymentsType()->[PaymentType]{
         var payments:[PaymentType] = []
         payments.append(PaymentType(desc: "MXN - Pesos", id: "2"))
         payments.append(PaymentType(desc: "USD - Dólares", id: "3"))

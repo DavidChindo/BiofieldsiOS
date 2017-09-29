@@ -50,6 +50,5 @@ class RequisitionAuthPresenter: BasePresenter {
             }
         }
     }
-
     
 }

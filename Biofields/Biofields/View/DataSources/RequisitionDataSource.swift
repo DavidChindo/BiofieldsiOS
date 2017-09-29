@@ -29,7 +29,7 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
             
             let view = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView!.bounds.size.width , height: self.tableView!.bounds.size.height))
             
-            let messageLabel = UILabel(frame: CGRect(x: view.bounds.size.width/2 - 30, y: view.bounds.size.height/2, width: view.bounds.size.width, height: view.bounds.size.height))
+            let messageLabel = UILabel(frame: CGRect(x: 30, y: view.bounds.size.height/2, width: view.bounds.size.width, height: view.bounds.size.height))
             messageLabel.text = emptyMessage
             messageLabel.textColor = UIColor.black
             messageLabel.numberOfLines = 0
@@ -72,7 +72,7 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
             cell.statusLbl.text = LogicUtils.validateStringByString(word:getStatus(status: requisitionObj.statusRequisition!))
         }
         
-        cell.container = DesignUtils.containerRound(content: cell.container)
+        cell.container = DesignUtils.containerRoundWithReturn(content: cell.container)
         
         return cell
     }

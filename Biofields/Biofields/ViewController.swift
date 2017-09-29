@@ -11,7 +11,7 @@ import CryptoSwift
 import SwiftSpinner
 import STPopup
 
-class ViewController: BaseViewController,LoginDelegate {
+class ViewController: BaseViewController,LoginDelegate,UITextFieldDelegate {
     
     @IBOutlet weak var passwordTxtField: UITextField!
     @IBOutlet weak var usernameTxtField: UITextField!
@@ -24,7 +24,8 @@ class ViewController: BaseViewController,LoginDelegate {
         customViews()
         loginPresenter = LoginPresenter(delegate: self)
         setupPresenter(loginPresenter!)
-        
+        initTextFieldDelegate()
+        hideKeyboard()
     }
     
     @IBAction func onLoginClick(_ sender: Any) {
@@ -75,6 +76,38 @@ class ViewController: BaseViewController,LoginDelegate {
                 return "El usuario es requerido"
             }
         }
+    }
+    
+    func initTextFieldDelegate(){
+        usernameTxtField.delegate = self
+        passwordTxtField.delegate = self
+    }
+    
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        switch textField {
+        case usernameTxtField:
+            passwordTxtField.becomeFirstResponder()
+            return true
+        case passwordTxtField:
+            dismissKeyboard()
+            return true
+        default:
+            return true
+        }
+    }
+    
+    func hideKeyboard()
+    {
+        let tap: UITapGestureRecognizer = UITapGestureRecognizer(
+            target: self,
+            action: #selector(dismissKeyboard))
+        
+        view.addGestureRecognizer(tap)
+    }
+    
+    func dismissKeyboard()
+    {
+        view.endEditing(true)
     }
     
     func initView(idView:String){

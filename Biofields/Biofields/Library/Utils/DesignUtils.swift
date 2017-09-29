@@ -61,7 +61,16 @@ class DesignUtils: NSObject {
         vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .warning)])
     }
     
-    class func containerRound(content: UIView)->UIView{
+    class func containerRound(content: UIView){
+        content.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 1.0])
+        content.layer.masksToBounds = false
+        content.layer.cornerRadius = 3.0
+        content.layer.shadowOffset = CGSize(width: -1, height: 1)
+        content.layer.shadowOpacity = 0.2
+
+    }
+    
+    class func containerRoundWithReturn(content: UIView)->UIView{
         content.layer.backgroundColor = CGColor(colorSpace: CGColorSpaceCreateDeviceRGB(), components: [1.0, 1.0, 1.0, 1.0])
         content.layer.masksToBounds = false
         content.layer.cornerRadius = 3.0
@@ -69,6 +78,5 @@ class DesignUtils: NSObject {
         content.layer.shadowOpacity = 0.2
         
         return content
-        
     }
 }

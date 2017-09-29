@@ -18,5 +18,8 @@ class Urls: NSObject {
     static let API_RECOVERY_PASSWORD = API_BIOFIELDS + "/PUT/recoverypasswd"
     static let API_LOGOUT = API_BIOFIELDS + "/POST/logout"
     static let API_CATALOG = API_BIOFIELDS + "/GET/list/verify/%@/%@"
-
+    static let API_INFO_REQUISITION = API_BIOFIELDS + "/GET/requisition/info/%d"
+    static let API_CREATE_REQUISITION = API_BIOFIELDS + "/POST/requisition/save"
+    static let API_UPLOAD_FILE = API_BIOFIELDS + "/POST/requisition/uploadFile"
+    static let API_SENT_REQUISITION_AUTH = API_BIOFIELDS + "/POST/requisition/auth"
 }

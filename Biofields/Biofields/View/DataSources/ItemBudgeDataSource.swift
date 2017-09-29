@@ -53,6 +53,5 @@ class ItemBudgeDataSource: NSObject, UITableViewDataSource,UITableViewDelegate {
         self.tableView?.reloadData()
     }
     
-    
 }
 
