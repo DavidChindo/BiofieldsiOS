@@ -26,20 +26,18 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
             self.tableView?.backgroundView = nil
             return self.requisitions.count
         } else {
-            
-            let view = UIView(frame: CGRect(x: 0, y: 0, width: self.tableView!.bounds.size.width , height: self.tableView!.bounds.size.height))
-            
-            let messageLabel = UILabel(frame: CGRect(x: 30, y: view.bounds.size.height/2, width: view.bounds.size.width, height: view.bounds.size.height))
+
+            let messageLabel = UILabel(frame: CGRect(x: 0,y: 0,width: self.tableView!.bounds.size.width, height: self.tableView!.bounds.size.height))
             messageLabel.text = emptyMessage
             messageLabel.textColor = UIColor.black
             messageLabel.numberOfLines = 0
             messageLabel.textAlignment = .center
             messageLabel.font = UIFont(name: "Helvetic", size: 20)
             messageLabel.sizeToFit()
-            view.addSubview(messageLabel)
-            self.tableView?.backgroundView = view
+            self.tableView?.backgroundView = messageLabel;
             self.tableView?.separatorStyle = .none
-        
+            
+            
             return 0
         }
     }
@@ -85,6 +83,10 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
         self.requisitions.removeAll()
         self.requisitions.append(contentsOf: items)
         self.tableView?.reloadData()
+    }
+    
+    func updateMessage(msg: String){
+        self.emptyMessage = msg
     }
     
     func getStatus(status:String)-> String{

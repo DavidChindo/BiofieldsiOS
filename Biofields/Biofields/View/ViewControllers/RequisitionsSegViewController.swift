@@ -60,6 +60,8 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
             mRequisitions = requistionSave
             RealmManager.insert(RequisitionItemResponse.self, items: requistionSave)
             requisitionDataSource?.update(requistionSave)
+        }else{
+            requisitionDataSource?.updateMessage(msg: "No hay requisiciones por autorizar")
         }
         if !refreshControl.isHidden && refreshControl.isRefreshing{
             self.refreshControl.endRefreshing()
@@ -73,6 +75,9 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
             self.refreshControl.endRefreshing()
         }else{
             SwiftSpinner.hide()
+        }
+        if msgError.contains("internet"){
+            requisitionDataSource?.updateMessage(msg: msgError)
         }
         DesignUtils.messageError(vc: self, title: "Requisiciones seguimiento", msg: msgError)
     }
@@ -115,6 +120,7 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
             requisitionItem.removeAll()
             requisitionDataSource?.update(requisitionItem)
             print("No hay resultado")
+            requisitionDataSource?.updateMessage(msg: "Sin resultados")
         }
     }
     

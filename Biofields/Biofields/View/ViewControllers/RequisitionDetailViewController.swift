@@ -227,7 +227,7 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
 
     override func viewDidLayoutSubviews() {
         filesTableView.frame.size = filesTableView.contentSize
-        filesContainer.frame = CGRect(x: filesContainer.frame.origin.x, y: filesContainer.frame.origin.y, width: filesContainer.frame.width, height: filesTableView.frame.height + 55)
+        filesContainer.frame = CGRect(x: filesContainer.frame.origin.x, y: filesContainer.frame.origin.y, width: filesContainer.frame.width, height: filesTableView.frame.height + 8)
         itemTableView.frame.size = itemTableView.contentSize
         totalBudgeContainer.frame = CGRect(x: totalBudgeContainer.frame.origin.x, y: itemTableView.frame.origin.y + itemTableView.frame.height + 4, width: totalBudgeContainer.frame.width, height: totalBudgeContainer.frame.height)
         productTitle.frame.origin.y = filesContainer.frame.origin.y + filesContainer.frame.height + 4
