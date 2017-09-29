@@ -23,6 +23,9 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
     
     var searchActive:Bool = false
     
+    private let refreshControl = UIRefreshControl()
+    private let refreshControlTintColor = DesignUtils.greenPrimary
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Por Autorizar"
@@ -39,6 +42,13 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         
         SwiftSpinner.show("Cargando...")
         requisitionPresenter?.requisitionAuth(id: 1)
+        if #available(iOS 10.0, *) {
+            requisitionTable.refreshControl = refreshControl
+        } else {
+            requisitionTable.addSubview(refreshControl)
+        }
+        refreshControl.tintColor = refreshControlTintColor
+        refreshControl.addTarget(self, action: #selector(refreshData(ender:)), for: .valueChanged)
     }
 
     func onRequisitionAuthSuccess(requisitions: [RequisitionItemResponse]) {
@@ -54,12 +64,21 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
                 RealmManager.insert(RequisitionItemResponse.self, items: requistionSave)
                 requisitionDataSource?.update(requistionSave)
         }
-        SwiftSpinner.hide()
+        if !refreshControl.isHidden && refreshControl.isRefreshing{
+            self.refreshControl.endRefreshing()
+        }else{
+            SwiftSpinner.hide()
+        }
     }
     
     func onRequisitionError(msgError: String) {
-        SwiftSpinner.hide()
+        if !refreshControl.isHidden && refreshControl.isRefreshing{
+            self.refreshControl.endRefreshing()
+        }else{
+            SwiftSpinner.hide()
+        }
         DesignUtils.messageError(vc: self, title: "Requisiciones por autorizar", msg: msgError)
+
     }
     
     func onOpenRequisition(requisition: RequisitionItemResponse) {        
@@ -71,10 +90,14 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         }
     }
     
+    func refreshData(ender: UIRefreshControl){
+        requisitionPresenter?.requisitionAuth(id: 1)
+    }
+    
+    
     func showBar(){
         searchBarShow()
     }
-    
     
     func searchBarShow(){
         searchbar = UISearchBar()

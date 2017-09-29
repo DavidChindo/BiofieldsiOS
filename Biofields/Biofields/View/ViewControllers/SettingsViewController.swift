@@ -14,7 +14,6 @@ class SettingsViewController: BaseViewController,SettingsDelegate {
     var settingsPresenter: SettingsPresenter?
     var window: UIWindow?
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "Cerrar Sesión"

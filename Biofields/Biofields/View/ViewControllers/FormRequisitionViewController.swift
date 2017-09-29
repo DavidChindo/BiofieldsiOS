@@ -126,6 +126,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     }
     
     func onSuccessUploadFiles(fResponse: FilesResponse, reqNumber: String) {
+        deleteFiles()
         SwiftSpinner.hide()
         let msgSuccess = "Se ha creado tú requisición " + reqNumber + " y " + fResponse.message!
         DesignUtils.alertConfirmFinish(titleMessage: "Nueva Requisición", message: msgSuccess, vc: self)
@@ -381,11 +382,19 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         } catch let error {
             print("Error: \(error.localizedDescription)")
         }
-
-        
-        //optional, case PDF -> render
-        //displayPDFweb.loadRequest(NSURLRequest(url: cico) as URLRequest)
-        
+    }
+    
+    func deleteFiles(){
+        if !FormRequisitionViewController.filesPath.isEmpty{
+            for f in FormRequisitionViewController.filesPath {
+                do {
+                    try FileManager.default.removeItem(at: f)
+                    print("Se ha eliminado")
+                } catch let error {
+                    print("Error: \(error.localizedDescription)")
+                }
+            }
+        }
     }
     
     @available(iOS 8.0, *)

@@ -20,6 +20,8 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
     var requisitionItem: [RequisitionItemResponse] = []
     var searchbar:UISearchBar?
     var searchActive:Bool = false
+    private let refreshControl = UIRefreshControl()
+    private let refreshControlTintColor = DesignUtils.greenPrimary
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,6 +39,13 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
         
         SwiftSpinner.show("Cargando...")
         requisitionPresenter?.requisitionSeg(id: 1)
+        if #available(iOS 10.0, *) {
+            requisitionsSegTableView.refreshControl = refreshControl
+        } else {
+            requisitionsSegTableView.addSubview(refreshControl)
+        }
+        refreshControl.tintColor = refreshControlTintColor
+        refreshControl.addTarget(self, action: #selector(refreshData(ender:)), for: .valueChanged)
     }
     
     func onRequisitionAuthSuccess(requisitions: [RequisitionItemResponse]) {
@@ -52,11 +61,19 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
             RealmManager.insert(RequisitionItemResponse.self, items: requistionSave)
             requisitionDataSource?.update(requistionSave)
         }
-        SwiftSpinner.hide()
+        if !refreshControl.isHidden && refreshControl.isRefreshing{
+            self.refreshControl.endRefreshing()
+        }else{
+            SwiftSpinner.hide()
+        }
     }
     
     func onRequisitionError(msgError: String) {
-        SwiftSpinner.hide()
+        if !refreshControl.isHidden && refreshControl.isRefreshing{
+            self.refreshControl.endRefreshing()
+        }else{
+            SwiftSpinner.hide()
+        }
         DesignUtils.messageError(vc: self, title: "Requisiciones seguimiento", msg: msgError)
     }
     
@@ -67,6 +84,10 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
             let destination = self.storyboard?.instantiateViewController(withIdentifier: "RequisitionDetailNavID")
             navigationController?.present(destination!, animated: true, completion: nil)
         }
+    }
+    
+    func refreshData(ender: UIRefreshControl){
+        requisitionPresenter?.requisitionSeg(id: 1)
     }
     
     func showBar(){
