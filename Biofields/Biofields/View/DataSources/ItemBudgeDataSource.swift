@@ -40,7 +40,7 @@ class ItemBudgeDataSource: NSObject, UITableViewDataSource,UITableViewDelegate {
         if item != nil{
             cell.qtyLbl.text = item.qtyBudge
             cell.descLbl.text = item.descBudge
-            cell.amountLbl.text = item.priceBudge
+            cell.amountLbl.text = "$" + DesignUtils.numberFormat(numberd: Double(item.priceBudge!)!)
         }
         
         

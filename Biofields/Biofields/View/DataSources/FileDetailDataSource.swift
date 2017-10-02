@@ -12,9 +12,11 @@ class FileDetailDataSource: NSObject, UITableViewDataSource,UITableViewDelegate 
     
     var tableView: UITableView?
     var files: [FilesReqResponse] = []
-    init(tableView: UITableView,files:[FilesReqResponse]) {
+    var delegate: RequisitionDetailDelegate?
+    init(tableView: UITableView,files:[FilesReqResponse],delegate: RequisitionDetailDelegate) {
         self.tableView = tableView
         self.files = files
+        self.delegate = delegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -41,6 +43,14 @@ class FileDetailDataSource: NSObject, UITableViewDataSource,UITableViewDelegate 
         }
         
         return cell
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let path = files[indexPath.row].url
+        if !(path?.isEmpty)!{
+            self.delegate?.onLoadUrl(url: path!)
+        }
+        tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func nameFile(path: String)->String{

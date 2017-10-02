@@ -152,6 +152,14 @@ class RealmManager: NSObject {
         return listResults
     }
     
+    class func findByProviderNoRegister<T: Object>(_ object : T.Type, fieldName: String, value: String)-> List<T>?{
+        let predicate = NSPredicate(format: fieldName + " = %@",value)
+        let results = try! Realm().objects(object.self).filter(predicate)
+        let listResults = List<T>()
+        listResults.append(objectsIn: results)
+        return listResults
+    }
+    
     class func token() -> String{
         
         let user = findFirst(object: User.self)
@@ -166,7 +174,7 @@ class RealmManager: NSObject {
     
     class func findByWord(value:String,needAuth:String)->[RequisitionItemResponse]{
         var values:[RequisitionItemResponse] = []
-        let predicate = NSPredicate(format: "needAuth = %@ AND (numRequisition CONTAINS[cd] %@ OR descRequisition CONTAINS[cd] %@ OR companyNameRequsition CONTAINS %@ OR statusRequisition CONTAINS[cd] %@ OR amountRequisition CONTAINS[cd] %@ OR urgentRequisition CONTAINS[cd] %@)", needAuth, value, value, value, value, value, value)
+        let predicate = NSPredicate(format: "needAuth = %@ AND (numRequisition CONTAINS[cd] %@ OR descRequisition CONTAINS[cd] %@ OR companyNameRequsition CONTAINS[cd] %@ OR statusRequisition CONTAINS[cd] %@ OR amountRequisition CONTAINS[cd] %@ OR urgentRequisition CONTAINS[cd] %@)", needAuth, value, value, value, value, value, value)
         
         let results = try! Realm().objects(RequisitionItemResponse.self).filter(predicate)
         let listResults = List<RequisitionItemResponse>()

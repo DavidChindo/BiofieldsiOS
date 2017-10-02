@@ -8,8 +8,9 @@
 
 import UIKit
 import SwiftSpinner
+import WebKit
 
-class RequisitionDetailViewController: BaseViewController,RequisitionDetailDelegate {
+class RequisitionDetailViewController: BaseViewController,RequisitionDetailDelegate,UIWebViewDelegate {
 
     @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var majorContainer: UIView!
@@ -50,9 +51,10 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
      var requisitionDetailObj:RequisitionDetailResponse?
     var itemBudgeDataSource: ItemBudgeDataSource?
     var filesDataSource: FileDetailDataSource?
-    var totalAmount = 0
+    var totalAmount:Double = 0.0
     var reason:String = ""
     var requisitionPresenter: RequisitionDetailPresenter?
+    var webView:UIWebView?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -61,7 +63,16 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
         scrollView.contentSize = CGSize(width: scrollView.frame.width, height: scrollView.frame.height)
  
         initFields()
-
+        webView = UIWebView(frame: CGRect(x: scrollView.frame.origin.x, y: scrollView.frame.origin.y, width: scrollView.frame.width, height: scrollView.frame.height))
+          navigationItem.rightBarButtonItem = UIBarButtonItem(title: "Cerrar", style: .plain, target: self, action: #selector(closeWebView))
+        webView?.isHidden = true
+        self.view.addSubview(webView!)
+        isShowingWebView()
+    }
+    
+    func showWebView(){
+        webView?.delegate = self;
+        webView?.frame = scrollView.frame
     }
     
     func initFields(){
@@ -94,11 +105,11 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
             frame.size.height = commentTxtView.contentSize.height
             commentTxtView.frame = frame
             involvedTitle.frame.origin.y = commentTxtView.frame.origin.y + commentTxtView.frame.height + 4
-            addInvolved(involved: requisition.applicantRequisition!)
-            addInvolved(involved: requisition.titularRequisition!)
-            addInvolved(involved: requisition.directorRequisition!)
-            addInvolved(involved: requisition.buyerRequisition!)
-            addInvolved(involved: requisition.auditorRequisition!)
+            addInvolved(involved: requisition.applicantRequisition!,role: "Solicitante")
+            addInvolved(involved: requisition.titularRequisition!, role: "Comprador")
+            addInvolved(involved: requisition.directorRequisition!, role: "Presupuesto")
+            addInvolved(involved: requisition.buyerRequisition!, role: "Aut N1")
+            addInvolved(involved: requisition.auditorRequisition!, role: "Aut N2")
             involvedStack.frame = CGRect(x: involvedStack.frame.origin.x, y: involvedStack.frame.origin.y, width: involvedStack.frame.width, height: CGFloat(25 * involvedStack.arrangedSubviews.count))
             involvedStack.frame.origin.y = involvedTitle.frame.origin.y + involvedTitle.frame.height + 4
             centerCostTitle.frame.origin.y = involvedStack.frame.origin.y + involvedStack.frame.height + 4
@@ -134,7 +145,7 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
             if requisition.items.count > 0{
                 budgeItemView(budgeItems:requisition.items)
                 itemTableView.isScrollEnabled = false
-                totalAmountLbl.text = String(format: Constants.totalAmountBudge,totalAmount) as String
+                totalAmountLbl.text = String(format: Constants.totalAmountBudge,DesignUtils.numberFormat(numberd:  totalAmount)) as String
                 DesignUtils.containerRound(content: productContainer)
             }
         }
@@ -176,14 +187,17 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
         DesignUtils.messageError(vc: self, title: "Autorizar Requisición", msg: msg)
     }
     
+    func onLoadUrl(url: String) {
+        loadUrlInWebView(url: url)
+    }
     
-    func addInvolved(involved: String){
+    func addInvolved(involved: String,role: String){
         if LogicUtils.validateString(word: involved){
-            involvedStack.addArrangedSubview(createLabel(involved: involved))
+            involvedStack.addArrangedSubview(createLabel(involved: involved, role: role))
         }
     }
     
-    func createLabel(involved: String)->UIView{
+    func createLabel(involved: String,role:String)->UIView{
         let view = UIView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width-8, height: 25))
         let dot = UILabel(frame: CGRect(x: 0, y: 4, width: 10, height: 25))
         dot.text =  "·"
@@ -191,7 +205,7 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
         dot.font = UIFont(name: "HelveticaNeue", size: 40)
         
         let label = UILabel(frame: CGRect(x: dot.frame.width+2, y: 6, width: view.frame.width, height: 25))
-        label.text = involved
+        label.text = involved+" | "+role
         label.font = UIFont(name: "HelveticaNeue", size: 13)
         label.textColor = UIColor.gray
         view.addSubview(dot)
@@ -205,12 +219,12 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
         self.itemTableView.delegate = itemBudgeDataSource
         itemBudgeDataSource?.update(budgeItems)
         for item in budgeItems {
-            totalAmount += Int(item.priceBudge!)!
+            totalAmount += Double(item.priceBudge!)!
         }
     }
     
     func filesView(files: [FilesReqResponse]){
-        filesDataSource = FileDetailDataSource(tableView: filesTableView, files: files)
+        filesDataSource = FileDetailDataSource(tableView: filesTableView, files: files, delegate: self)
         self.filesTableView.dataSource = filesDataSource
         self.filesTableView.delegate = filesDataSource
         filesDataSource?.update(files)
@@ -271,5 +285,31 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
         self.dismiss(animated: true, completion: nil)
     }
     
+    func closeWebView(){
+        webView?.stopLoading()
+        webView?.goBack()
+        webView?.isHidden = true
+        
+        isShowingWebView()
+    }
     
+    func isShowingWebView(){
+        if (webView?.isHidden)!{
+            navigationItem.rightBarButtonItem?.title = ""
+            navigationItem.rightBarButtonItem?.isEnabled = false
+        }else{
+            navigationItem.rightBarButtonItem?.title = "Cerrar"
+            navigationItem.rightBarButtonItem?.isEnabled = true
+        }
+    }
+    
+    func loadUrlInWebView(url:String){
+        var urlTemp: String = url.contains(" ") ? url.replacingOccurrences(of: " ", with: "%20") : url
+        let url_request_temp = URL(string: urlTemp)
+        //let url_request = URLRequest(url: url_request_temp!)
+        let url_request = URLRequest(url: url_request_temp!, cachePolicy: NSURLRequest.CachePolicy.reloadIgnoringLocalAndRemoteCacheData, timeoutInterval: 1.0)
+        webView?.loadRequest(url_request)
+        webView?.isHidden = false
+        isShowingWebView()
+    }
 }

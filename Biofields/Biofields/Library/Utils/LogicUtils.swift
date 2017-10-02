@@ -18,8 +18,8 @@ class LogicUtils: NSObject {
         return !(textView.text?.trimmingCharacters(in: CharacterSet.whitespacesAndNewlines).isEmpty)!
     }
     
-    class func validateSpinner(spinner: LBZSpinner)->Bool{
-        return spinner.selectedIndex == LBZSpinner.INDEX_NOTHING
+    class func validateSpinner(spinner: LBZSpinner,wasChanged:Bool)->Bool{
+        return wasChanged
     }
     
     class func validateSegmented(segmented: UISegmentedControl) -> Bool{
@@ -39,6 +39,18 @@ class LogicUtils: NSObject {
             return wordTemp
         }else{
             return ""
+        }
+    }
+    
+    class func openUrl(urls:String){
+        let url = URL(fileURLWithPath: urls)
+        
+        if UIApplication.shared.canOpenURL(url) {
+            if #available(iOS 10.0, *) {
+                UIApplication.shared.open(url, options: [:])
+        }else{
+            UIApplication.shared.openURL(url)
+            }
         }
     }
 

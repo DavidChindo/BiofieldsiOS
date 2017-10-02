@@ -154,6 +154,12 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         searchBar.endEditing(true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.titleView = nil
+        self.navigationItem.title = "Por Autorizar"
+        requisitionDataSource?.update(mRequisitions)
+    }
+    
     func hideKeyboard()
     {
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(self.handleTap))

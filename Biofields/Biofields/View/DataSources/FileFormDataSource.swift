@@ -12,10 +12,12 @@ class FileFormDataSource: NSObject, UITableViewDataSource,UITableViewDelegate {
     
     var tableView: UITableView?
     var items: [String] = []
+    var delegate: FormRequisitionDelegate?
     
-    init(tableView: UITableView,items:[String]) {
+    init(tableView: UITableView,items:[String], delegate: FormRequisitionDelegate) {
         self.tableView = tableView
         self.items = items
+        self.delegate = delegate
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -30,7 +32,8 @@ class FileFormDataSource: NSObject, UITableViewDataSource,UITableViewDelegate {
         let cell:FileFormTableViewCell = tableView.dequeueReusableCell(withIdentifier: "filesCell") as! FileFormTableViewCell
         let item = self.items[indexPath.row]
         cell.tag = indexPath.row
-        
+        cell.index = indexPath.row
+        cell.delegate = delegate
         if !item.isEmpty{
             var path:[String] = item.components(separatedBy: "/")
             cell.nameLabel.text = path[path.count - 1]

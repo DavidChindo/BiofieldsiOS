@@ -29,6 +29,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
     var priceString:String?
     var qtyString:String?
     var searchItem:Bool = true
+    var spUOMChanged:Bool = false
     
     var isBiofieldsCompany:Bool = true
     var uomSelected:String?
@@ -59,12 +60,22 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
     @IBAction func onSelectProductServiceChange(_ sender: Any) {
         if productServiceSeg.selectedSegmentIndex == 0{
             productServicetextField.text = "Ingrese Producto"
+            productServicetextField.textColor = UIColor.gray
             searchItem = true
         }else{
             productServicetextField.text = "Categoría de gasto"
             searchItem = false
         }
+        if productServicetextField.isFocused{
+            productServicetextField.textColor = DesignUtils.grayFont
+            productServicetextField.text = (productServicetextField.text?.contains("Ingrese Producto"))! || (productServicetextField.text?.contains("Categoría de gasto"))! ? "" : productServicetextField.text
+        }
+        if !myTableView.isHidden {
+        myTableView.isHidden = true
+            myTableView.reloadData()
+        }
         productServicetextField.isEnabled = true
+        productServicetextField.textColor = UIColor.gray
     }
     
     @IBAction func onCancelBudgeItemClick(_ sender: Any) {
@@ -79,6 +90,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
     }
     
     func spinnerChoose(_ spinner: LBZSpinner, index: Int, value: String) {
+        spUOMChanged = true
         uomSelected = value
     }
     
@@ -92,7 +104,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
                 price = Double(priceString!)!
                 qty = Double(qtytxt.text!)!
                 total = price * qty
-                totalLabel.text = String(format: Constants.TOTAL_BUDGE, String(total))
+                totalLabel.text = String(format: Constants.TOTAL_BUDGE, DesignUtils.numberFormat(numberd: total))
             }else{
                 totalLabel.text = ""
             }
@@ -103,7 +115,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
                 qty = Double(qtyString!)!
                 price = Double(pricetxt.text!)!
                 total = price * qty
-                totalLabel.text = String(format: Constants.TOTAL_BUDGE, String(total))
+                totalLabel.text = String(format: Constants.TOTAL_BUDGE, DesignUtils.numberFormat(numberd: total))
             }else {
                 totalLabel.text = ""
             }
@@ -112,6 +124,13 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
         if textField == productServicetextField{
             if !(productServicetextField.text?.isEmpty)! {
                 search(word: productServicetextField.text!)
+            }else{
+                if !myTableView.isHidden{
+                    listValuesItem.removeAll()
+                    listValuesExpense.removeAll()
+                    myTableView.isHidden = true
+                    myTableView.reloadData()
+                }
             }
         }
     }
@@ -122,6 +141,24 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
             textField.text = (textField.text?.contains("Ingrese Producto"))! || (textField
                 .text?.contains("Categoría de gasto"))! ? "" : textField.text
         }
+    }
+    
+    func textFieldDidEndEditing(_ textField: UITextField) {
+        if textField == productServicetextField{
+            textField.textColor = DesignUtils.grayFont
+            textField.text = (textField.text?.contains("Ingrese Producto"))! || (textField
+                .text?.contains("Categoría de gasto"))! ? "" : textField.text
+        }
+    }
+    
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if textField == productServicetextField{
+            textField.textColor = DesignUtils.grayFont
+            textField.text = (textField.text?.contains("Ingrese Producto"))! || (textField
+                .text?.contains("Categoría de gasto"))! ? "" : textField.text
+        }
+        
+        return true
     }
     
     func validateForm()-> Bool{
@@ -141,7 +178,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
                         DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
                         return false
                     }else{
-                        if(LogicUtils.validateSpinner(spinner: spUOM)){
+                        if(!LogicUtils.validateSpinner(spinner: spUOM, wasChanged: spUOMChanged)){
                             let message = String(format: Constants.ERROR_MESSAGE, "Unidad de medida")
                             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
                             return false
@@ -157,7 +194,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
                             return true
                         }
                     }
-                }else if(LogicUtils.validateSpinner(spinner: spUOM)){
+                }else if(!LogicUtils.validateSpinner(spinner: spUOM, wasChanged: spUOMChanged)){
                     let message = String(format: Constants.ERROR_MESSAGE, "Unidad de medida")
                     DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
                     return false
@@ -179,7 +216,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
                 DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
                 return false
             }else{
-                if(LogicUtils.validateSpinner(spinner: spUOM)){
+                if(!LogicUtils.validateSpinner(spinner: spUOM, wasChanged: spUOMChanged)){
                     let message = String(format: Constants.ERROR_MESSAGE, "Unidad de medida")
                     DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
                     return false
@@ -195,7 +232,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
                     return true
                 }
             }
-        }else if(LogicUtils.validateSpinner(spinner: spUOM)){
+        }else if(!LogicUtils.validateSpinner(spinner: spUOM, wasChanged: spUOMChanged)){
             let message = String(format: Constants.ERROR_MESSAGE, "Unidad de medida")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
@@ -216,6 +253,7 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
         if searchItem{
             if !word.isEmpty{
                 listValuesItem.removeAll()
+                listValuesExpense.removeAll()
                 listValuesItem = RealmManager.findByDescriptions(ItemResponse.self, fieldName: "companyId", value: FormRequisitionViewController.idCompanyGlobal, fieldName2: "itemDesc", value2: word)!
                 if listValuesItem.count > 0{
                     print("tamaño \(listValuesItem.count)")
@@ -223,15 +261,18 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
                     myTableView.reloadData()
                 }else{
                     listValuesItem.removeAll()
+                    listValuesExpense.removeAll()
                     DesignUtils.messageWarning(vc: self, title: "", msg: "No existen resultados")
                     myTableView.isHidden = true
                 }
             }else{
                 listValuesItem.removeAll()
+                listValuesExpense.removeAll()
                 myTableView.isHidden = true
             }
         }else{
             if !word.isEmpty{
+                listValuesItem.removeAll()
                 listValuesExpense.removeAll()
                 listValuesExpense = RealmManager.findByProvider(ExpenseResponse.self, fieldName: "expcatDesc", value: word)!
                 if listValuesExpense.count > 0{
@@ -239,11 +280,13 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
                     myTableView.isHidden = false
                     myTableView.reloadData()
                 }else{
+                    listValuesItem.removeAll()
                     listValuesExpense.removeAll()
                 myTableView.isHidden = true
                     DesignUtils.messageWarning(vc: self, title: "", msg: "No existen resultados")
                 }
             }else{
+                listValuesItem.removeAll()
                 listValuesExpense.removeAll()
                 myTableView.isHidden = true
             }

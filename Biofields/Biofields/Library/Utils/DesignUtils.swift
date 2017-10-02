@@ -79,4 +79,12 @@ class DesignUtils: NSObject {
         
         return content
     }
+    
+    class func numberFormat(numberd: Double)-> String{
+        let formater = NumberFormatter()
+        formater.groupingSeparator = ","
+        formater.numberStyle = .decimal
+        let valueFormated = formater.string(from: NSNumber(value: numberd))
+        return valueFormated!
+    }
 }

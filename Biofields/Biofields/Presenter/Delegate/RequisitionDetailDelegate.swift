@@ -17,5 +17,7 @@ public protocol RequisitionDetailDelegate: NSObjectProtocol{
     func onSuccessLoadDetail(detail: [RequisitionDetailResponse])
     
     func onErrorLoadDetail(msg: String)
+    
+    func onLoadUrl(url:String)
 
 }

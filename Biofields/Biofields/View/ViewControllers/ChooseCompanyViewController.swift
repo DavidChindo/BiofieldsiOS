@@ -42,61 +42,61 @@ class ChooseCompanyViewController: BaseViewController,ChooseCompanyDelegate,UIPi
         var loginCompany = LoginCompanyRequest(email: RealmManager.user(), passwd: ChooseCompanyViewController.PASWD, company: company)
         choosePresenter?.login(credentials: loginCompany)
         }else{
-            DesignUtils.messageError(vc: self, title: "Seleccionar Compañia", msg: "Debes seleccionar una empresa, por favor")
+            DesignUtils.messageError(vc: self, title: "Seleccionar Empresa", msg: "Debes seleccionar una empresa, por favor")
         }
     }
     
     func onLoginCompanyError(msgError: String) {
         SwiftSpinner.hide()
-        DesignUtils.messageError(vc: self, title: "Seleccionar Compañia", msg: msgError)
+        DesignUtils.messageError(vc: self, title: "Seleccionar Empresa", msg: msgError)
     }
     
     func onLoginCompanySuccess(loginResponse: LoginResponse) {
         RealmManager.saveUser(usr: loginResponse)
         Prefs.instance().putBool(Constants.IS_BIO_PREFS, value: company.lowercased().contains("biofields") ? true : false)
-        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(1/8)..."
+        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catálogos(1/8)..."
         choosePresenter?.catalogVendor()
     }
 
     func onDownloadVendorSuccess(vendorCatalog: [VendorResponse]) {
         RealmManager.insert(VendorResponse.self, items: vendorCatalog)
-        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(2/8)..."
+        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catálogos(2/8)..."
         choosePresenter?.catalogCompany()
     }
     
     func onDownloadCompanyCatSuccess(companyCatCatalog: [CompanyCatResponse]) {
         RealmManager.insert(CompanyCatResponse.self, items: companyCatCatalog)
-        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(3/8)..."
+        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catálogos(3/8)..."
         choosePresenter?.catalogCostCenter()
     }
     
     func onDownloadCostCenterSuccess(costCenterCatalog: [CostcenterResponse]) {
         RealmManager.insert(CostcenterResponse.self, items: costCenterCatalog)
-        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(4/8)..."
+        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catálogos(4/8)..."
         choosePresenter?.catalogBudgetList()
     }
     
     func onDownloadBudgetListSuccess(budgelistCatalog: [BudgetlistResponse]) {
         RealmManager.insert(BudgetlistResponse.self, items: budgelistCatalog)
-        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(5/8)..."
+        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catálogos(5/8)..."
         choosePresenter?.catalogSite()
     }
     
     func onDownloadSiteSuccess(siteCatalog: [SiteResponse]) {
         RealmManager.insert(SiteResponse.self, items: siteCatalog)
-        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(6/8)..."
+        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catálogos(6/8)..."
         choosePresenter?.catalogExpense()
     }
     
     func onDownloadExpenseSuccess(expenseCatalog: [ExpenseResponse]) {
         RealmManager.insert(ExpenseResponse.self, items: expenseCatalog)
-        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(7/8)..."
+        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catálogos(7/8)..."
         choosePresenter?.catalogItem()
     }
     
     func onDownloadItemSuccess(itemCatalog: [ItemResponse]) {
         RealmManager.insert(ItemResponse.self, items: itemCatalog)
-        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catalogos(8/8)..."
+        SwiftSpinner.sharedInstance.titleLabel.text = "Descargando catálogos(8/8)..."
         choosePresenter?.catalogUOM()
     }
     
@@ -109,7 +109,7 @@ class ChooseCompanyViewController: BaseViewController,ChooseCompanyDelegate,UIPi
     
     func onDonwnloadError(msgError: String) {
         SwiftSpinner.hide()
-        DesignUtils.messageError(vc: self, title: "Selccionar Compañia", msg: msgError)
+        DesignUtils.messageError(vc: self, title: "Selccionar Empresa", msg: msgError)
     }
     
     func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {

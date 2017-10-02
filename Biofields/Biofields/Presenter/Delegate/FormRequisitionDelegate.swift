@@ -15,6 +15,10 @@ public protocol FormRequisitionDelegate: NSObjectProtocol {
     func onErrorSent(msg: String)
     
     func onSuccessUploadFiles(fResponse: FilesResponse, reqNumber: String)
+    
+    func onDeleteFile(index: Int)
+    
+    func onDeleteBudgetRequisition(index: Int)
 
 }
 

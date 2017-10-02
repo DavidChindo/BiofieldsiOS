@@ -114,7 +114,8 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
         
         let searchWord = searchText.folding(options: .diacriticInsensitive, locale: nil)
         requisitionItem = RealmManager.findByWord(value: searchWord, needAuth: "2")
-        if requisitionItem.count > 0{
+        if
+            requisitionItem.count > 0{
             requisitionDataSource?.update(requisitionItem)
         }else{
             requisitionItem.removeAll()
@@ -149,6 +150,11 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
         searchBar.endEditing(true)
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        self.navigationItem.titleView = nil
+        self.navigationItem.title = "Por Autorizar"
+        requisitionDataSource?.update(mRequisitions)
+    }
     
     func hideKeyboard()
     {

@@ -53,10 +53,15 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     var methodsPay:[PaymentType] = []
     
     static var indexsSpCompany:Int = LBZSpinner.INDEX_NOTHING
+    static var spCompanyChage:Bool = false
     static var indexsSpCenterCost:Int = LBZSpinner.INDEX_NOTHING
+    static var SpCenterCostChage:Bool = false
     static var indexsSpBudgeItem:Int = LBZSpinner.INDEX_NOTHING
+    static var SpBudgeItemChage:Bool = false
     static var indexsSpSite:Int = LBZSpinner.INDEX_NOTHING
+    static var SpSiteChage:Bool = false
     static var indexsSpPayMoney:Int = LBZSpinner.INDEX_NOTHING
+    static var SpPayMoneyChage:Bool = false
     static var providerStatic: String = ""
     static var descriptionStatic: String = "Descripción del requirimiento"
     static var annotationsStatic: String = "Anotaciones"
@@ -110,8 +115,8 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         spCenterCost.updateList(RealmManager.listStringByField(CostcenterResponse.self))
         spSite.updateList(RealmManager.listStringByField(SiteResponse.self))
         spPayMoney.updateList(PaymentType.paymentsTypesDesc())
-        fileDataSource = FileFormDataSource(tableView: filesTableView, items: FormRequisitionViewController.files)
-        budgeDataSource = BudgeItemDataSource(tableView: requisitionTable, items: FormRequisitionViewController.BUDGES)
+        fileDataSource = FileFormDataSource(tableView: filesTableView, items: FormRequisitionViewController.files, delegate: self)
+        budgeDataSource = BudgeItemDataSource(tableView: requisitionTable, items: FormRequisitionViewController.BUDGES, vcontroller: self, view: self.view, delegate: self)
         requisitionTable.delegate = budgeDataSource
         requisitionTable.dataSource = budgeDataSource
         filesTableView.delegate = fileDataSource
@@ -143,6 +148,39 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         DesignUtils.messageError(vc: self, title: "Crear Requisición", msg: msg)
     }
     
+    func onDeleteFile(index: Int) {
+        if index >= 0{
+            let alertEmpty = UIAlertController(title: "Archivos de Soporte", message: "¿Desea borrar el archivo?", preferredStyle: UIAlertControllerStyle.alert)
+            
+            alertEmpty.addAction(UIAlertAction(title: "Cancelar", style: .default, handler: {(action:UIAlertAction!) in
+                
+            }))
+            
+            alertEmpty.addAction(UIAlertAction(title: "Aceptar", style: .default, handler: {(action:UIAlertAction!) in
+                FormRequisitionViewController.files.remove(at: index)
+                FormRequisitionViewController.filesPath.remove(at: index)
+                self.fileDataSource?.update(FormRequisitionViewController.files)
+                self.filesTableView.reloadData()
+                self.repositionFilesTableView()
+            }))
+            
+            present(alertEmpty, animated: true, completion: nil)
+            
+        }
+    }
+    
+    func onDeleteBudgetRequisition(index: Int) {
+        FormRequisitionViewController.BUDGES.remove(at: index)
+        budgeDataSource = nil
+        
+        budgeDataSource = BudgeItemDataSource(tableView: requisitionTable, items: FormRequisitionViewController.BUDGES, vcontroller: self, view: self.view, delegate: self)
+        self.requisitionTable.dataSource =  budgeDataSource
+        
+        requisitionTable.reloadData()
+        repositionFilesTableView()
+        repositionRequisitionTableView()
+    }
+    
     func textFieldDidChange(textField: UITextField) {
         if textField == providerTxt{
             if !(providerTxt.text?.isEmpty)! {
@@ -153,30 +191,44 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     
     func spinnerChoose(_ spinner: LBZSpinner, index: Int, value: String) {
         if spinner == spCompany{
+            FormRequisitionViewController.spCompanyChage = true
             FormRequisitionViewController.indexsSpCompany = index
             FormRequisitionViewController.idCompanyGlobal = companies[index].companyId!
             spBudgeItem.updateList(RealmManager.findByid(BudgetlistResponse.self, fieldName: "rubroEmpresaId", value: FormRequisitionViewController.idCompanyGlobal))
             budges = RealmManager.listById(BudgetlistResponse.self, fieldName: "rubroEmpresaId", value: FormRequisitionViewController.idCompanyGlobal)
             viewDiseable.isHidden = true
         }else if spinner == spCenterCost{
+            FormRequisitionViewController.SpCenterCostChage = true
             FormRequisitionViewController.indexsSpCenterCost = index
         }else if spinner == spBudgeItem{
+            FormRequisitionViewController.SpBudgeItemChage = true
             FormRequisitionViewController.indexsSpBudgeItem = index
         }else if spinner == spSite{
+            FormRequisitionViewController.SpSiteChage = true
             FormRequisitionViewController.indexsSpSite = index
         }else if spinner == spPayMoney{
+            FormRequisitionViewController.SpPayMoneyChage = true
             FormRequisitionViewController.indexsSpPayMoney = index
         }
     }
     
     func preSaveFields(){
         FormRequisitionViewController.needPreload = true
-        FormRequisitionViewController.indexsSpCompany = spCompany.selectedIndex
-        FormRequisitionViewController.indexsSpCenterCost = spCenterCost.selectedIndex
-        FormRequisitionViewController.indexsSpBudgeItem = spBudgeItem.selectedIndex
-        FormRequisitionViewController.indexsSpSite = spSite.selectedIndex
-        FormRequisitionViewController.indexsSpPayMoney = spPayMoney.selectedIndex
-        
+        if FormRequisitionViewController.spCompanyChage{
+            FormRequisitionViewController.indexsSpCompany = spCompany.selectedIndex
+        }
+        if FormRequisitionViewController.SpCenterCostChage{
+            FormRequisitionViewController.indexsSpCenterCost = spCenterCost.selectedIndex
+        }
+        if FormRequisitionViewController.SpBudgeItemChage{
+            FormRequisitionViewController.indexsSpBudgeItem = spBudgeItem.selectedIndex
+        }
+        if FormRequisitionViewController.SpSiteChage{
+            FormRequisitionViewController.indexsSpSite = spSite.selectedIndex
+        }
+        if FormRequisitionViewController.SpPayMoneyChage{
+            FormRequisitionViewController.indexsSpPayMoney = spPayMoney.selectedIndex
+        }
         FormRequisitionViewController.providerStatic = providerTxt.text!
         FormRequisitionViewController.descriptionStatic = descriptionTextView.text
         FormRequisitionViewController.annotationsStatic = annotationsTextView.text
@@ -192,12 +244,21 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     func reloadFields(){
         if FormRequisitionViewController.needPreload{
             FormRequisitionViewController.needPreload = false
-            
-            spCompany.changeSelectedIndex(FormRequisitionViewController.indexsSpCompany)
-            spCenterCost.changeSelectedIndex(FormRequisitionViewController.indexsSpCenterCost)
-            spBudgeItem.changeSelectedIndex(FormRequisitionViewController.indexsSpBudgeItem)
-            spSite.changeSelectedIndex(FormRequisitionViewController.indexsSpSite)
-            spPayMoney.changeSelectedIndex(FormRequisitionViewController.indexsSpPayMoney)
+            if FormRequisitionViewController.spCompanyChage{
+                spCompany.changeSelectedIndex(FormRequisitionViewController.indexsSpCompany)
+            }
+            if FormRequisitionViewController.SpCenterCostChage{
+                spCenterCost.changeSelectedIndex(FormRequisitionViewController.indexsSpCenterCost)
+            }
+            if FormRequisitionViewController.SpBudgeItemChage{
+                spBudgeItem.changeSelectedIndex(FormRequisitionViewController.indexsSpBudgeItem)
+            }
+            if FormRequisitionViewController.SpSiteChage{
+                spSite.changeSelectedIndex(FormRequisitionViewController.indexsSpSite)
+            }
+            if FormRequisitionViewController.SpPayMoneyChage{
+                spPayMoney.changeSelectedIndex(FormRequisitionViewController.indexsSpPayMoney)
+            }
             
             providerTxt.text = FormRequisitionViewController.providerStatic.isEmpty ? "" : FormRequisitionViewController.providerStatic
             
@@ -271,7 +332,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             navigationController?.pushViewController(destination, animated: true)
             
         }else{
-            DesignUtils.messageError(vc: self, title: "Crear Partida de Requisición", msg: "Debe seleccionar una compañia primero")
+            DesignUtils.messageError(vc: self, title: "Crear Partida de Requisición", msg: "Debe seleccionar una empresa primero")
         }
     }
     
@@ -352,7 +413,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     
     func openExplorer(){
         let importMenu = UIDocumentMenuViewController(documentTypes:["public.image","public.movie","public.item","public.content","public.composite-content","public.archive"], in: .import)
-            /*[String(kUTTypeText),String(kUTTypeImage),String(kUTTypeItem)] */
+        /*[String(kUTTypeText),String(kUTTypeImage),String(kUTTypeItem)] */
         importMenu.delegate = self
         importMenu.modalPresentationStyle = .formSheet
         
@@ -427,8 +488,10 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
                 myTableView.reloadData()
             }else{
                 listVendor.removeAll()
-                myTableView.isHidden = true
-                DesignUtils.messageWarning(vc: self, title: "", msg: "No existen resultados")
+                listVendor = RealmManager.findByProviderNoRegister(VendorResponse.self, fieldName: "name", value: "Proveedor no registrado")!
+                myTableView.isHidden = false
+                myTableView.reloadData()
+                //DesignUtils.messageWarning(vc: self, title: "", msg: "No existen resultados")
             }
         }else{
             listVendor.removeAll()
@@ -496,15 +559,15 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     }
     
     func validateForm()-> Bool{
-        if LogicUtils.validateSpinner(spinner: spCompany){
+        if !LogicUtils.validateSpinner(spinner: spCompany, wasChanged: FormRequisitionViewController.spCompanyChage){
             let message = String(format: Constants.ERROR_MESSAGE, "Empresa")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
-        }else if LogicUtils.validateSpinner(spinner: spCenterCost){
+        }else if !LogicUtils.validateSpinner(spinner: spCenterCost, wasChanged: FormRequisitionViewController.SpCenterCostChage){
             let message = String(format: Constants.ERROR_MESSAGE, "Centro del Costo")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
-        }else if LogicUtils.validateSpinner(spinner: spBudgeItem){
+        }else if !LogicUtils.validateSpinner(spinner: spBudgeItem, wasChanged: FormRequisitionViewController.SpBudgeItemChage){
             let message = String(format: Constants.ERROR_MESSAGE, "Partida de presupuesto")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
@@ -516,11 +579,11 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             let message = String(format: Constants.ERROR_MESSAGE, "Descripción del requerimiento")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
-        }else if LogicUtils.validateSpinner(spinner: spSite){
+        }else if !LogicUtils.validateSpinner(spinner: spSite, wasChanged: FormRequisitionViewController.SpSiteChage){
             let message = String(format: Constants.ERROR_MESSAGE, "Sitio de entrega")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
-        }else if LogicUtils.validateSpinner(spinner: spPayMoney){
+        }else if !LogicUtils.validateSpinner(spinner: spPayMoney, wasChanged: FormRequisitionViewController.SpPayMoneyChage){
             let message = String(format: Constants.ERROR_MESSAGE, "Moneda de pago")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
@@ -536,7 +599,9 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             let message = String(format: Constants.ERROR_MESSAGE, "POA")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
-        }else if !LogicUtils.validateSegmented(segmented: includeSegment){
+        }else if !validateBudgeInfo(){
+            return false
+        /*}else if !LogicUtils.validateSegmented(segmented: includeSegment){
             let message = String(format: Constants.ERROR_MESSAGE, "¿Puede incluirse / reemplazar otra partida?")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
@@ -547,7 +612,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         }else if !LogicUtils.validateSegmented(segmented: indispensableSegment){
             let message = String(format: Constants.ERROR_MESSAGE, "¿Es indispensable para la operación?")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
-            return false
+            return false*/
         }else if FormRequisitionViewController.files.isEmpty{
             let message = String(format: Constants.ERROR_MESSAGE, "Archivos de Soporte")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
@@ -561,6 +626,69 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         }
     }
     
+    func validateBudgeInfo()->Bool{
+        if poaSegment.selectedSegmentIndex == 1{
+            if !LogicUtils.validateSegmented(segmented: includeSegment){
+                let message = String(format: Constants.ERROR_MESSAGE, "¿Puede incluirse / reemplazar otra partida?")
+                DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+                return false
+            }else if includeSegment.selectedSegmentIndex == 1{
+                if !LogicUtils.validateSegmented(segmented: deleteSegment){
+                    let message = String(format: Constants.ERROR_MESSAGE, "¿Se puede eliminar otra partida?")
+                    DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+                    return false
+                }else if deleteSegment.selectedSegmentIndex == 1{
+                    if !LogicUtils.validateSegmented(segmented: indispensableSegment){
+                        let message = String(format: Constants.ERROR_MESSAGE, "¿Es indispensable para la operación?")
+                        DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+                        return false
+                    }else {
+                        return true
+                    }
+                }else {
+                    return true
+                }
+            }else if deleteSegment.selectedSegmentIndex == 1{
+                if !LogicUtils.validateSegmented(segmented: indispensableSegment){
+                    let message = String(format: Constants.ERROR_MESSAGE, "¿Es indispensable para la operación?")
+                    DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+                    return false
+                }else {
+                    return true
+                }
+            }else {
+                return true
+            }
+        }else if includeSegment.selectedSegmentIndex == 1{
+            if !LogicUtils.validateSegmented(segmented: deleteSegment){
+                let message = String(format: Constants.ERROR_MESSAGE, "¿Se puede eliminar otra partida?")
+                DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+                return false
+            }else if deleteSegment.selectedSegmentIndex == 1{
+                if !LogicUtils.validateSegmented(segmented: indispensableSegment){
+                    let message = String(format: Constants.ERROR_MESSAGE, "¿Es indispensable para la operación?")
+                    DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+                    return false
+                }else {
+                    return true
+                }
+            }else {
+                return true
+            }
+        }else if deleteSegment.selectedSegmentIndex == 1{
+            if !LogicUtils.validateSegmented(segmented: indispensableSegment){
+                let message = String(format: Constants.ERROR_MESSAGE, "¿Es indispensable para la operación?")
+                DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+                return false
+            }else {
+                return true
+            }
+        }else{
+            return true
+        }
+    }
+    
+    
     func dissmissView(_ sender: Any){
         AddRequisition.IsNew = false
         clearData()
@@ -571,6 +699,22 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         FormRequisitionViewController.BUDGES.removeAll()
         FormRequisitionViewController.files.removeAll()
         FormRequisitionViewController.filesPath.removeAll()
+        FormRequisitionViewController.spCompanyChage = false
+        FormRequisitionViewController.SpCenterCostChage = false
+        FormRequisitionViewController.SpBudgeItemChage = false
+        FormRequisitionViewController.SpSiteChage = false
+        FormRequisitionViewController.SpPayMoneyChage = false
+        FormRequisitionViewController.providerStatic = ""
+        FormRequisitionViewController.descriptionStatic = "Descripción del requirimiento"
+        FormRequisitionViewController.annotationsStatic = "Anotaciones"
+        FormRequisitionViewController.isBilledStatic = -1
+        FormRequisitionViewController.isUrgentStatic = -1
+        FormRequisitionViewController.isPOAStatic = 0
+        FormRequisitionViewController.isIncludeStatic = -1
+        FormRequisitionViewController.isDeleteStatic = -1
+        FormRequisitionViewController.isIndispensableStatic = -1
+        FormRequisitionViewController.needPreload = false
+        
     }
     
 }

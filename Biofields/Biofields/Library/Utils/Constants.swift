@@ -19,7 +19,7 @@ class Constants: NSObject {
     static let IS_BIO_PREFS = "prefsIsBio"
 
     
-    static let totalAmountBudge = "$ %d MXN"
+    static let totalAmountBudge = "$%@ MXN"
     static let ERROR_MESSAGE = "%@ es requerido"
-    static let TOTAL_BUDGE = "Total %@ MXN"
+    static let TOTAL_BUDGE = "Total $%@ MXN"
 }
