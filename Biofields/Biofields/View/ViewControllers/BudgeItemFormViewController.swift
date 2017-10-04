@@ -135,13 +135,20 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
         spUOMChanged = true
         uomSelected = value
     }
-    
-    
+
     func textFieldDidChange(textField: UITextField) {
         priceString = ""
         qtyString = ""
         if textField == pricetxt{
             priceString = pricetxt.text
+            if !(priceString?.isEmpty)!{
+                let priceTemp = Double(priceString!)!
+                let isValidatePrice = isBiofieldsCompany ? priceTemp >= 0 : priceTemp > 0
+                if !isValidatePrice{
+                    pricetxt.text = ""
+                    DesignUtils.messageError(vc: self, title: "", msg: "El monto del precio debe ser mayor a cero")
+                }
+            }
             if !(qtytxt.text?.isEmpty)! && !(pricetxt.text?.isEmpty)!{
                 price = Double(priceString!)!
                 qty = Double(qtytxt.text!)!
@@ -153,6 +160,13 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
         }
         if textField == qtytxt{
             qtyString = qtytxt.text
+            if !(qtyString?.isEmpty)! {
+                let qtytemp = Double(qtyString!)!
+                if qtytemp <= 0{
+                    qtytxt.text = ""
+                    DesignUtils.messageError(vc: self, title: "", msg: "La cantidad debe ser mayor a cero")
+                }
+            }
             if !(qtytxt.text?.isEmpty)! && !(pricetxt.text?.isEmpty)!{
                 qty = Double(qtyString!)!
                 price = Double(pricetxt.text!)!

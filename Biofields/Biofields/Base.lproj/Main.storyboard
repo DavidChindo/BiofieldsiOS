@@ -1522,12 +1522,19 @@
                         <outlet property="descriptionTextView" destination="DUi-1B-e7y" id="Hua-Ik-TJ8"/>
                         <outlet property="filesBtn" destination="evU-Pf-gCQ" id="KmN-V4-m5V"/>
                         <outlet property="filesContainer" destination="nJ4-3G-CBy" id="Lng-9t-lMZ"/>
+                        <outlet property="filesLbl" destination="5LC-AM-KyD" id="T4q-2d-exh"/>
                         <outlet property="filesTableView" destination="G0y-K6-9Gq" id="Nk2-QU-NPG"/>
                         <outlet property="generalContainer" destination="cKC-EY-j4K" id="jKe-8Z-1DC"/>
                         <outlet property="includeSegment" destination="vqG-FU-nGv" id="Y9a-VW-sg9"/>
                         <outlet property="indispensableSegment" destination="42p-5D-Srq" id="fbp-jC-e89"/>
+                        <outlet property="infoBudgetLbl" destination="dNZ-9t-dLC" id="Pd5-pS-L1x"/>
+                        <outlet property="isBilledLabel" destination="Z4j-uI-C9p" id="LXC-uC-DMq"/>
                         <outlet property="isBilledSegment" destination="VfT-tK-8k5" id="1et-HP-bSi"/>
+                        <outlet property="isUrgentLabel" destination="QmK-bC-6B3" id="u1R-nm-gnk"/>
                         <outlet property="majorContainer" destination="nZD-i7-qRg" id="E15-Me-gLf"/>
+                        <outlet property="notesLbl" destination="KCO-DV-WLf" id="9l3-76-T69"/>
+                        <outlet property="notesView" destination="FhY-PN-h8j" id="t1t-vu-o08"/>
+                        <outlet property="paymoneyLabel" destination="Aak-aX-cWz" id="BX1-cf-buk"/>
                         <outlet property="poaSegment" destination="KaR-02-2YI" id="OXn-4o-lKy"/>
                         <outlet property="providerTxt" destination="o6t-sV-M0s" id="2cY-04-Rhg"/>
                         <outlet property="requisitionBtn" destination="P7F-5j-X2M" id="st3-hQ-aGV"/>
@@ -1535,6 +1542,7 @@
                         <outlet property="requisitionsContainer" destination="B8c-jN-sYC" id="4Ah-Ui-mIz"/>
                         <outlet property="requisitionsTitltle" destination="vfk-qe-Fkg" id="0VZ-4h-y9M"/>
                         <outlet property="scrollView" destination="7np-98-bOy" id="7KJ-C2-PWJ"/>
+                        <outlet property="sitesLabel" destination="A3u-iG-vlg" id="RsA-IR-ENs"/>
                         <outlet property="spBudgeItem" destination="PiE-c4-AfB" id="V6D-8x-bJN"/>
                         <outlet property="spCenterCost" destination="HyJ-LO-1Ve" id="0QI-RF-mPz"/>
                         <outlet property="spCompany" destination="lBU-P9-8fk" id="iA5-Wz-e1Q"/>

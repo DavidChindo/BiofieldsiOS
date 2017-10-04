@@ -15,6 +15,14 @@ import SwiftSpinner
 
 class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UITextViewDelegate,UITableViewDelegate, UITableViewDataSource, FormRequisitionDelegate{
     
+    @IBOutlet weak var filesLbl: UILabel!
+    @IBOutlet weak var infoBudgetLbl: UILabel!
+    @IBOutlet weak var isUrgentLabel: UILabel!
+    @IBOutlet weak var isBilledLabel: UILabel!
+    @IBOutlet weak var paymoneyLabel: UILabel!
+    @IBOutlet weak var notesView: UIView!
+    @IBOutlet weak var notesLbl: UILabel!
+    @IBOutlet weak var sitesLabel: UILabel!
     @IBOutlet weak var viewDiseable: UIView!
     @IBOutlet weak var acceptBtn: UIButton!
     @IBOutlet weak var majorContainer: UIView!
@@ -123,10 +131,35 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         filesTableView.delegate = fileDataSource
         filesTableView.dataSource = fileDataSource
         providerTxt.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
+        hideFields()
         initTableView()
         repositionFilesTableView()
         
     }
+    
+    func hideFields(){
+        if !isBiofieldsCompany{
+            isBilledLabel.isHidden = true
+            isBilledSegment.isHidden = true
+            isUrgentLabel.isHidden = true
+            urgentePaySegment.isHidden = true
+            sitesLabel.isHidden = true
+            spSite.isHidden = true
+            budgetContainer.isHidden = true
+            infoBudgetLbl.isHidden = true
+            notesLbl.frame = CGRect(x: notesLbl.frame.origin.x, y: sitesLabel.frame.origin.y, width: notesLbl.frame.width, height: notesLbl.frame.height)
+            annotationsTextView.frame = CGRect(x: annotationsTextView.frame.origin.x, y: spSite.frame.origin.y + 12, width: annotationsTextView.frame.width, height: annotationsTextView.frame.height)
+            notesView.frame = CGRect(x: notesView.frame.origin.x, y: annotationsTextView.frame.height + annotationsTextView.frame.origin.y + 1, width: notesView.frame.width, height: notesView.frame.height)
+            paymoneyLabel.frame = CGRect(x: paymoneyLabel.frame.origin.x, y: notesView.frame.origin.y + 12, width: paymoneyLabel.frame.width, height: paymoneyLabel.frame.height)
+            spPayMoney.frame = CGRect(x: spPayMoney.frame.origin.x, y: paymoneyLabel.frame.origin.y + paymoneyLabel.frame.height + 8, width: spPayMoney.frame.width, height: spPayMoney.frame.height)
+            generalContainer.frame = CGRect(x: generalContainer.frame.origin.x, y: generalContainer.frame.origin.y, width: generalContainer.frame.width, height: spPayMoney.frame.height + spPayMoney.frame.origin.y + 12)
+            filesLbl.frame = CGRect(x: filesLbl.frame.origin.x, y: generalContainer.frame.origin.y + generalContainer.frame.height + 16 , width: filesLbl.frame.width, height: filesLbl.frame.height)
+            filesBtn.frame = CGRect(x: filesBtn.frame.origin.x, y: filesLbl.frame.origin.y - 2, width: filesBtn.frame.width, height: filesBtn.frame.height)
+            filesContainer.frame = CGRect(x: filesContainer.frame.origin.x, y: filesBtn.frame.origin.y + filesBtn.frame.height + 12 , width: filesContainer.frame.width, height: filesContainer.frame.height)
+            repositionFilesTableView()
+        }
+    }
+    
     
     func onSuccessSent(requisition: RequisitionResponse) {
         if requisition != nil{
@@ -183,9 +216,11 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     }
     
     func textFieldDidChange(textField: UITextField) {
-        if textField == providerTxt{
-            if !(providerTxt.text?.isEmpty)! {
-                search(word: providerTxt.text!)
+        if isBiofieldsCompany {
+            if textField == providerTxt{
+                if !(providerTxt.text?.isEmpty)! {
+                    search(word: providerTxt.text!)
+                }
             }
         }
     }
@@ -338,7 +373,8 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     }
     
     @IBAction func onSentRequisitionClick(_ sender: Any) {
-        if validateForm() {
+        let validate: Bool = isBiofieldsCompany ? validateForm() : validateFormNotBiofields()
+        if validate {
             SwiftSpinner.show("Enviando...")
             requisitionPresenter?.sentRequisition(requisitionRequest: createRequisition())
         }
@@ -365,9 +401,6 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         
         return requisitionRequest
     }
-    
-    
-    
     
     func uploadZip(reqNumber: String){
         do {
@@ -602,18 +635,56 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             return false
         }else if !validateBudgeInfo(){
             return false
-        /*}else if !LogicUtils.validateSegmented(segmented: includeSegment){
-            let message = String(format: Constants.ERROR_MESSAGE, "¿Puede incluirse / reemplazar otra partida?")
+            /*}else if !LogicUtils.validateSegmented(segmented: includeSegment){
+             let message = String(format: Constants.ERROR_MESSAGE, "¿Puede incluirse / reemplazar otra partida?")
+             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+             return false
+             }else if !LogicUtils.validateSegmented(segmented: deleteSegment){
+             let message = String(format: Constants.ERROR_MESSAGE, "¿Se puede eliminar otra partida?")
+             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+             return false
+             }else if !LogicUtils.validateSegmented(segmented: indispensableSegment){
+             let message = String(format: Constants.ERROR_MESSAGE, "¿Es indispensable para la operación?")
+             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+             return false*/
+        }else if FormRequisitionViewController.files.isEmpty{
+            let message = String(format: Constants.ERROR_MESSAGE, "Archivos de Soporte")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
-        }else if !LogicUtils.validateSegmented(segmented: deleteSegment){
-            let message = String(format: Constants.ERROR_MESSAGE, "¿Se puede eliminar otra partida?")
+        }else if FormRequisitionViewController.BUDGES.isEmpty{
+            let message = String(format: Constants.ERROR_MESSAGE, "Partidas de Requisición")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
             return false
-        }else if !LogicUtils.validateSegmented(segmented: indispensableSegment){
-            let message = String(format: Constants.ERROR_MESSAGE, "¿Es indispensable para la operación?")
+        }else{
+            return true
+        }
+    }
+    
+    func validateFormNotBiofields()-> Bool{
+        if !LogicUtils.validateSpinner(spinner: spCompany, wasChanged: FormRequisitionViewController.spCompanyChage){
+            let message = String(format: Constants.ERROR_MESSAGE, "Empresa")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
-            return false*/
+            return false
+        }else if !LogicUtils.validateSpinner(spinner: spCenterCost, wasChanged: FormRequisitionViewController.SpCenterCostChage){
+            let message = String(format: Constants.ERROR_MESSAGE, "Centro del Costo")
+            DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+            return false
+        }else if !LogicUtils.validateSpinner(spinner: spBudgeItem, wasChanged: FormRequisitionViewController.SpBudgeItemChage){
+            let message = String(format: Constants.ERROR_MESSAGE, "Partida de presupuesto")
+            DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+            return false
+        }else if !LogicUtils.validateTextField(textField: providerTxt){
+            let message = String(format: Constants.ERROR_MESSAGE, "Proveedor")
+            DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+            return false
+        }else if !LogicUtils.validateTextView(textView: descriptionTextView){
+            let message = String(format: Constants.ERROR_MESSAGE, "Descripción del requerimiento")
+            DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+            return false
+        }else if !LogicUtils.validateSpinner(spinner: spPayMoney, wasChanged: FormRequisitionViewController.SpPayMoneyChage){
+            let message = String(format: Constants.ERROR_MESSAGE, "Moneda de pago")
+            DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
+            return false
         }else if FormRequisitionViewController.files.isEmpty{
             let message = String(format: Constants.ERROR_MESSAGE, "Archivos de Soporte")
             DesignUtils.messageError(vc: self, title: "Campo Obligatorio", msg: message)
