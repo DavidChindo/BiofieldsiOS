@@ -12,6 +12,13 @@ import Realm
 
 class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextFieldDelegate,UITableViewDelegate, UITableViewDataSource{
     
+    @IBOutlet weak var qtyView: UIView!
+    @IBOutlet weak var qtyLabel: UILabel!
+    @IBOutlet weak var priceView: UIView!
+    @IBOutlet weak var priceLabel: UILabel!
+    @IBOutlet weak var uomlabel: UILabel!
+    @IBOutlet weak var viewProduct: UIView!
+    @IBOutlet weak var titleProduct: UILabel!
     @IBOutlet weak var cardView: UIView!
     @IBOutlet weak var totalLabel: UILabel!
     @IBOutlet weak var qtytxt: UITextField!
@@ -55,6 +62,41 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
         qtytxt.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         productServicetextField.addTarget(self, action: #selector(textFieldDidChange(textField:)), for: UIControlEvents.editingChanged)
         productServicetextField.isEnabled = false
+        hideFields()
+    }
+    
+    func hideFields(){
+        if(!isBiofieldsCompany){
+            titleProduct.isHidden = true
+            productServiceSeg.isHidden = true
+            productServicetextField.isHidden = true
+            viewProduct.isHidden = true
+            let ypricetxf = uomlabel.frame.origin.y
+            let yqtylbl = spUOM.frame.origin.y + 12
+            let yqtytxf = priceLabel.frame.origin.y - 12
+            let ytotal = pricetxt.frame.origin.y
+            uomlabel.frame = CGRect(x: uomlabel.frame.origin.x, y: titleProduct.frame.origin.y, width: uomlabel.frame.width, height: uomlabel.frame.height)
+            spUOM.frame = CGRect(x: spUOM.frame.origin.x, y: productServiceSeg.frame.origin.y, width: spUOM.frame.width, height: spUOM.frame.height)
+            priceLabel.frame = CGRect(x: priceLabel.frame.origin.x, y: productServicetextField.frame.origin.y + 16, width: priceLabel.frame.width, height: priceLabel.frame.height)
+            
+            pricetxt.frame = CGRect(x: pricetxt.frame.origin.x, y: ypricetxf, width: pricetxt.frame.width, height: pricetxt.frame.height)
+            
+            priceView.frame = CGRect(x: priceView.frame.origin.x, y: pricetxt.frame.origin.y + pricetxt.frame.height + 1, width: priceView.frame.width, height: priceView.frame.height)
+            
+            qtyLabel.frame = CGRect(x: qtyLabel.frame.origin.x, y: yqtylbl, width: qtyLabel.frame.width, height: qtyLabel.frame.height)
+            qtytxt.frame = CGRect(x: qtytxt.frame.origin.x, y: yqtytxf, width: qtytxt.frame.width, height: qtytxt.frame.height)
+            qtyView.frame = CGRect(x: qtyView.frame.origin.x, y: qtytxt.frame.origin.y + qtytxt.frame.height + 1, width: qtyView.frame.width, height: qtyView.frame.height)
+            totalLabel.frame = CGRect(x: totalLabel.frame.origin.x, y: ytotal, width: totalLabel.frame.width, height: totalLabel.frame.height)
+            
+            cardView.frame = CGRect(x: cardView.frame.origin.x, y: cardView.frame.origin.y, width: cardView.frame.width, height: totalLabel.frame.height + totalLabel.frame.origin.y + 12)
+            
+            cancelBtn.frame = CGRect(x: cancelBtn.frame.origin.x, y: cardView.frame.height + cardView.frame.origin.y + 20, width: cancelBtn.frame.width, height: cancelBtn.frame.height)
+            
+            acceptBtn.frame = CGRect(x: acceptBtn.frame.origin.x, y: cancelBtn.frame.origin.y, width: acceptBtn.frame.width, height: acceptBtn.frame.height)
+            
+            scrollView.contentSize = CGSize(width: scrollView.frame.width, height: cancelBtn.frame.height + 20)
+                
+        }
     }
     
     @IBAction func onSelectProductServiceChange(_ sender: Any) {

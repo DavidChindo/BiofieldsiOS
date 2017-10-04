@@ -16,6 +16,7 @@ public class BudgeItemResponse: NSObject,Mappable {
     var itemIdBudge:String?
     var qtyBudge:String?
     var priceBudge:String?
+    var notes:String?
     
     public required convenience init?(map: Map) {
         self.init()
@@ -27,6 +28,6 @@ public class BudgeItemResponse: NSObject,Mappable {
         itemIdBudge <- map["reqitem_item_number"]
         qtyBudge <- map["reqitem_qty"]
         priceBudge <- map["reqitem_price"]
-        
+        notes <- map["reqitem_notas"]
     }
 }

@@ -36,13 +36,14 @@ class ItemBudgeDataSource: NSObject, UITableViewDataSource,UITableViewDelegate {
         let item = self.items[indexPath.row]
         cell.tag = indexPath.row
         
-        
         if item != nil{
+            let desc = (item.descBudge?.isEmpty)! && (item.itemIdBudge?.isEmpty)! ? item.notes :
+                !(item.descBudge?.isEmpty)! && (item.itemIdBudge?.isEmpty)! ? item.notes! + " " + item.descBudge! :
+                item.notes! + " " + item.itemIdBudge!
             cell.qtyLbl.text = item.qtyBudge
-            cell.descLbl.text = item.descBudge
+            cell.descLbl.text = desc
             cell.amountLbl.text = "$" + DesignUtils.numberFormat(numberd: Double(item.priceBudge!)!)
         }
-        
         
         return cell
     }

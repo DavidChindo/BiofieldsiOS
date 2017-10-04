@@ -74,7 +74,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     static var files:[String] = []
     static var filesPath:[URL] = []
     static var needPreload:Bool = false
-    
+    var isBiofieldsCompany:Bool = true
     
     private var myTableView: UITableView!
     var budgeDataSource: BudgeItemDataSource?
@@ -94,6 +94,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     }
     
     func initViews(){
+        isBiofieldsCompany = Prefs.instance().bool(Constants.IS_BIO_PREFS)
         DesignUtils.containerRound(content: generalContainer)
         DesignUtils.containerRound(content: budgetContainer)
         DesignUtils.containerRound(content: filesContainer)

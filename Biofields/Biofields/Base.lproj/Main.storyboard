@@ -1744,13 +1744,20 @@
                         <outlet property="cancelBtn" destination="qXA-PE-MEe" id="6Vi-py-FQa"/>
                         <outlet property="cardView" destination="V65-4Q-efa" id="2KQ-bs-cLi"/>
                         <outlet property="descriptiongral" destination="yBB-wa-Rrk" id="1gF-ci-ZTe"/>
+                        <outlet property="priceLabel" destination="Yc1-3j-Gty" id="9M0-7P-UnW"/>
+                        <outlet property="priceView" destination="6lh-S0-Nho" id="HQO-4V-CWr"/>
                         <outlet property="pricetxt" destination="cct-I2-uY0" id="fSF-rj-5L4"/>
                         <outlet property="productServiceSeg" destination="AZM-Uy-Flu" id="Wwo-ih-reu"/>
                         <outlet property="productServicetextField" destination="wdj-Li-Sm5" id="eK6-g7-1qC"/>
+                        <outlet property="qtyLabel" destination="244-ZJ-RaU" id="ieg-en-bCQ"/>
+                        <outlet property="qtyView" destination="6Fw-tT-vI2" id="Q3x-De-kwn"/>
                         <outlet property="qtytxt" destination="QYT-zx-eXz" id="sXm-zU-4Cy"/>
                         <outlet property="scrollView" destination="lVq-4E-8xA" id="vnw-uI-5T2"/>
                         <outlet property="spUOM" destination="6BL-Qt-cB2" id="I1W-Sg-xZx"/>
+                        <outlet property="titleProduct" destination="RIc-tD-3BY" id="5Td-ys-nay"/>
                         <outlet property="totalLabel" destination="ODv-Wx-eEP" id="UmU-Q6-NtG"/>
+                        <outlet property="uomlabel" destination="N3c-ph-NNb" id="lIY-6U-xEU"/>
+                        <outlet property="viewProduct" destination="mej-Ze-GP7" id="UXN-s1-IGY"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="fRi-4M-QAM" userLabel="First Responder" sceneMemberID="firstResponder"/>
