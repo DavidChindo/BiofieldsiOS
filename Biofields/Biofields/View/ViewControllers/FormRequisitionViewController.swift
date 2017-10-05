@@ -15,6 +15,9 @@ import SwiftSpinner
 
 class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UIDocumentMenuDelegate,UIDocumentPickerDelegate,UINavigationControllerDelegate,UITextViewDelegate,UITableViewDelegate, UITableViewDataSource, FormRequisitionDelegate{
     
+    @IBOutlet weak var indispensableView: UIView!
+    @IBOutlet weak var deleteView: UIView!
+    @IBOutlet weak var includeView: UIView!
     @IBOutlet weak var filesLbl: UILabel!
     @IBOutlet weak var infoBudgetLbl: UILabel!
     @IBOutlet weak var isUrgentLabel: UILabel!
@@ -109,6 +112,9 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         DesignUtils.containerRound(content: requisitionsContainer)
         requisitionPresenter = FormRequisitionPresenter(delegate: self)
         setupPresenter(requisitionPresenter!)
+        includeSegment.isEnabled = false
+        deleteSegment.isEnabled = false
+        indispensableSegment.isEnabled = false
         descriptionTextView.delegate = self
         annotationsTextView.delegate = self
         spCompany.delegate = self
@@ -331,6 +337,39 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             if FormRequisitionViewController.isIndispensableStatic >= 0{
                 indispensableSegment.selectedSegmentIndex = FormRequisitionViewController.isIndispensableStatic
             }
+            if poaSegment.selectedSegmentIndex == 1{
+                includeView.isHidden = true
+                includeSegment.isEnabled = true
+            }else{
+                includeView.isHidden = false
+                includeSegment.isEnabled = false
+                includeSegment.selectedSegmentIndex = -1
+                deleteSegment.isEnabled = false
+                deleteSegment.selectedSegmentIndex = -1
+                indispensableSegment.selectedSegmentIndex = -1
+                indispensableSegment.isEnabled = false
+                deleteView.isHidden = false
+                indispensableView.isHidden = false
+            }
+                if includeSegment.selectedSegmentIndex == 1{
+                    deleteView.isHidden = true
+                    deleteSegment.isEnabled = true
+                }else{
+                    deleteView.isHidden = false
+                    deleteSegment.isEnabled = false
+                    deleteSegment.selectedSegmentIndex = -1
+                    indispensableSegment.isEnabled = false
+                    indispensableSegment.selectedSegmentIndex = -1
+                    indispensableView.isHidden = false
+                }
+            if deleteSegment.selectedSegmentIndex == 1{
+                indispensableView.isHidden = true
+                indispensableSegment.isEnabled = true
+            }else{
+                indispensableView.isHidden = false
+                indispensableSegment.isEnabled = false
+                indispensableSegment.selectedSegmentIndex = -1
+            }
         }
     }
     
@@ -342,12 +381,45 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     }
     
     @IBAction func isPoaSelected(_ sender: Any) {
+        if poaSegment.selectedSegmentIndex == 1{
+            includeView.isHidden = true
+            includeSegment.isEnabled = true
+        }else{
+            includeView.isHidden = false
+            includeSegment.isEnabled = false
+            includeSegment.selectedSegmentIndex = -1
+            deleteSegment.isEnabled = false
+            deleteSegment.selectedSegmentIndex = -1
+            indispensableSegment.selectedSegmentIndex = -1
+            indispensableSegment.isEnabled = false
+            deleteView.isHidden = false
+            indispensableView.isHidden = false
+        }
     }
     
     @IBAction func canIncludeSelected(_ sender: Any) {
+        if includeSegment.selectedSegmentIndex == 1{
+            deleteView.isHidden = true
+            deleteSegment.isEnabled = true
+        }else{
+            deleteView.isHidden = false
+            deleteSegment.isEnabled = false
+            deleteSegment.selectedSegmentIndex = -1
+            indispensableSegment.isEnabled = false
+            indispensableSegment.selectedSegmentIndex = -1
+            indispensableView.isHidden = false
+        }
     }
     
     @IBAction func canDeleteSelected(_ sender: Any) {
+        if deleteSegment.selectedSegmentIndex == 1{
+            indispensableView.isHidden = true
+            indispensableSegment.isEnabled = true
+        }else{
+            indispensableView.isHidden = false
+            indispensableSegment.isEnabled = false
+            indispensableSegment.selectedSegmentIndex = -1
+        }
     }
     
     @IBAction func isIndispensableSelected(_ sender: Any) {
@@ -386,18 +458,18 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         let reqRubroId = Int(budges[spBudgeItem.selectedIndex].rubroId!)
         let reqVendor = providerTxt.text?.trimmingCharacters(in: .whitespacesAndNewlines)
         let reqDesc = descriptionTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
-        let reqSite = Int(sites[spSite.selectedIndex].siteId!)
+        let reqSite = isBiofieldsCompany ? Int(sites[spSite.selectedIndex].siteId!) : -1
         let reqNotes = annotationsTextView.text.trimmingCharacters(in: .whitespacesAndNewlines)
         let reqMoneId = Int(methodsPay[spPayMoney.selectedIndex].id!)
-        let reqFacturado = isBilledSegment.selectedSegmentIndex == 0
-        let reqUrgente = urgentePaySegment.selectedSegmentIndex == 0 ? 1 : 0
-        let reqPOAa = poaSegment.selectedSegmentIndex == 0
-        let reqIncluirPOAb = reqPOAa ? includeSegment.selectedSegmentIndex == 0 : nil
-        let reqDeletePOAc = reqPOAa ? deleteSegment.selectedSegmentIndex == 0 : nil
-        let reqOperaciond = reqPOAa ? indispensableSegment.selectedSegmentIndex == 0 : nil
+        let reqFacturado = isBiofieldsCompany ? isBilledSegment.selectedSegmentIndex == 0 : nil
+        let reqUrgente = isBiofieldsCompany ?  urgentePaySegment.selectedSegmentIndex == 0 ? 1 : 0 : -1
+        let reqPOAa = isBiofieldsCompany ? poaSegment.selectedSegmentIndex == 0 : nil
+        let reqIncluirPOAb = isBiofieldsCompany ? reqPOAa! ? includeSegment.selectedSegmentIndex == 0 : nil : nil
+        let reqDeletePOAc = isBiofieldsCompany ? reqPOAa! ? deleteSegment.selectedSegmentIndex == 0 : nil : nil
+        let reqOperaciond =  isBiofieldsCompany ?reqPOAa! ? indispensableSegment.selectedSegmentIndex == 0 : nil : nil
         let reqItem = FormRequisitionViewController.BUDGES
         
-        let requisitionRequest = RequisitionRequest(reqCompanyId: reqCompanyId!, reqCostCenterId: reqCostCenterId!, reqRubroId: reqRubroId!, reqVendedorNumber: reqVendor!, reqDesc: reqDesc, reqSite: reqSite!, reqNotes: reqNotes, reqMonedaId: reqMoneId!, reqFacturado: reqFacturado, reqUrgente: reqUrgente, reqPOAa: reqPOAa, reqIncluirPOAb: reqIncluirPOAb!, reqDeletePOAc: reqDeletePOAc!, reqOperaciond: reqOperaciond!, reqitem: reqItem)
+        let requisitionRequest = RequisitionRequest(reqCompanyId: reqCompanyId!, reqCostCenterId: reqCostCenterId!, reqRubroId: reqRubroId!, reqVendedorNumber: reqVendor!, reqDesc: reqDesc, reqSite: reqSite!, reqNotes: reqNotes, reqMonedaId: reqMoneId!, reqFacturado: reqFacturado, reqUrgente: reqUrgente, reqPOAa: reqPOAa, reqIncluirPOAb: reqIncluirPOAb, reqDeletePOAc: reqDeletePOAc, reqOperaciond: reqOperaciond, reqitem: reqItem)
         
         return requisitionRequest
     }

@@ -99,6 +99,10 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         requisitionPresenter?.requisitionAuth(id: 1)
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        SwiftSpinner.show("Cargando...")
+        requisitionPresenter?.requisitionAuth(id: 1)
+    }
     
     func showBar(){
         searchBarShow()

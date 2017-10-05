@@ -40,7 +40,7 @@ class BudgeItemDataSource: NSObject, UITableViewDataSource,UITableViewDelegate {
         
         //return this.idProduct != null ? this.idProduct.equals("-1") ? this.descProduct : this.idProduct : this.notes;
         if item != nil{
-            cell.descLabel.text = item.idProduct != nil ? item.idProduct == "-1" ? item.descProduct : item.idProduct : item.notes
+            cell.descLabel.text = !(item.idProduct?.isEmpty)! ? item.idProduct == "-1" ? item.descProduct : item.idProduct : item.notes
         }
         
         return cell

@@ -39,7 +39,9 @@ class FileDetailDataSource: NSObject, UITableViewDataSource,UITableViewDelegate 
         cell.tag = indexPath.row
         
         if file != nil{
-            cell.fileNameLbl.text = nameFile(path: file.url!)
+            if file.url != nil{
+                cell.fileNameLbl.text = nameFile(path: LogicUtils.validateStringByString(word:file.url!))
+            }
         }
         
         return cell
@@ -55,7 +57,7 @@ class FileDetailDataSource: NSObject, UITableViewDataSource,UITableViewDelegate 
     
     func nameFile(path: String)->String{
         var name: String = ""
-        if !path.isEmpty{
+        if LogicUtils.validateString(word: path){
             var paths:[String] = path.components(separatedBy: "/")
             name = paths[paths.count - 1]
         }

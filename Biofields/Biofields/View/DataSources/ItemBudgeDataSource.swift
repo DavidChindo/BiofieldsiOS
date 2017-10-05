@@ -42,7 +42,9 @@ class ItemBudgeDataSource: NSObject, UITableViewDataSource,UITableViewDelegate {
                 item.notes! + " " + item.itemIdBudge!
             cell.qtyLbl.text = item.qtyBudge
             cell.descLbl.text = desc
-            cell.amountLbl.text = "$" + DesignUtils.numberFormat(numberd: Double(item.priceBudge!)!)
+            if !(item.priceBudge?.isEmpty)!{
+                cell.amountLbl.text = "$" + DesignUtils.numberFormat(numberd: Double(item.priceBudge!)!)
+            }
         }
         
         return cell

@@ -48,17 +48,18 @@ class DesignUtils: NSObject {
 
     
     class func messageError(vc:UIViewController, title: String, msg: String){
-        vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .error )
+        vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .error ),.spaceHeight(height: 80)
             ])
+        
     }
     
     class func messageSuccess(vc:UIViewController, title: String, msg: String){
-        vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .success )
+        vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .success ),.spaceHeight(height: 80)
             ])
     }
     
     class func messageWarning(vc: UIViewController, title: String, msg: String){
-        vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .warning)])
+        vc.self.showSpace(title: title, description: msg, spaceOptions: [.spaceStyle(style: .warning),.spaceHeight(height: 80)])
     }
     
     class func containerRound(content: UIView){

@@ -91,6 +91,11 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
         }
     }
     
+    override func viewDidAppear(_ animated: Bool) {
+        SwiftSpinner.show("Cargando...")
+        requisitionPresenter?.requisitionSeg(id: 1)
+    }
+    
     func refreshData(ender: UIRefreshControl){
         requisitionPresenter?.requisitionSeg(id: 1)
     }

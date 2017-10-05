@@ -19,15 +19,15 @@ public class RequisitionRequest: NSObject,Mappable {
     var reqSite:Int = -1
     var reqNotes:String?
     var reqMonedaId:Int = -1
-    var reqFacturado:Bool = false
+    var reqFacturado:Bool? = false
     var reqUrgente:Int = -1
-    var reqPOAa:Bool = false
-    var reqIncluirPOAb:Bool = false
-    var reqDeletePOAc:Bool = false
-    var reqOperaciond:Bool = false
+    var reqPOAa:Bool? = false
+    var reqIncluirPOAb:Bool? = false
+    var reqDeletePOAc:Bool? = false
+    var reqOperaciond:Bool? = false
     var reqitem:[BudgeItemRequest] = []
     
-    public init(reqCompanyId:Int,  reqCostCenterId:Int, reqRubroId: Int, reqVendedorNumber: String, reqDesc: String, reqSite:Int, reqNotes: String, reqMonedaId:Int, reqFacturado: Bool, reqUrgente:Int, reqPOAa: Bool, reqIncluirPOAb:Bool, reqDeletePOAc: Bool, reqOperaciond: Bool, reqitem:[BudgeItemRequest]) {
+    public init(reqCompanyId:Int,  reqCostCenterId:Int, reqRubroId: Int, reqVendedorNumber: String, reqDesc: String, reqSite:Int, reqNotes: String, reqMonedaId:Int, reqFacturado: Bool?, reqUrgente:Int, reqPOAa: Bool?, reqIncluirPOAb:Bool?, reqDeletePOAc: Bool?, reqOperaciond: Bool?, reqitem:[BudgeItemRequest]) {
         self.reqCompanyId = reqCompanyId
         self.reqCostCenterId = reqCostCenterId
         self.reqRubroId = reqRubroId

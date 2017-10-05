@@ -105,11 +105,17 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
             frame.size.height = commentTxtView.contentSize.height
             commentTxtView.frame = frame
             involvedTitle.frame.origin.y = commentTxtView.frame.origin.y + commentTxtView.frame.height + 4
-            addInvolved(involved: requisition.applicantRequisition!,role: "Solicitante")
-            addInvolved(involved: requisition.titularRequisition!, role: "Comprador")
-            addInvolved(involved: requisition.directorRequisition!, role: "Presupuesto")
-            addInvolved(involved: requisition.buyerRequisition!, role: "Aut N1")
-            addInvolved(involved: requisition.auditorRequisition!, role: "Aut N2")
+            addInvolved(involved: LogicUtils.validateStringByString(word:requisition.applicantRequisition!),role: "Solicitante")
+            addInvolved(involved: LogicUtils.validateStringByString(word:requisition.buyerRequisition!), role: "Aut N1")
+            addInvolved(involved: LogicUtils.validateStringByString(word:requisition.auditorRequisition!), role: "Aut N2")
+            addInvolved(involved: LogicUtils.validateStringByString(word:requisition.titularRequisition!), role: "Comprador")
+            addInvolved(involved: LogicUtils.validateStringByString(word:requisition.directorRequisition!), role: "Presupuesto")
+            if requisition.authDafRequisition != nil{
+                addInvolved(involved: LogicUtils.validateStringByString(word:requisition.authDafRequisition!), role: "")
+            }
+            if requisition.authDgRequisition != nil{
+                addInvolved(involved: LogicUtils.validateStringByString(word:requisition.authDgRequisition!), role: "")
+            }
             involvedStack.frame = CGRect(x: involvedStack.frame.origin.x, y: involvedStack.frame.origin.y, width: involvedStack.frame.width, height: CGFloat(25 * involvedStack.arrangedSubviews.count))
             involvedStack.frame.origin.y = involvedTitle.frame.origin.y + involvedTitle.frame.height + 4
             centerCostTitle.frame.origin.y = involvedStack.frame.origin.y + involvedStack.frame.height + 4
@@ -119,9 +125,14 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
             billedLbl.frame.origin.y = centerCostDivider.frame.origin.y + centerCostDivider.frame.height + 8
             billedImg.frame.origin.y = billedLbl.frame.origin.y - 4
             let imgBilled = UIImage(named: (requisition.billedRequisition?.lowercased().contains("no"))! ? "icoNo" : "icoYes")
-            let urgentPay = UIImage(named: (requisition.urgentRequsition?.lowercased().contains("urgente"))! ? "icoYes" : "icoNo")
+            var urgentPay = UIImage(named:"icoNo")
+            if requisition.urgentRequsition != nil{
+             urgentPay = UIImage(named: (requisition.urgentRequsition?.lowercased().contains("urgente"))! ? "icoYes" : "icoNo")
             urgentBar.backgroundColor = (requisition.urgentRequsition?.lowercased().contains("urgente"))! ? DesignUtils.redBio : DesignUtils.grayStatus
-                
+            }else{
+                urgentBar.backgroundColor = DesignUtils.grayStatus
+            }
+            
             billedImg.image = imgBilled
             billedDivider.frame.origin.y = billedLbl.frame.origin.y + billedLbl.frame.height + 8
             urgentPayLbl.frame.origin.y = billedDivider.frame.origin.y + billedDivider.frame.height + 8
@@ -145,7 +156,8 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
             if requisition.items.count > 0{
                 budgeItemView(budgeItems:requisition.items)
                 itemTableView.isScrollEnabled = false
-                totalAmountLbl.text = String(format: Constants.totalAmountBudge,DesignUtils.numberFormat(numberd:  totalAmount)) as String
+                /*totalAmountLbl.text = String(format: Constants.totalAmountBudge,DesignUtils.numberFormat(numberd:  totalAmount)) as String*/
+                totalAmountLbl.text = LogicUtils.validateStringByString(word: requisition.amountRequsition)
                 DesignUtils.containerRound(content: productContainer)
             }
         }
@@ -205,7 +217,7 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
         dot.font = UIFont(name: "HelveticaNeue", size: 40)
         
         let label = UILabel(frame: CGRect(x: dot.frame.width+2, y: 6, width: view.frame.width, height: 25))
-        label.text = involved+" | "+role
+        label.text = involved
         label.font = UIFont(name: "HelveticaNeue", size: 13)
         label.textColor = UIColor.gray
         view.addSubview(dot)

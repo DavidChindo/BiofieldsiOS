@@ -352,8 +352,8 @@ class BudgeItemFormViewController: BaseViewController,LBZSpinnerDelegate,UITextF
     func budgeItemRequest()->BudgeItemRequest{
         let productService:Bool = productServiceSeg.selectedSegmentIndex == 0  ? true : false
         let notes = descriptiongral.text?.trimmingCharacters(in: .whitespacesAndNewlines)
-        let idProduct = isBiofieldsCompany ? productService ? productServicetextField.text : "-1" : nil
-        let descProduct = isBiofieldsCompany ? !productService ? productServicetextField.text : "-1" : nil
+        let idProduct = isBiofieldsCompany ? productService ? productServicetextField.text : "-1" : ""
+        let descProduct = isBiofieldsCompany ? !productService ? productServicetextField.text : "-1" : ""
         let uom = uomSelected
         let price = Double((pricetxt.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
         let qty = Double((qtytxt.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)

@@ -59,9 +59,14 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
             cell.providerLbl.text = LogicUtils.validateStringByString(word: requisitionObj.salesManNumberRequisition)
             cell.amountLbl.text = LogicUtils.validateStringByString(word: requisitionObj.amountRequisition)
             cell.moneyImg.isHidden = !LogicUtils.validateString(word: requisitionObj.amountRequisition)
+            if requisitionObj.urgentRequisition != nil{
             if (requisitionObj.urgentRequisition?.lowercased().contains("urgente"))!{
                 cell.urgentBar.backgroundColor = DesignUtils.redBio
                 cell.UrgentLbl.isHidden = false
+            }else{
+                cell.urgentBar.backgroundColor = DesignUtils.grayStatus
+                cell.UrgentLbl.isHidden = true
+            }
             }else{
                 cell.urgentBar.backgroundColor = DesignUtils.grayStatus
                 cell.UrgentLbl.isHidden = true
