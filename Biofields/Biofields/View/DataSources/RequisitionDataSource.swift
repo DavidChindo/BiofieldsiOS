@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate {
+class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate,UIScrollViewDelegate {
     
     var tableView: UITableView?
     var requisitions: [RequisitionItemResponse] = []
@@ -83,6 +83,22 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         delegate?.onOpenRequisition(requisition: self.requisitions[indexPath.row])
     }
+    
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if (Int(scrollView.contentOffset.y + scrollView.frame.size.height) == Int(scrollView.contentSize.height + scrollView.contentInset.bottom)) {
+            delegate?.onRefreshRequisitions(isAuth: true)
+            print("valor verdad")
+        }else{
+        
+        }
+     
+    }
+    
+    /*func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath){
+        if indexPath.row + 1 == self.requisitions.count {
+     
+        }
+    }*/
     
     func update(_ items: [RequisitionItemResponse]){
         self.requisitions.removeAll()

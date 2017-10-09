@@ -15,6 +15,7 @@ class RequisitionSegPresenter: BasePresenter {
     
     var delegate: RequisitionAuthDelegate?
     var request: Alamofire.Request?
+    var mIsRequesting: Bool = false
     
     init(delegate: RequisitionAuthDelegate) {
         self.delegate = delegate
@@ -30,23 +31,29 @@ class RequisitionSegPresenter: BasePresenter {
         case .unknown, .offline:
             self.delegate?.onRequisitionError(msgError: "No hay conexión a internet")
         case .online(.wwan),.online(.wiFi):
-            do {
-                try
-                    request = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization" : authorization]).responseArray(completionHandler:{(response: DataResponse<[RequisitionItemResponse]>) in
-                        switch response.result{
-                        case .success:
-                            let code = response.response?.statusCode
-                            if code == Constants.STATUS_OK_GET{
-                                self.delegate?.onRequisitionAuthSuccess(requisitions: response.result.value!)
+            if !mIsRequesting{
+                mIsRequesting = true
+                do {
+                    try
+                        request = Alamofire.request(url, method: .get, parameters: nil, encoding: JSONEncoding.default, headers: ["Authorization" : authorization]).responseArray(completionHandler:{(response: DataResponse<[RequisitionItemResponse]>) in
+                            switch response.result{
+                            case .success:
+                                let code = response.response?.statusCode
+                                self.mIsRequesting = false
+                                if code == Constants.STATUS_OK_GET{
+                                    self.delegate?.onRequisitionAuthSuccess(requisitions: response.result.value!)
+                                }
+                            case .failure(let error):
+                                print(error.localizedDescription)
+                                self.mIsRequesting = false
+                                self.delegate?.onRequisitionError(msgError:  "Por el momento no se pueden descargar las requisiciones de seguimiento")
                             }
-                        case .failure(let error):
-                            print(error.localizedDescription)
-                            self.delegate?.onRequisitionError(msgError:  "Por el momento no se pueden descargar las requisiciones de seguimiento")
-                        }
-                    })
-            } catch let error  {
-                print(error.localizedDescription)
-                self.delegate?.onRequisitionError(msgError:  error.localizedDescription)
+                        })
+                } catch let error  {
+                    print(error.localizedDescription)
+                    self.mIsRequesting = false
+                    self.delegate?.onRequisitionError(msgError:  error.localizedDescription)
+                }
             }
         }
     }

@@ -15,4 +15,6 @@ public protocol RequisitionAuthDelegate: NSObjectProtocol {
     func onRequisitionError(msgError: String)
     
     func onOpenRequisition(requisition: RequisitionItemResponse)
+    
+    func onRefreshRequisitions(isAuth : Bool)
 }

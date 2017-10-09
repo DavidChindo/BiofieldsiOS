@@ -59,6 +59,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>StatefulTableView.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>SwiftSpinner.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -72,7 +77,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>2DF80013CAFB5EB606F477AD9B5CBC03</key>
+		<key>0695DD47A541C33868F657AE5419624D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>182655DEE9BFB209994D6E389F5533BB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>24C1955B3507D5278D0DFFEF9E5B7AE9</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -87,32 +102,12 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>37562957726CB0E80A6FF7B044405FAF</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>47F6146C5E3EC0A9E509A5172CDFDF5F</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>506F8BE1268D01522A0D5A091905C913</key>
+		<key>32986E5B664F5C0BDF50B9AFE9F91523</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>6BB1C1403B2419F911818DA8413FDA07</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7C34F2796AC9772091EAD1F495911CB8</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>7D406D9858C1AC638E2852135F09AED8</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -127,12 +122,27 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>B9D45E46206D7D0C826EA9F4CABD0707</key>
+		<key>96892C89062EE4830CC6D82DD117F24F</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>96ABF3E6A6BB30F5DB3B40B9938D1A97</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ACA343EF112EE87B5E5F32F1257E5DC5</key>
 		<dict>
 			<key>primary</key>
 			<true/>
 		</dict>
 		<key>C235F77E101E742652CCF98FFDFA5182</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>ECC590A3F579C892AEB072281B3C797D</key>
 		<dict>
 			<key>primary</key>
 			<true/>

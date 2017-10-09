@@ -27,6 +27,18 @@ class RealmManager: NSObject {
         })
     }
     
+    class func deleteClass<T: Object>(_ object: T.Type,value: String){
+        let realm = try! Realm()
+        let predictate = NSPredicate(format: "needAuth = %@", value)
+        let resultsRealm = try! Realm().objects(object.self).filter(predictate)
+        try! realm.write { () -> Void in
+            if resultsRealm.count > 0{
+                realm.delete(resultsRealm)
+            }
+        }
+        
+    }
+    
     class func list<T: Object>(_ object : T.Type)->[T]{
         var results:[T] = []
         let resultsRealm = try! Realm().objects(object)

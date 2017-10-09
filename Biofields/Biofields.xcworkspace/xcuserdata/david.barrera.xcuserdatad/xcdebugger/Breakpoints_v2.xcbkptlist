@@ -186,11 +186,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528574304.442016"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "171"
-            endingLineNumber = "171"
+            startingLineNumber = "183"
+            endingLineNumber = "183"
             landmarkName = "user()"
             landmarkType = "7">
          </BreakpointContent>
@@ -362,11 +362,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/RequisitionAuthPresenter.swift"
-            timestampString = "526857778.753474"
+            timestampString = "529259235.520968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "35"
-            endingLineNumber = "35"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "requisitionAuth(id:)"
             landmarkType = "7">
             <Locations>
@@ -410,11 +410,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/RequisitionAuthPresenter.swift"
-            timestampString = "526857783.369613"
+            timestampString = "529259235.520968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "37"
-            endingLineNumber = "37"
+            startingLineNumber = "40"
+            endingLineNumber = "40"
             landmarkName = "requisitionAuth(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -426,11 +426,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/RequisitionAuthPresenter.swift"
-            timestampString = "526857785.98913"
+            timestampString = "529259235.520968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "43"
-            endingLineNumber = "43"
+            startingLineNumber = "47"
+            endingLineNumber = "47"
             landmarkName = "requisitionAuth(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -442,11 +442,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/RequisitionAuthPresenter.swift"
-            timestampString = "526857787.221811"
+            timestampString = "529259235.520968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "48"
-            endingLineNumber = "48"
+            startingLineNumber = "53"
+            endingLineNumber = "53"
             landmarkName = "requisitionAuth(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -458,11 +458,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/RequisitionAuthPresenter.swift"
-            timestampString = "526857828.272708"
+            timestampString = "529259235.520968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "31"
-            endingLineNumber = "31"
+            startingLineNumber = "32"
+            endingLineNumber = "32"
             landmarkName = "requisitionAuth(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -474,11 +474,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/DataSources/RequisitionDataSource.swift"
-            timestampString = "528875162.529459"
+            timestampString = "529259235.520968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "96"
-            endingLineNumber = "96"
+            startingLineNumber = "112"
+            endingLineNumber = "112"
             landmarkName = "RequisitionDataSource"
             landmarkType = "3">
          </BreakpointContent>
@@ -490,11 +490,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/RequisitionAuthPresenter.swift"
-            timestampString = "526860176.921188"
+            timestampString = "529259235.520968"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "32"
-            endingLineNumber = "32"
+            startingLineNumber = "34"
+            endingLineNumber = "34"
             landmarkName = "requisitionAuth(id:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -586,11 +586,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
+            timestampString = "529263968.323703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "460"
-            endingLineNumber = "460"
+            startingLineNumber = "476"
+            endingLineNumber = "476"
             landmarkName = "createRequisition()"
             landmarkType = "7">
          </BreakpointContent>
@@ -602,11 +602,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
+            timestampString = "529263968.323703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "478"
-            endingLineNumber = "478"
+            startingLineNumber = "494"
+            endingLineNumber = "494"
             landmarkName = "uploadZip(reqNumber:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -714,11 +714,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528315093.444206"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "140"
-            endingLineNumber = "140"
+            startingLineNumber = "152"
+            endingLineNumber = "152"
             landmarkName = "findByDescriptions(_:fieldName:value:fieldName2:value2:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -746,11 +746,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528315093.444206"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "148"
-            endingLineNumber = "148"
+            startingLineNumber = "160"
+            endingLineNumber = "160"
             landmarkName = "findByProvider(_:fieldName:value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -938,11 +938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528315093.444206"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "151"
-            endingLineNumber = "151"
+            startingLineNumber = "163"
+            endingLineNumber = "163"
             landmarkName = "findByProvider(_:fieldName:value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -976,22 +976,6 @@
             startingLineNumber = "59"
             endingLineNumber = "59"
             landmarkName = "initViews()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "449"
-            endingLineNumber = "449"
-            landmarkName = "onSentRequisitionClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -1114,11 +1098,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528328227.491272"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "149"
-            endingLineNumber = "149"
+            startingLineNumber = "161"
+            endingLineNumber = "161"
             landmarkName = "findByProvider(_:fieldName:value:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1530,11 +1514,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
+            timestampString = "529263968.323703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "515"
-            endingLineNumber = "515"
+            startingLineNumber = "530"
+            endingLineNumber = "530"
             landmarkName = "viewDidAppear(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1546,11 +1530,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
+            timestampString = "529263968.323703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "503"
-            endingLineNumber = "503"
+            startingLineNumber = "518"
+            endingLineNumber = "518"
             landmarkName = "FormRequisitionViewController"
             landmarkType = "3">
          </BreakpointContent>
@@ -1562,11 +1546,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
+            timestampString = "529263968.323703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "502"
-            endingLineNumber = "502"
+            startingLineNumber = "517"
+            endingLineNumber = "517"
             landmarkName = "textViewDidBeginEditing(_:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1593,22 +1577,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "452"
-            endingLineNumber = "452"
-            landmarkName = "onSentRequisitionClick(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
             timestampString = "528875710.154166"
             startingColumnNumber = "9223372036854775807"
@@ -1626,11 +1594,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionsAuthViewController.swift"
-            timestampString = "528875835.211573"
+            timestampString = "529260562.273769"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "126"
-            endingLineNumber = "126"
+            startingLineNumber = "151"
+            endingLineNumber = "151"
             landmarkName = "searchBar(_:textDidChange:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1658,11 +1626,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528389610.162485"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "104"
-            endingLineNumber = "104"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "saveUser(usr:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1674,11 +1642,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528389702.094252"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "110"
-            endingLineNumber = "110"
+            startingLineNumber = "122"
+            endingLineNumber = "122"
             landmarkName = "saveUser(usr:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1706,11 +1674,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528389857.334806"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "107"
-            endingLineNumber = "107"
+            startingLineNumber = "119"
+            endingLineNumber = "119"
             landmarkName = "saveUser(usr:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1722,11 +1690,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528389920.001684"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "106"
-            endingLineNumber = "106"
+            startingLineNumber = "118"
+            endingLineNumber = "118"
             landmarkName = "saveUser(usr:)"
             landmarkType = "7">
             <Locations>
@@ -1770,11 +1738,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Model/Managment/RealmManager.swift"
-            timestampString = "528390491.297457"
+            timestampString = "528940783.077499"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "105"
-            endingLineNumber = "105"
+            startingLineNumber = "117"
+            endingLineNumber = "117"
             landmarkName = "saveUser(usr:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -1814,7 +1782,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -1846,7 +1814,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2070,7 +2038,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2170,7 +2138,7 @@
                   moduleName = "Biofields"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/Presenter/Implementations/RequisitionDetailPresenter.swift"
-                  timestampString = "528904478.373134"
+                  timestampString = "529263969.597525"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "63"
@@ -2185,7 +2153,7 @@
                   moduleName = "Biofields"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/Presenter/Implementations/RequisitionDetailPresenter.swift"
-                  timestampString = "528904478.375606"
+                  timestampString = "529263969.599233"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "64"
@@ -2234,7 +2202,7 @@
                   moduleName = "Biofields"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/Presenter/Implementations/RequisitionDetailPresenter.swift"
-                  timestampString = "528904478.385121"
+                  timestampString = "529263969.605916"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -2249,7 +2217,7 @@
                   moduleName = "Biofields"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/Presenter/Implementations/RequisitionDetailPresenter.swift"
-                  timestampString = "528904478.388001"
+                  timestampString = "529263969.607409"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "70"
@@ -2310,7 +2278,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/SettingsPresenter.swift"
@@ -2326,7 +2294,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/SettingsPresenter.swift"
@@ -2342,7 +2310,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/SettingsPresenter.swift"
@@ -2358,7 +2326,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/Presenter/Implementations/SettingsPresenter.swift"
@@ -2374,7 +2342,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/SettingsViewController.swift"
@@ -2714,7 +2682,7 @@
                   moduleName = "Biofields"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/View/DataSources/BudgeItemDataSource.swift"
-                  timestampString = "528904478.462153"
+                  timestampString = "529263969.640972"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -2729,7 +2697,7 @@
                   moduleName = "Biofields"
                   usesParentBreakpointCondition = "Yes"
                   urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/View/DataSources/BudgeItemDataSource.swift"
-                  timestampString = "528904478.465054"
+                  timestampString = "529263969.642464"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "75"
@@ -2758,7 +2726,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2790,7 +2758,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2806,7 +2774,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2822,7 +2790,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2854,7 +2822,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2870,7 +2838,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2886,7 +2854,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -2937,22 +2905,6 @@
             shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
-            filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "451"
-            endingLineNumber = "451"
-            landmarkName = "onSentRequisitionClick(_:)"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
             filePath = "Biofields/Library/Network/Requests/BudgeItemRequest.swift"
             timestampString = "528873810.169031"
             startingColumnNumber = "9223372036854775807"
@@ -2986,11 +2938,11 @@
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
-            timestampString = "528904757.232543"
+            timestampString = "529263968.323703"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "472"
-            endingLineNumber = "472"
+            startingLineNumber = "488"
+            endingLineNumber = "488"
             landmarkName = "createRequisition()"
             landmarkType = "7">
          </BreakpointContent>
@@ -3030,7 +2982,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -3046,7 +2998,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -3062,7 +3014,7 @@
       <BreakpointProxy
          BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
          <BreakpointContent
-            shouldBeEnabled = "Yes"
+            shouldBeEnabled = "No"
             ignoreCount = "0"
             continueAfterRunningActions = "No"
             filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
@@ -3104,6 +3056,454 @@
             startingLineNumber = "415"
             endingLineNumber = "415"
             landmarkName = "canDeleteSelected(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/RequisitionsAuthViewController.swift"
+            timestampString = "529260367.439767"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "114"
+            endingLineNumber = "114"
+            landmarkName = "onRefreshRequisitions(isAuth:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/RequisitionsAuthViewController.swift"
+            timestampString = "529260161.779238"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "63"
+            endingLineNumber = "63"
+            landmarkName = "onRequisitionAuthSuccess(requisitions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/RequisitionsAuthViewController.swift"
+            timestampString = "529260367.439767"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "88"
+            endingLineNumber = "88"
+            landmarkName = "onRequisitionError(msgError:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/RequisitionsAuthViewController.swift"
+            timestampString = "529260367.439767"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "71"
+            endingLineNumber = "71"
+            landmarkName = "onRequisitionAuthSuccess(requisitions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/RequisitionsAuthViewController.swift"
+            timestampString = "529260367.439767"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "64"
+            endingLineNumber = "64"
+            landmarkName = "onRequisitionAuthSuccess(requisitions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/RequisitionsAuthViewController.swift"
+            timestampString = "529260367.439767"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "65"
+            endingLineNumber = "65"
+            landmarkName = "onRequisitionAuthSuccess(requisitions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/RequisitionsAuthViewController.swift"
+            timestampString = "529260367.439767"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "66"
+            endingLineNumber = "66"
+            landmarkName = "onRequisitionAuthSuccess(requisitions:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+            timestampString = "529008095.765152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "56"
+            endingLineNumber = "56"
+            landmarkName = "recoveryPassword(recoveryRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+            timestampString = "529008095.765152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "recoveryPassword(recoveryRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/SettingsPresenter.swift"
+            timestampString = "528940801.553093"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "45"
+            endingLineNumber = "45"
+            landmarkName = "logout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/SettingsPresenter.swift"
+            timestampString = "528940802.83377"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "43"
+            endingLineNumber = "43"
+            landmarkName = "logout()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+            timestampString = "528940948.730103"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "41"
+            endingLineNumber = "41"
+            landmarkName = "recoveryPassword(recoveryRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+            timestampString = "529008095.765152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "recoveryPassword(recoveryRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+            timestampString = "529008095.765152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "50"
+            endingLineNumber = "50"
+            landmarkName = "recoveryPassword(recoveryRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+            timestampString = "529008095.765152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "49"
+            endingLineNumber = "49"
+            landmarkName = "recoveryPassword(recoveryRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+            timestampString = "529008095.765152"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
+            landmarkName = "recoveryPassword(recoveryRequest:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+            timestampString = "528941862.428286"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "37"
+            endingLineNumber = "37"
+            landmarkName = "recoveryPassword(recoveryRequest:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Biofields.RecoveryPasswordPresenter.recoveryPassword (recoveryRequest : Biofields.RecoveryPasswordRequest) -&gt; ()"
+                  moduleName = "Biofields"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+                  timestampString = "529263969.685135"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "37"
+                  endingLineNumber = "37"
+                  offsetFromSymbolStart = "688">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Biofields.RecoveryPasswordPresenter.(recoveryPassword (recoveryRequest : Biofields.RecoveryPasswordRequest) -&gt; ()).(closure #1)"
+                  moduleName = "Biofields"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/Presenter/Implementations/RecoveryPasswordPresenter.swift"
+                  timestampString = "529263969.686663"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "39"
+                  endingLineNumber = "39"
+                  offsetFromSymbolStart = "132">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/DataSources/RequisitionDataSource.swift"
+            timestampString = "529259235.520968"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "94"
+            endingLineNumber = "94"
+            landmarkName = "scrollViewDidScroll(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
+            timestampString = "529261199.779592"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "174"
+            endingLineNumber = "174"
+            landmarkName = "onAcceptRequisitionRejectClick(_:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Biofields.RequisitionDetailViewController.onAcceptRequisitionRejectClick (Any) -&gt; ()"
+                  moduleName = "Biofields"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
+                  timestampString = "529263969.690278"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "276">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "Biofields.RequisitionDetailViewController.onAcceptRequisitionRejectClick (Any) -&gt; ()"
+                  moduleName = "Biofields"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/david.barrera/Documents/Dev/iOSBiofields/BiofieldsiOS/Biofields/Biofields/View/ViewControllers/RequisitionDetailViewController.swift"
+                  timestampString = "529263969.691779"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "174"
+                  endingLineNumber = "174"
+                  offsetFromSymbolStart = "1204">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/Presenter/Implementations/RequisitionDetailPresenter.swift"
+            timestampString = "529262642.613264"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "67"
+            endingLineNumber = "67"
+            landmarkName = "requisitionAuth(requisitionAut:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
+            timestampString = "529263968.323703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "451"
+            endingLineNumber = "451"
+            landmarkName = "onSentRequisitionClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
+            timestampString = "529263968.323703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "456"
+            endingLineNumber = "456"
+            landmarkName = "onSentRequisitionClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
+            timestampString = "529263968.323703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "458"
+            endingLineNumber = "458"
+            landmarkName = "onSentRequisitionClick(_:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Biofields/View/ViewControllers/FormRequisitionViewController.swift"
+            timestampString = "529263968.323703"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "455"
+            endingLineNumber = "455"
+            landmarkName = "onSentRequisitionClick(_:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

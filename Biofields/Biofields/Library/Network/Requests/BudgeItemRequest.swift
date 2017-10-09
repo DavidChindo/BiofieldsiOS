@@ -42,7 +42,7 @@ public class BudgeItemRequest: NSObject,Mappable {
         descProduct <- map["reqitem_cg_desc"]
         uom <- map["reqitem_uom"]
         price <- map["reqitem_price"]
-        total <- map["reqitem_qty"]
+        qyt <- map["reqitem_qty"]
     }
     
 }

@@ -24,12 +24,13 @@ class RecoveryPasswordDialogViewController: BaseViewController,RecoveryPassword 
         self.landscapeContentSizeInPopup = CGSize(width: 300, height: 150)
 
     }
+    
     @IBAction func onSentEmailClick(_ sender: Any) {
         
         if LogicUtils.validateTextField(textField: emailTxt){
             if isValidEmailAddress(emailAddressString: emailTxt.text!){
                 SwiftSpinner.show("Enviando...")
-                let recoveryPasswd = RecoveryPasswordRequest(email: emailTxt.text!)
+                let recoveryPasswd = RecoveryPasswordRequest(email: (emailTxt.text?.trimmingCharacters(in: .whitespacesAndNewlines))!)
                 recoveryPasswdPresenter?.recoveryPassword(recoveryRequest: recoveryPasswd)
             }else{
                 DesignUtils.messageError(vc: self, title: "Recuperar Contraseña", msg: "Formato de correo incorrecto. Intente nuevamente")
@@ -41,13 +42,12 @@ class RecoveryPasswordDialogViewController: BaseViewController,RecoveryPassword 
     
     func onRecoveryPasswordError(msgError: String) {
         SwiftSpinner.hide()
-        DesignUtils.alertConfirm(titleMessage: "Error", message: msgError, vc: self)
+        DesignUtils.alertConfirmFinish(titleMessage: "Error", message: msgError, vc: self)
     }
     
     func onRecoveryPasswordSuccess(recovery: RecoveryPasswordResponse) {
         SwiftSpinner.hide()
-        DesignUtils.alertConfirm(titleMessage: "Exitoso", message: recovery.message!, vc: self)
-        self.dismiss(animated: true, completion: nil)
+        DesignUtils.alertConfirmFinish(titleMessage: "Exitoso", message: recovery.message!, vc: self)
     }
     
     

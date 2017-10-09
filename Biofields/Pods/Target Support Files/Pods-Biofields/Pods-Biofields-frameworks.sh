@@ -99,6 +99,7 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/STPopup/STPopup.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SpaceView/SpaceView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/StatefulTableView/StatefulTableView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftSpinner/SwiftSpinner.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Zip/Zip.framework"
 fi
@@ -113,6 +114,7 @@ if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/RealmSwift/RealmSwift.framework"
   install_framework "$BUILT_PRODUCTS_DIR/STPopup/STPopup.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SpaceView/SpaceView.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/StatefulTableView/StatefulTableView.framework"
   install_framework "$BUILT_PRODUCTS_DIR/SwiftSpinner/SwiftSpinner.framework"
   install_framework "$BUILT_PRODUCTS_DIR/Zip/Zip.framework"
 fi

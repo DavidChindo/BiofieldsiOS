@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '37562957726CB0E80A6FF7B044405FAF'
+               BlueprintIdentifier = 'ACA343EF112EE87B5E5F32F1257E5DC5'
                BlueprintName = 'SpaceView'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'SpaceView.framework'>

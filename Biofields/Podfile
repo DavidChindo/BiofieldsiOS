@@ -19,5 +19,6 @@ pod 'Crashlytics'
 pod 'CryptoSwift'
 pod 'SpaceView'
 pod 'Zip', '~> 0.7'
+pod 'StatefulTableView', '0.0.17'
 
 end

@@ -19,6 +19,7 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
     var mRequisitions:[RequisitionItemResponse] = []
     var requisitionItem: [RequisitionItemResponse] = []
     var searchbar:UISearchBar?
+    var spinner: UIActivityIndicatorView? = nil
     var searchActive:Bool = false
     private let refreshControl = UIRefreshControl()
     private let refreshControlTintColor = DesignUtils.greenPrimary
@@ -46,6 +47,10 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
         }
         refreshControl.tintColor = refreshControlTintColor
         refreshControl.addTarget(self, action: #selector(refreshData(ender:)), for: .valueChanged)
+        spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        spinner?.color = UIColor.darkGray
+        spinner?.hidesWhenStopped = true
+        requisitionsSegTableView.tableFooterView = spinner
     }
     
     func onRequisitionAuthSuccess(requisitions: [RequisitionItemResponse]) {
@@ -57,9 +62,9 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
                 r.compundPrimaryKey()
                 requistionSave.append(r)
             }
-            mRequisitions = requistionSave
+            mRequisitions.append(contentsOf: requistionSave)
             RealmManager.insert(RequisitionItemResponse.self, items: requistionSave)
-            requisitionDataSource?.update(requistionSave)
+            requisitionDataSource?.update(mRequisitions)
         }else{
             requisitionDataSource?.updateMessage(msg: "No hay requisiciones por autorizar")
         }
@@ -68,6 +73,9 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
         }else{
             SwiftSpinner.hide()
         }
+        if !(spinner?.isHidden)!{
+            spinner?.stopAnimating()
+        }
     }
     
     func onRequisitionError(msgError: String) {
@@ -75,6 +83,9 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
             self.refreshControl.endRefreshing()
         }else{
             SwiftSpinner.hide()
+        }
+        if !(spinner?.isHidden)!{
+            spinner?.stopAnimating()
         }
         if msgError.contains("internet"){
             requisitionDataSource?.updateMessage(msg: msgError)
@@ -91,12 +102,21 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
         }
     }
     
+    func onRefreshRequisitions(isAuth: Bool) {
+        spinner?.startAnimating()
+        print("Init refresh")
+        let lastId = Int((mRequisitions.last?.numRequisition)!)! + 1
+        requisitionPresenter?.requisitionSeg(id: lastId)
+    }
+    
     override func viewDidAppear(_ animated: Bool) {
         SwiftSpinner.show("Cargando...")
+        mRequisitions.removeAll()
         requisitionPresenter?.requisitionSeg(id: 1)
     }
     
     func refreshData(ender: UIRefreshControl){
+        mRequisitions.removeAll()
         requisitionPresenter?.requisitionSeg(id: 1)
     }
     

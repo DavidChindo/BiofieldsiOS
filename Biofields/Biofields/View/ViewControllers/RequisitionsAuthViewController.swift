@@ -11,7 +11,8 @@ import SwiftSpinner
 import RealmSwift
 import Realm
 
-class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate,UISearchBarDelegate {
+
+class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate,UISearchBarDelegate{
 
     @IBOutlet weak var requisitionTable: UITableView!
     
@@ -20,7 +21,7 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
     var mRequisitions:[RequisitionItemResponse] = []
     var requisitionItem: [RequisitionItemResponse] = []
     var searchbar:UISearchBar?
-    
+    var spinner: UIActivityIndicatorView? = nil
     var searchActive:Bool = false
     
     private let refreshControl = UIRefreshControl()
@@ -40,15 +41,22 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         self.requisitionTable.dataSource = requisitionDataSource
         self.requisitionTable.delegate = requisitionDataSource
         
+        
         SwiftSpinner.show("Cargando...")
         requisitionPresenter?.requisitionAuth(id: 1)
         if #available(iOS 10.0, *) {
             requisitionTable.refreshControl = refreshControl
+            
         } else {
             requisitionTable.addSubview(refreshControl)
         }
         refreshControl.tintColor = refreshControlTintColor
+        
         refreshControl.addTarget(self, action: #selector(refreshData(ender:)), for: .valueChanged)
+         spinner = UIActivityIndicatorView(activityIndicatorStyle: .gray)
+        spinner?.color = UIColor.darkGray
+        spinner?.hidesWhenStopped = true
+        requisitionTable.tableFooterView = spinner
     }
 
     func onRequisitionAuthSuccess(requisitions: [RequisitionItemResponse]) {
@@ -60,9 +68,9 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
                 r.compundPrimaryKey()
                 requistionSave.append(r)
             }
-            mRequisitions = requistionSave
+            mRequisitions.append(contentsOf: requistionSave)
                 RealmManager.insert(RequisitionItemResponse.self, items: requistionSave)
-                requisitionDataSource?.update(requistionSave)
+                requisitionDataSource?.update(mRequisitions)
         }else{
             requisitionDataSource?.updateMessage(msg: "No hay requisiciones por autorizar")
         }
@@ -71,6 +79,9 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         }else{
             SwiftSpinner.hide()
         }
+        if !(spinner?.isHidden)!{
+            spinner?.stopAnimating()
+        }
     }
     
     func onRequisitionError(msgError: String) {
@@ -78,6 +89,9 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
             self.refreshControl.endRefreshing()
         }else{
             SwiftSpinner.hide()
+        }
+        if !(spinner?.isHidden)!{
+            spinner?.stopAnimating()
         }
         if msgError.contains("internet"){
             requisitionDataSource?.updateMessage(msg: msgError)
@@ -95,12 +109,23 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         }
     }
     
-    func refreshData(ender: UIRefreshControl){
-        requisitionPresenter?.requisitionAuth(id: 1)
+    func onRefreshRequisitions(isAuth: Bool) {
+        
+        spinner?.startAnimating()
+        print("Init refresh")
+        let lastId = Int((mRequisitions.last?.numRequisition)!)! + 1
+        requisitionPresenter?.requisitionAuth(id: lastId)
+
     }
     
+    func refreshData(ender: UIRefreshControl){
+        mRequisitions.removeAll()
+        requisitionPresenter?.requisitionAuth(id: 1)
+    }
+
     override func viewDidAppear(_ animated: Bool) {
         SwiftSpinner.show("Cargando...")
+        mRequisitions.removeAll()
         requisitionPresenter?.requisitionAuth(id: 1)
     }
     
@@ -175,4 +200,6 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
     func handleTap(sender: UITapGestureRecognizer) {
         searchbar?.endEditing(true)
     }
+    
+    
 }

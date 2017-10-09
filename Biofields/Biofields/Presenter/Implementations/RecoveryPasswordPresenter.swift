@@ -34,17 +34,20 @@ class RecoveryPasswordPresenter: BasePresenter {
             
             do {
                 try
-                    request = Alamofire.request(Urls.API_RECOVERY_PASSWORD, method: .put, parameters: params, encoding: JSONEncoding.default, headers: nil).responseObject(completionHandler: {(response:DataResponse<RecoveryPasswordResponse>) in
+                    request = Alamofire.request(Urls.API_RECOVERY_PASSWORD, method: .post, parameters: params, encoding: JSONEncoding.default, headers: nil).responseObject(completionHandler: {(response:DataResponse<RecoveryPasswordResponse>) in
                         
                         switch response.result{
                         case .success:
                             let code = response.response?.statusCode
                             if code == Constants.STATUS_OK_GET {
                                 self.delegate?.onRecoveryPasswordSuccess(recovery: response.result.value!)
+                                //self.delegate?.onRecoveryPasswordSuccess(recovery: response.result.value)
                             }else{
                                 self.delegate?.onRecoveryPasswordError(msgError:"Ha ocurrido un error")
                             }
                         case .failure(let error):
+                            let json = String(data: response.data!, encoding: String.Encoding.utf8)
+                            print(json)
                             print(error)
                             self.delegate?.onRecoveryPasswordError(msgError: "Por el momento no se puede realizar esta acción")
                         }

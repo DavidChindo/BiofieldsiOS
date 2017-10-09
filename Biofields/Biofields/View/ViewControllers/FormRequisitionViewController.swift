@@ -351,17 +351,17 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
                 deleteView.isHidden = false
                 indispensableView.isHidden = false
             }
-                if includeSegment.selectedSegmentIndex == 1{
-                    deleteView.isHidden = true
-                    deleteSegment.isEnabled = true
-                }else{
-                    deleteView.isHidden = false
-                    deleteSegment.isEnabled = false
-                    deleteSegment.selectedSegmentIndex = -1
-                    indispensableSegment.isEnabled = false
-                    indispensableSegment.selectedSegmentIndex = -1
-                    indispensableView.isHidden = false
-                }
+            if includeSegment.selectedSegmentIndex == 1{
+                deleteView.isHidden = true
+                deleteSegment.isEnabled = true
+            }else{
+                deleteView.isHidden = false
+                deleteSegment.isEnabled = false
+                deleteSegment.selectedSegmentIndex = -1
+                indispensableSegment.isEnabled = false
+                indispensableSegment.selectedSegmentIndex = -1
+                indispensableView.isHidden = false
+            }
             if deleteSegment.selectedSegmentIndex == 1{
                 indispensableView.isHidden = true
                 indispensableSegment.isEnabled = true
@@ -447,8 +447,24 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     @IBAction func onSentRequisitionClick(_ sender: Any) {
         let validate: Bool = isBiofieldsCompany ? validateForm() : validateFormNotBiofields()
         if validate {
-            SwiftSpinner.show("Enviando...")
-            requisitionPresenter?.sentRequisition(requisitionRequest: createRequisition())
+            do{
+                let zipFilePath = try Zip.quickZipFiles(FormRequisitionViewController.filesPath, fileName: "222")
+                guard let data = NSData(contentsOf: zipFilePath ) else {
+                    return
+                }
+                let size:Double = Double(data.length)
+                let sizeVideo:Double = size / 1048576.0
+                print("zipFileLenght: \(sizeVideo)")
+                if sizeVideo < 5.0{
+                    SwiftSpinner.show("Enviando...")
+                    requisitionPresenter?.sentRequisition(requisitionRequest: createRequisition())
+                }else{
+                    DesignUtils.alertConfirm(titleMessage: "", message: "Ha superado el peso máximo de archivos, no debe ser mayor a 5 MB. Verifique el tamaño de sus archivos", vc: self)
+                }
+            }catch let error{
+                DesignUtils.alertConfirm(titleMessage: "", message: "Ha sucedido un error al comprimir los documentos", vc: self)
+                print("Something went wrong")
+            }
         }
     }
     
@@ -482,7 +498,6 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             }
             let sizeVideo = Double(data.length / 1048576)
             print("zipFileLenght: \(sizeVideo)")
-            
             print("ZIPFILEPATH: \(zipFilePath)")
             SwiftSpinner.sharedInstance.titleLabel.text = "Subiendo..."
             requisitionPresenter?.uploadZip(urlZip: zipFilePath, numRequisition: reqNumber)
