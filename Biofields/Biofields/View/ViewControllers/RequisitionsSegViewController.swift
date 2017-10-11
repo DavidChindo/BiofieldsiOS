@@ -177,7 +177,7 @@ class RequisitionsSegViewController: BaseViewController,RequisitionAuthDelegate,
     
     override func viewWillAppear(_ animated: Bool) {
         self.navigationItem.titleView = nil
-        self.navigationItem.title = "Por Autorizar"
+        self.navigationItem.title = "Seguimiento"
         requisitionDataSource?.update(mRequisitions)
     }
     

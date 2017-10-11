@@ -10,6 +10,7 @@ import UIKit
 
 class Urls: NSObject {
     
+    //static let API_PROD_BIOFIELDS = "http://workflowbf.azurewebsites.net/workflow/wsprod_v1/index.php"
     static let API_BIOFIELDS = "http://workflowbf.azurewebsites.net/workflow/v1/index.php"
     static let API_LOGIN = API_BIOFIELDS + "/POST/login/v2/login"
     static let API_LOGIN_COMPANY = API_BIOFIELDS + "/POST/login/v3/login/company"
