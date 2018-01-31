@@ -11,7 +11,7 @@ import SpaceView
 
 class DesignUtils: NSObject {
     
-    static let greenPrimary = UIColor(red: 120/255, green: 162/255, blue: 47/255, alpha: 1)
+    static let greenPrimary = UIColor(red: 25/255, green: 169/255, blue: 247/255, alpha: 1)
     static let grayStatus = UIColor(red: 187/255, green: 189/255, blue: 191/255, alpha: 1)
     static let redBio = UIColor(red: 160/255, green: 43/255, blue: 66/255, alpha: 1)
     static let backGroundColor = UIColor(red: 240/255, green: 242/255, blue: 247/255, alpha: 1)

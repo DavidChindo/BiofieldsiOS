@@ -37,7 +37,6 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
             self.tableView?.backgroundView = messageLabel;
             self.tableView?.separatorStyle = .none
             
-            
             return 0
         }
     }
@@ -107,6 +106,7 @@ class RequisitionDataSource: NSObject, UITableViewDataSource,UITableViewDelegate
     }
     
     func updateMessage(msg: String){
+        
         self.emptyMessage = msg
     }
     

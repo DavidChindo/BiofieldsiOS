@@ -26,6 +26,7 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
     
     private let refreshControl = UIRefreshControl()
     private let refreshControlTintColor = DesignUtils.greenPrimary
+    private var isTop:Bool = true
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,6 +45,7 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         
         SwiftSpinner.show("Cargando...")
         requisitionPresenter?.requisitionAuth(id: 1)
+        isTop = true
         if #available(iOS 10.0, *) {
             requisitionTable.refreshControl = refreshControl
             
@@ -72,6 +74,10 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
                 RealmManager.insert(RequisitionItemResponse.self, items: requistionSave)
                 requisitionDataSource?.update(mRequisitions)
         }else{
+            if isTop {
+                mRequisitions.removeAll()
+                requisitionDataSource?.update(mRequisitions)
+            }
             requisitionDataSource?.updateMessage(msg: "No hay requisiciones por autorizar")
         }
         if !refreshControl.isHidden && refreshControl.isRefreshing{
@@ -82,9 +88,12 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
         if !(spinner?.isHidden)!{
             spinner?.stopAnimating()
         }
+        isTop = false
     }
     
     func onRequisitionError(msgError: String) {
+        isTop = false
+        mRequisitions.removeAll()
         if !refreshControl.isHidden && refreshControl.isRefreshing{
             self.refreshControl.endRefreshing()
         }else{
@@ -110,22 +119,26 @@ class RequisitionsAuthViewController: BaseViewController,RequisitionAuthDelegate
     }
     
     func onRefreshRequisitions(isAuth: Bool) {
-        
         spinner?.startAnimating()
         print("Init refresh")
-        let lastId = Int((mRequisitions.last?.numRequisition)!)! + 1
-        requisitionPresenter?.requisitionAuth(id: lastId)
+        if mRequisitions.count > 0{
+            let lastId = Int((mRequisitions.last?.numRequisition)!)! + 1
+            isTop = false
+            requisitionPresenter?.requisitionAuth(id: lastId)
+        }
 
     }
     
     func refreshData(ender: UIRefreshControl){
         mRequisitions.removeAll()
+        isTop = true
         requisitionPresenter?.requisitionAuth(id: 1)
     }
 
     override func viewDidAppear(_ animated: Bool) {
         SwiftSpinner.show("Cargando...")
         mRequisitions.removeAll()
+        isTop = true
         requisitionPresenter?.requisitionAuth(id: 1)
     }
     

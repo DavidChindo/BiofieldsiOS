@@ -219,7 +219,9 @@ class RequisitionDetailViewController: BaseViewController,RequisitionDetailDeleg
         let label = UILabel(frame: CGRect(x: dot.frame.width+2, y: 6, width: view.frame.width, height: 25))
         label.text = involved
         label.font = UIFont(name: "HelveticaNeue", size: 13)
-        label.textColor = UIColor.gray
+        label.textColor = involved.contains("@") ? DesignUtils.greenPrimary : UIColor.gray
+        label.font = UIFont.boldSystemFont(ofSize: label.font.pointSize)
+
         view.addSubview(dot)
         view.addSubview(label)
         return view

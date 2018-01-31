@@ -75,7 +75,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     static var SpPayMoneyChage:Bool = false
     static var providerStatic: String = ""
     static var descriptionStatic: String = "Descripción del requirimiento"
-    static var annotationsStatic: String = "Anotaciones"
+    static var annotationsStatic: String = "Justificación"
     static var isBilledStatic: Int = -1
     static var isUrgentStatic: Int = -1
     static var isPOAStatic:  Int = 0
@@ -105,7 +105,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     }
     
     func initViews(){
-        isBiofieldsCompany = Prefs.instance().bool(Constants.IS_BIO_PREFS)
+        isBiofieldsCompany =  Prefs.instance().bool(Constants.IS_BIO_PREFS)
         DesignUtils.containerRound(content: generalContainer)
         DesignUtils.containerRound(content: budgetContainer)
         DesignUtils.containerRound(content: filesContainer)
@@ -159,11 +159,17 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
             paymoneyLabel.frame = CGRect(x: paymoneyLabel.frame.origin.x, y: notesView.frame.origin.y + 12, width: paymoneyLabel.frame.width, height: paymoneyLabel.frame.height)
             spPayMoney.frame = CGRect(x: spPayMoney.frame.origin.x, y: paymoneyLabel.frame.origin.y + paymoneyLabel.frame.height + 8, width: spPayMoney.frame.width, height: spPayMoney.frame.height)
             generalContainer.frame = CGRect(x: generalContainer.frame.origin.x, y: generalContainer.frame.origin.y, width: generalContainer.frame.width, height: spPayMoney.frame.height + spPayMoney.frame.origin.y + 12)
-            filesLbl.frame = CGRect(x: filesLbl.frame.origin.x, y: generalContainer.frame.origin.y + generalContainer.frame.height + 16 , width: filesLbl.frame.width, height: filesLbl.frame.height)
-            filesBtn.frame = CGRect(x: filesBtn.frame.origin.x, y: filesLbl.frame.origin.y - 2, width: filesBtn.frame.width, height: filesBtn.frame.height)
-            filesContainer.frame = CGRect(x: filesContainer.frame.origin.x, y: filesBtn.frame.origin.y + filesBtn.frame.height + 12 , width: filesContainer.frame.width, height: filesContainer.frame.height)
-            repositionFilesTableView()
+           /*
+             filesLbl.frame = CGRect(x: filesLbl.frame.origin.x, y: generalContainer.frame.origin.y + generalContainer.frame.height + 16 , width: filesLbl.frame.width, height: filesLbl.frame.height)
+             filesBtn.frame = CGRect(x: filesBtn.frame.origin.x, y: filesLbl.frame.origin.y - 2, width: filesBtn.frame.width, height: filesBtn.frame.height)
+             filesContainer.frame = CGRect(x: filesContainer.frame.origin.x, y: filesBtn.frame.origin.y + filesBtn.frame.height + 12 , width: filesContainer.frame.width, height: filesContainer.frame.height)
+             repositionFilesTableView()
+             */
         }
+        filesLbl.frame = CGRect(x: filesLbl.frame.origin.x, y: generalContainer.frame.origin.y + generalContainer.frame.height + 16 , width: filesLbl.frame.width, height: filesLbl.frame.height)
+        filesBtn.frame = CGRect(x: filesBtn.frame.origin.x, y: filesLbl.frame.origin.y - 2, width: filesBtn.frame.width, height: filesBtn.frame.height)
+        filesContainer.frame = CGRect(x: filesContainer.frame.origin.x, y: filesBtn.frame.origin.y + filesBtn.frame.height + 12 , width: filesContainer.frame.width, height: filesContainer.frame.height)
+        repositionFilesTableView()
     }
     
     
@@ -309,7 +315,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
                 descriptionTextView.text =  FormRequisitionViewController.descriptionStatic
             }
             
-            if !FormRequisitionViewController.annotationsStatic.contains("Anotaciones"){
+            if !FormRequisitionViewController.annotationsStatic.contains("Justificación"){
                 annotationsTextView.textColor = DesignUtils.grayFont
                 annotationsTextView.text = FormRequisitionViewController.annotationsStatic
             }
@@ -479,10 +485,14 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         let reqMoneId = Int(methodsPay[spPayMoney.selectedIndex].id!)
         let reqFacturado = isBiofieldsCompany ? isBilledSegment.selectedSegmentIndex == 0 : nil
         let reqUrgente = isBiofieldsCompany ?  urgentePaySegment.selectedSegmentIndex == 0 ? 1 : 0 : -1
-        let reqPOAa = isBiofieldsCompany ? poaSegment.selectedSegmentIndex == 0 : nil
-        let reqIncluirPOAb = isBiofieldsCompany ? reqPOAa! ? includeSegment.selectedSegmentIndex == 0 : nil : nil
-        let reqDeletePOAc = isBiofieldsCompany ? reqPOAa! ? deleteSegment.selectedSegmentIndex == 0 : nil : nil
-        let reqOperaciond =  isBiofieldsCompany ?reqPOAa! ? indispensableSegment.selectedSegmentIndex == 0 : nil : nil
+        //let reqPOAa = isBiofieldsCompany ? poaSegment.selectedSegmentIndex == 0 : nil
+        let reqPOAa:Bool? = nil
+        /*let reqIncluirPOAb = isBiofieldsCompany ? reqPOAa! ? includeSegment.selectedSegmentIndex == 0 : nil : nil*/
+        let reqIncluirPOAb:Bool? = nil
+        /*let reqDeletePOAc = isBiofieldsCompany ? reqPOAa! ? deleteSegment.selectedSegmentIndex == 0 : nil : nil*/
+        let reqDeletePOAc:Bool? = nil
+        /*let reqOperaciond =  isBiofieldsCompany ?reqPOAa! ? indispensableSegment.selectedSegmentIndex == 0 : nil : nil*/
+        let reqOperaciond:Bool? = nil
         let reqItem = FormRequisitionViewController.BUDGES
         
         let requisitionRequest = RequisitionRequest(reqCompanyId: reqCompanyId!, reqCostCenterId: reqCostCenterId!, reqRubroId: reqRubroId!, reqVendedorNumber: reqVendor!, reqDesc: reqDesc, reqSite: reqSite!, reqNotes: reqNotes, reqMonedaId: reqMoneId!, reqFacturado: reqFacturado, reqUrgente: reqUrgente, reqPOAa: reqPOAa, reqIncluirPOAb: reqIncluirPOAb, reqDeletePOAc: reqDeletePOAc, reqOperaciond: reqOperaciond, reqitem: reqItem)
@@ -513,7 +523,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
     
     func textViewDidBeginEditing(_ textView: UITextView) {
         textView.textColor = DesignUtils.grayFont
-        textView.text = textView.text.contains("Descripción del requirimiento") || textView.text.contains("Anotaciones") ? "" : textView.text
+        textView.text = textView.text.contains("Descripción del requirimiento") || textView.text.contains("Justificación") ? "" : textView.text
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -865,7 +875,7 @@ class FormRequisitionViewController: BaseViewController , LBZSpinnerDelegate,UID
         FormRequisitionViewController.SpPayMoneyChage = false
         FormRequisitionViewController.providerStatic = ""
         FormRequisitionViewController.descriptionStatic = "Descripción del requirimiento"
-        FormRequisitionViewController.annotationsStatic = "Anotaciones"
+        FormRequisitionViewController.annotationsStatic = "Justificación"
         FormRequisitionViewController.isBilledStatic = -1
         FormRequisitionViewController.isUrgentStatic = -1
         FormRequisitionViewController.isPOAStatic = 0

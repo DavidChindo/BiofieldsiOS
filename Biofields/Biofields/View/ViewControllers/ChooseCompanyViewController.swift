@@ -12,6 +12,8 @@ import SwiftSpinner
 class ChooseCompanyViewController: BaseViewController,ChooseCompanyDelegate,UIPickerViewDelegate,UIPickerViewDataSource {
 
     
+    @IBOutlet weak var titleLbl: UILabel!
+    @IBOutlet weak var chooseView: UIView!
     @IBOutlet weak var companiesPickerView: UIPickerView!
     @IBOutlet weak var acceptBtn: UIButton!
     
@@ -34,6 +36,12 @@ class ChooseCompanyViewController: BaseViewController,ChooseCompanyDelegate,UIPi
     func customViews(){
         DesignUtils.setBorder(button: acceptBtn, mred: 255, mgreen: 255, mblue: 255)
         company = ChooseCompanyViewController.COMPANIES[0].companyName!
+        //if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad {
+        titleLbl.frame = CGRect(x: titleLbl.frame.origin.x, y: titleLbl.frame.origin.y  - 50, width: titleLbl.frame.width, height: titleLbl.frame.height)
+        companiesPickerView.frame = CGRect(x: companiesPickerView.frame.origin.x, y: companiesPickerView.frame.origin.y - 50, width: companiesPickerView.frame.width, height: 150)
+        acceptBtn.frame = CGRect(x: acceptBtn.frame.origin.x, y: companiesPickerView.frame.origin.y + companiesPickerView.frame.height + 16, width: acceptBtn.frame.width, height: acceptBtn.frame.height + 10)
+        chooseView.frame = CGRect(x: chooseView.frame.origin.x, y: chooseView.frame.origin.y - 50, width: chooseView.frame.width, height: companiesPickerView.frame.origin.y + companiesPickerView.frame.height - 24)
+        //}
     }
     
     @IBAction func onAcceptSelectCompany(_ sender: Any) {
